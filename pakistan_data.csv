@@ -1,0 +1,410 @@
+tweet_dt,topic,id,username,name,number of followers,tweet,tag_type,tag,sentiment,polarity,like_count,reply_count,retweet_count,account_start_date,verified_user,location,total number of tweets
+2020-09-18,Pakistan,1306813944862998532,GujjarJobs,Nadeem Anjum Gujjar,157,"The Khyber Pass links which two countries?
+Afghanistan and Pakistan",,Khyber Pass,POSITIVE,0.7471418976783752,0,0,0,2012-03-13 07:40:41,False,Kot Gujjran Multan,2958
+2020-09-18,Pakistan,1306813944862998532,GujjarJobs,Nadeem Anjum Gujjar,157,"The Khyber Pass links which two countries?
+Afghanistan and Pakistan",,Afghanistan,POSITIVE,0.7471418976783752,0,0,0,2012-03-13 07:40:41,False,Kot Gujjran Multan,2958
+2020-09-18,Pakistan,1306813944862998532,GujjarJobs,Nadeem Anjum Gujjar,157,"The Khyber Pass links which two countries?
+Afghanistan and Pakistan",,Pakistan,POSITIVE,0.7471418976783752,0,0,0,2012-03-13 07:40:41,False,Kot Gujjran Multan,2958
+2020-09-18,Pakistan,1306813944632242176,HBaarot,Hiren Barot,0,@IMRANKH51363466 @ReallySwara Terror means Islam. Horrible. They marriage with their sisters. Rediculous.  They sta… https://t.co/YFkcg3ux6e,,Islam,NEGATIVE,-0.999961256980896,0,0,0,2017-11-25 12:06:45,False,,91
+2020-09-18,Pakistan,1306813943285862401,krab09,Prasad Karambelkar,46,"Suddenly everyone wants to nonch India. Nepal came up with new Maps, Pakistan doing the same. We can very well conn… https://t.co/PiBA65B2QX",,India,POSITIVE,0.8822751641273499,0,0,0,2009-10-24 11:01:40,False,"Bengaluru, India",4460
+2020-09-18,Pakistan,1306813943285862401,krab09,Prasad Karambelkar,46,"Suddenly everyone wants to nonch India. Nepal came up with new Maps, Pakistan doing the same. We can very well conn… https://t.co/PiBA65B2QX",,Nepal,POSITIVE,0.8822751641273499,0,0,0,2009-10-24 11:01:40,False,"Bengaluru, India",4460
+2020-09-18,Pakistan,1306813943285862401,krab09,Prasad Karambelkar,46,"Suddenly everyone wants to nonch India. Nepal came up with new Maps, Pakistan doing the same. We can very well conn… https://t.co/PiBA65B2QX",,Pakistan,POSITIVE,0.8822751641273499,0,0,0,2009-10-24 11:01:40,False,"Bengaluru, India",4460
+2020-09-18,Pakistan,1306813879641542656,pardhu_leo,NRC & UCC Next 🇮🇳 Jai Shri Ram🚩,2072,Entire humanity except #Pakistan #China https://t.co/BzAX0rkJDS,,Pakistan,NEGATIVE,-0.9881457090377808,0,0,0,2013-08-13 06:38:31,False,Bharat,83423
+2020-09-18,Pakistan,1306813879641542656,pardhu_leo,NRC & UCC Next 🇮🇳 Jai Shri Ram🚩,2072,Entire humanity except #Pakistan #China https://t.co/BzAX0rkJDS,,China,NEGATIVE,-0.9881457090377808,0,0,0,2013-08-13 06:38:31,False,Bharat,83423
+2020-09-18,Pakistan,1306813879641542656,pardhu_leo,NRC & UCC Next 🇮🇳 Jai Shri Ram🚩,2072,Entire humanity except #Pakistan #China https://t.co/BzAX0rkJDS,Hashtag,#Pakistan,NEGATIVE,-0.9881457090377808,0,0,0,2013-08-13 06:38:31,False,Bharat,83423
+2020-09-18,Pakistan,1306813879641542656,pardhu_leo,NRC & UCC Next 🇮🇳 Jai Shri Ram🚩,2072,Entire humanity except #Pakistan #China https://t.co/BzAX0rkJDS,Hashtag,#China,NEGATIVE,-0.9881457090377808,0,0,0,2013-08-13 06:38:31,False,Bharat,83423
+2020-09-18,Pakistan,1306813878773395457,abidhussainuk,PTI,230,@FaisalJavedKhan @StateBank_Pak Can you transfer money from existing bank accounts in pakistan into the new roshan digital bank account?,,pakistan,NEGATIVE,-0.9691168665885925,0,0,0,2013-03-01 17:44:56,False,UK,10725
+2020-09-18,Pakistan,1306813850919088130,BhambriKastura,Kastura Bhambri,705,"A country whr terrorists carrying guns can roam more freely than women on streets!
+Welcm 2 Islamic Republic of Paki… https://t.co/vtG33vN53n",,Islamic Republic of Paki,NEGATIVE,-0.9658317565917969,0,0,0,2020-01-22 04:20:56,False,"India, Los Angeles",664
+2020-09-18,Pakistan,1306813841595006976,KabirMohit,Mohit Pandey,344,"The PM seemed to have taken the luxury of having Pakistan at hand for granted, and ignored the fact that the nation… https://t.co/KSqliQqxgA",,Pakistan,NEGATIVE,-0.9865169525146484,0,0,0,2013-11-14 18:01:01,False,Gaya ✈️ New Delhi ✈️ Gaya,783
+2020-09-18,Pakistan,1306813838474358784,KabirMohit,Mohit Pandey,344,"The prime minister made an error of judgement when he said, “Hum Bajrang Bali ki jai bolkar upar se chale gaye” whi… https://t.co/qJzenjYqOp",,Hum Bajrang Bali,NEGATIVE,-0.9986016154289246,0,0,0,2013-11-14 18:01:01,False,Gaya ✈️ New Delhi ✈️ Gaya,783
+2020-09-18,Pakistan,1306813833693089793,HarisKhalil10,Haris Khalil,3101,@Shanzayhere It's better to create individual Pakistan,,Shanzayhere,NEGATIVE,-0.9962087869644165,0,0,0,2017-03-31 11:33:53,False,Lahore pakistan ,58027
+2020-09-18,Pakistan,1306813833693089793,HarisKhalil10,Haris Khalil,3101,@Shanzayhere It's better to create individual Pakistan,,Pakistan,NEGATIVE,-0.9962087869644165,0,0,0,2017-03-31 11:33:53,False,Lahore pakistan ,58027
+2020-09-18,Pakistan,1306813825216323585,etcnews_tv,EtcNews_tv,1187,Reko Diq Case || Some facts behind the Fine || Pakistan Wins || Siddique Jaan #RekoDiqCase #SiddiqueJaan https://t.co/Iyq2nYn9uo,,Siddique Jaan,POSITIVE,0.9863198399543762,0,0,0,2015-12-25 12:49:55,False,Pakistan,74713
+2020-09-18,Pakistan,1306813825216323585,etcnews_tv,EtcNews_tv,1187,Reko Diq Case || Some facts behind the Fine || Pakistan Wins || Siddique Jaan #RekoDiqCase #SiddiqueJaan https://t.co/Iyq2nYn9uo,Hashtag,#RekoDiqCase,POSITIVE,0.9863198399543762,0,0,0,2015-12-25 12:49:55,False,Pakistan,74713
+2020-09-18,Pakistan,1306813825216323585,etcnews_tv,EtcNews_tv,1187,Reko Diq Case || Some facts behind the Fine || Pakistan Wins || Siddique Jaan #RekoDiqCase #SiddiqueJaan https://t.co/Iyq2nYn9uo,Hashtag,#SiddiqueJaan,POSITIVE,0.9863198399543762,0,0,0,2015-12-25 12:49:55,False,Pakistan,74713
+2020-09-18,Pakistan,1306813800486596608,bumblebee1925,OMR,9,"Another example of Pakistan following their Boss China!
+
+What China is doing with Uyghurs,  Pakistan is doing with… https://t.co/LgrEoTMQVR",,Pakistan,NEGATIVE,-0.9992493987083435,0,0,0,2012-07-22 12:18:20,False,,9
+2020-09-18,Pakistan,1306813800486596608,bumblebee1925,OMR,9,"Another example of Pakistan following their Boss China!
+
+What China is doing with Uyghurs,  Pakistan is doing with… https://t.co/LgrEoTMQVR",,China,NEGATIVE,-0.9992493987083435,0,0,0,2012-07-22 12:18:20,False,,9
+2020-09-18,Pakistan,1306813800486596608,bumblebee1925,OMR,9,"Another example of Pakistan following their Boss China!
+
+What China is doing with Uyghurs,  Pakistan is doing with… https://t.co/LgrEoTMQVR",,China,NEGATIVE,-0.9992493987083435,0,0,0,2012-07-22 12:18:20,False,,9
+2020-09-18,Pakistan,1306813800486596608,bumblebee1925,OMR,9,"Another example of Pakistan following their Boss China!
+
+What China is doing with Uyghurs,  Pakistan is doing with… https://t.co/LgrEoTMQVR",,Uyghurs,NEGATIVE,-0.9992493987083435,0,0,0,2012-07-22 12:18:20,False,,9
+2020-09-18,Pakistan,1306813800486596608,bumblebee1925,OMR,9,"Another example of Pakistan following their Boss China!
+
+What China is doing with Uyghurs,  Pakistan is doing with… https://t.co/LgrEoTMQVR",,Pakistan,NEGATIVE,-0.9992493987083435,0,0,0,2012-07-22 12:18:20,False,,9
+2020-09-18,Pakistan,1306813797013782528,adeelakbarsidd1,Adeel Akbar,27,@madehanaqvi i think aap kay pass information nhi Angen Altan (Eurtugal) 2times pakistan ka visit kar chukay hain.… https://t.co/ud0Rt5DGe3,,Angen Altan,POSITIVE,0.7188882231712341,0,0,0,2014-08-30 21:41:26,False,"کراچی, پاکستان",1011
+2020-09-18,Pakistan,1306813797013782528,adeelakbarsidd1,Adeel Akbar,27,@madehanaqvi i think aap kay pass information nhi Angen Altan (Eurtugal) 2times pakistan ka visit kar chukay hain.… https://t.co/ud0Rt5DGe3,,Eurtugal,POSITIVE,0.7188882231712341,0,0,0,2014-08-30 21:41:26,False,"کراچی, پاکستان",1011
+2020-09-18,Pakistan,1306813778026135553,bhaveshlohar,Bhavesh Lohar,37,@Singh1Raji @UsamaShakoor16 @republic Let him be any which ways pakistan is on verge of getting blacklisted by FATF,,pakistan,NEGATIVE,-0.9867809414863586,0,0,0,2011-07-01 07:14:58,False,"Mumbai, India",2664
+2020-09-18,Pakistan,1306813778026135553,bhaveshlohar,Bhavesh Lohar,37,@Singh1Raji @UsamaShakoor16 @republic Let him be any which ways pakistan is on verge of getting blacklisted by FATF,,FATF,NEGATIVE,-0.9867809414863586,0,0,0,2011-07-01 07:14:58,False,"Mumbai, India",2664
+2020-09-18,Pakistan,1306813763170054145,rhmalik51,Rashid Hussain Malik,12,@jamilnagri And an end to Pakistan’s as well as world resolution that Kashmir is disputed. It is becoming evident t… https://t.co/2W4HT47GRW,,Pakistan,POSITIVE,0.9160212874412537,0,0,0,2013-02-23 03:20:37,False,"Rawalpindi, Pakistan",2290
+2020-09-18,Pakistan,1306813763170054145,rhmalik51,Rashid Hussain Malik,12,@jamilnagri And an end to Pakistan’s as well as world resolution that Kashmir is disputed. It is becoming evident t… https://t.co/2W4HT47GRW,,Kashmir,POSITIVE,0.9160212874412537,0,0,0,2013-02-23 03:20:37,False,"Rawalpindi, Pakistan",2290
+2020-09-18,Pakistan,1306813759613214721,Pak_Customs,Pakistan Customs Service Officers Association,2861,"4/4
+
+6. All international agencies have appreciated professional competence of Pakistan Customs in execution of thi… https://t.co/btwa9dzfYt",,Pakistan Customs,POSITIVE,0.9813578724861145,0,0,0,2020-06-26 08:17:11,False,Pakistan ,154
+2020-09-18,Pakistan,1306813721818181633,RaghuPune,Raghubir Singh,42,@JagranNews @Arzookazmi30 Now even Shias are being called Kafirs -if sloganeering in Karachi be any indication?Ahme… https://t.co/QyZOlSBEls,,Kafirs,NEGATIVE,-0.9216047525405884,0,0,0,2016-12-11 11:54:24,False,,8902
+2020-09-18,Pakistan,1306813721818181633,RaghuPune,Raghubir Singh,42,@JagranNews @Arzookazmi30 Now even Shias are being called Kafirs -if sloganeering in Karachi be any indication?Ahme… https://t.co/QyZOlSBEls,,Karachi,NEGATIVE,-0.9216047525405884,0,0,0,2016-12-11 11:54:24,False,,8902
+2020-09-18,Pakistan,1306813711173255174,pakistaninews,Pakistan News,95771,Pakistan Quiz: Society ‘proud to be partners with Honehar Pakistan. #pakistan https://t.co/iSwQq1lVIP,,Pakistan,POSITIVE,0.9678550958633423,0,0,0,2009-02-02 18:33:47,False,"Islamabad, Pakistan",287881
+2020-09-18,Pakistan,1306813711173255174,pakistaninews,Pakistan News,95771,Pakistan Quiz: Society ‘proud to be partners with Honehar Pakistan. #pakistan https://t.co/iSwQq1lVIP,,Honehar Pakistan,POSITIVE,0.9678550958633423,0,0,0,2009-02-02 18:33:47,False,"Islamabad, Pakistan",287881
+2020-09-18,Pakistan,1306813711173255174,pakistaninews,Pakistan News,95771,Pakistan Quiz: Society ‘proud to be partners with Honehar Pakistan. #pakistan https://t.co/iSwQq1lVIP,,pakistan,POSITIVE,0.9678550958633423,0,0,0,2009-02-02 18:33:47,False,"Islamabad, Pakistan",287881
+2020-09-18,Pakistan,1306813711173255174,pakistaninews,Pakistan News,95771,Pakistan Quiz: Society ‘proud to be partners with Honehar Pakistan. #pakistan https://t.co/iSwQq1lVIP,Hashtag,#pakistan,POSITIVE,0.9678550958633423,0,0,0,2009-02-02 18:33:47,False,"Islamabad, Pakistan",287881
+2020-09-18,Pakistan,1306813706676781057,yraze,yRaze,2686,"via @regvulture Pakistan to smartphone-makers: Come for the low tax, stay to create your replacements https://t.co/XumzZb53dw",,Pakistan,NEGATIVE,-0.9995834231376648,0,0,0,2011-04-01 05:46:32,False,,238971
+2020-09-18,Pakistan,1306813684954460160,SandeepKarwa18,Sandy K,97,"@Mishti_in You guys study to get job in india else you have possibilities in Pakistan , NO VISA EDUCATION REQUIRED IN PAKISTAN 😂",,Pakistan,NEGATIVE,-0.9972434043884277,0,0,0,2020-01-08 09:58:15,False,Hyderabad,7499
+2020-09-18,Pakistan,1306813684954460160,SandeepKarwa18,Sandy K,97,"@Mishti_in You guys study to get job in india else you have possibilities in Pakistan , NO VISA EDUCATION REQUIRED IN PAKISTAN 😂",,PAKISTAN,NEGATIVE,-0.9972434043884277,0,0,0,2020-01-08 09:58:15,False,Hyderabad,7499
+2020-09-18,Pakistan,1306813674170904576,Riyadenny,Riya_s,2618,"But we won war against Corona in 21 days.  Are you talking about Pakistan? Well, I am not interested in hearing any… https://t.co/sBcxYWEnso",,Corona,NEGATIVE,-0.999510645866394,1,0,1,2010-02-04 17:35:10,False,Kochi,87436
+2020-09-18,Pakistan,1306813674170904576,Riyadenny,Riya_s,2618,"But we won war against Corona in 21 days.  Are you talking about Pakistan? Well, I am not interested in hearing any… https://t.co/sBcxYWEnso",,Pakistan,NEGATIVE,-0.999510645866394,1,0,1,2010-02-04 17:35:10,False,Kochi,87436
+2020-09-18,Pakistan,1306813632081256449,itsabrowngal,MariamSohail,3,This guy at work telling me how much he loves India 🇮🇳 and that he wants to visit the country. Arm ok? Me too!!! Bc… https://t.co/ZgBqHJfQ6x,,India,POSITIVE,0.9610644578933716,0,0,0,2020-09-17 09:06:56,False,"Chicago, IL",8
+2020-09-18,Pakistan,1306813603173953537,SudeepC11,Sudeep Chatterjee,3,@sharrmasumann @narendramodi Twitter is officially banned in China and PM deleted his profile from Weibo😜 so Xi din… https://t.co/T4WGLa8g5a,,China,NEGATIVE,-0.9996089339256287,0,0,0,2017-01-01 18:26:15,False,,2402
+2020-09-18,Pakistan,1306813603173953537,SudeepC11,Sudeep Chatterjee,3,@sharrmasumann @narendramodi Twitter is officially banned in China and PM deleted his profile from Weibo😜 so Xi din… https://t.co/T4WGLa8g5a,,Weibo,NEGATIVE,-0.9996089339256287,0,0,0,2017-01-01 18:26:15,False,,2402
+2020-09-18,Pakistan,1306813577051996162,TopTrendsWatch,Top Trends Watch 🇵🇰,6289,"Just started trending in Pakistan.
+
+5 gossip
+Chairman PPP
+#COVID__19",,Pakistan,POSITIVE,0.9310654401779175,0,0,0,2010-03-18 06:47:03,False,Pakistan,71292
+2020-09-18,Pakistan,1306813577051996162,TopTrendsWatch,Top Trends Watch 🇵🇰,6289,"Just started trending in Pakistan.
+
+5 gossip
+Chairman PPP
+#COVID__19",Hashtag,#COVID__19,POSITIVE,0.9310654401779175,0,0,0,2010-03-18 06:47:03,False,Pakistan,71292
+2020-09-18,Pakistan,1306813572153069568,EmToxic__,ItsNigarisyed,61,"This is How TO LOVE PAKISTAN 
+🇵🇰🤍
+Remain Calm Peaceful UNITE 
+🇵🇰🤍
+After Being Cursed Abused &amp; Fatawafied __ 
+Allama… https://t.co/Q2zKocbXpb",,PAKISTAN,POSITIVE,0.9508768320083618,1,0,0,2020-02-26 12:18:06,False,Pakistan,544
+2020-09-18,Pakistan,1306813572153069568,EmToxic__,ItsNigarisyed,61,"This is How TO LOVE PAKISTAN 
+🇵🇰🤍
+Remain Calm Peaceful UNITE 
+🇵🇰🤍
+After Being Cursed Abused &amp; Fatawafied __ 
+Allama… https://t.co/Q2zKocbXpb",,Allama,POSITIVE,0.9508768320083618,1,0,0,2020-02-26 12:18:06,False,Pakistan,544
+2020-09-18,Pakistan,1306813515009863680,TalhaH77896733,Talha H,8,@DrMuradPTI Pakistan doesn't have only Aitchison college where only Elite class studies. you have to look after the… https://t.co/rrA0cjnHE7,,Pakistan,NEGATIVE,-0.6307549476623535,0,0,0,2020-03-26 18:29:33,False,,207
+2020-09-18,Pakistan,1306813515009863680,TalhaH77896733,Talha H,8,@DrMuradPTI Pakistan doesn't have only Aitchison college where only Elite class studies. you have to look after the… https://t.co/rrA0cjnHE7,,Aitchison,NEGATIVE,-0.6307549476623535,0,0,0,2020-03-26 18:29:33,False,,207
+2020-09-18,Pakistan,1306813466070540288,Kaushal23570720,Kaushalsingh,0,@majorgauravarya @ImranKhanPTI Sir Taliban is not helping Pakistan in Kashmir and this is a very right time for Ind… https://t.co/t8qLL6TFf8,,Taliban,NEGATIVE,-0.5540655851364136,0,0,0,2020-09-18 02:47:28,False,,1
+2020-09-18,Pakistan,1306813466070540288,Kaushal23570720,Kaushalsingh,0,@majorgauravarya @ImranKhanPTI Sir Taliban is not helping Pakistan in Kashmir and this is a very right time for Ind… https://t.co/t8qLL6TFf8,,Pakistan,NEGATIVE,-0.5540655851364136,0,0,0,2020-09-18 02:47:28,False,,1
+2020-09-18,Pakistan,1306813466070540288,Kaushal23570720,Kaushalsingh,0,@majorgauravarya @ImranKhanPTI Sir Taliban is not helping Pakistan in Kashmir and this is a very right time for Ind… https://t.co/t8qLL6TFf8,,Kashmir,NEGATIVE,-0.5540655851364136,0,0,0,2020-09-18 02:47:28,False,,1
+2020-09-18,Pakistan,1306813450924879872,Sarath61401250,Sarath,0,China-Pakistan Economic Corridor Chairman braces for further heat over kins' corruption - The Economic Times… https://t.co/Yewj2U7Ic4,,China-Pakistan Economic Corridor,NEGATIVE,-0.6832107901573181,0,0,0,2020-09-03 15:09:23,False,,12
+2020-09-18,Pakistan,1306813450924879872,Sarath61401250,Sarath,0,China-Pakistan Economic Corridor Chairman braces for further heat over kins' corruption - The Economic Times… https://t.co/Yewj2U7Ic4,,The Economic Times,NEGATIVE,-0.6832107901573181,0,0,0,2020-09-03 15:09:23,False,,12
+2020-09-18,Pakistan,1306813437352181766,PriyankaLahiri_,Priyanka,12006,@sob_dylan This time i cant even go to pakistan. Waha se bhi nikaal denge,,pakistan,POSITIVE,0.8706138134002686,0,0,0,2009-06-14 20:10:40,False,India,71542
+2020-09-18,Pakistan,1306813437352181766,PriyankaLahiri_,Priyanka,12006,@sob_dylan This time i cant even go to pakistan. Waha se bhi nikaal denge,,Waha,POSITIVE,0.8706138134002686,0,0,0,2009-06-14 20:10:40,False,India,71542
+2020-09-18,Pakistan,1306813435796127745,156kph,WAZIR🇵🇰,448,@IbrahimReporter @Farhan_YusEfzai @mak_asif @aaliaaaliya @afghcricket Afghan players used to play cricket in Pakist… https://t.co/iV9FOXbSys,,Afghan,NEGATIVE,-0.680034339427948,0,0,0,2018-02-11 21:57:06,False,"Quetta, Pakistan",7595
+2020-09-18,Pakistan,1306813435796127745,156kph,WAZIR🇵🇰,448,@IbrahimReporter @Farhan_YusEfzai @mak_asif @aaliaaaliya @afghcricket Afghan players used to play cricket in Pakist… https://t.co/iV9FOXbSys,,Pakist,NEGATIVE,-0.680034339427948,0,0,0,2018-02-11 21:57:06,False,"Quetta, Pakistan",7595
+2020-09-18,Pakistan,1306813422877773824,faisalnadim88,My name is Pakistan,710,"@betterpakistan India Wants Pakistan Blacklist in FATF case.
+PML N &amp;PPP wants Pakistan blacklist by opposing FATF b… https://t.co/DNvzEaFawY",,India,NEGATIVE,-0.9932506680488586,0,0,0,2011-12-28 11:34:33,False,"Multan, Pakistan",24707
+2020-09-18,Pakistan,1306813422877773824,faisalnadim88,My name is Pakistan,710,"@betterpakistan India Wants Pakistan Blacklist in FATF case.
+PML N &amp;PPP wants Pakistan blacklist by opposing FATF b… https://t.co/DNvzEaFawY",,Pakistan,NEGATIVE,-0.9932506680488586,0,0,0,2011-12-28 11:34:33,False,"Multan, Pakistan",24707
+2020-09-18,Pakistan,1306813422877773824,faisalnadim88,My name is Pakistan,710,"@betterpakistan India Wants Pakistan Blacklist in FATF case.
+PML N &amp;PPP wants Pakistan blacklist by opposing FATF b… https://t.co/DNvzEaFawY",,FATF,NEGATIVE,-0.9932506680488586,0,0,0,2011-12-28 11:34:33,False,"Multan, Pakistan",24707
+2020-09-18,Pakistan,1306813422877773824,faisalnadim88,My name is Pakistan,710,"@betterpakistan India Wants Pakistan Blacklist in FATF case.
+PML N &amp;PPP wants Pakistan blacklist by opposing FATF b… https://t.co/DNvzEaFawY",,PML N &amp,NEGATIVE,-0.9932506680488586,0,0,0,2011-12-28 11:34:33,False,"Multan, Pakistan",24707
+2020-09-18,Pakistan,1306813422877773824,faisalnadim88,My name is Pakistan,710,"@betterpakistan India Wants Pakistan Blacklist in FATF case.
+PML N &amp;PPP wants Pakistan blacklist by opposing FATF b… https://t.co/DNvzEaFawY",,PPP,NEGATIVE,-0.9932506680488586,0,0,0,2011-12-28 11:34:33,False,"Multan, Pakistan",24707
+2020-09-18,Pakistan,1306813422877773824,faisalnadim88,My name is Pakistan,710,"@betterpakistan India Wants Pakistan Blacklist in FATF case.
+PML N &amp;PPP wants Pakistan blacklist by opposing FATF b… https://t.co/DNvzEaFawY",,Pakistan,NEGATIVE,-0.9932506680488586,0,0,0,2011-12-28 11:34:33,False,"Multan, Pakistan",24707
+2020-09-18,Pakistan,1306813422877773824,faisalnadim88,My name is Pakistan,710,"@betterpakistan India Wants Pakistan Blacklist in FATF case.
+PML N &amp;PPP wants Pakistan blacklist by opposing FATF b… https://t.co/DNvzEaFawY",,FATF,NEGATIVE,-0.9932506680488586,0,0,0,2011-12-28 11:34:33,False,"Multan, Pakistan",24707
+2020-09-18,Pakistan,1306813406003884032,atmanirbhar2020,Atmanirbhar Bharat 🙏,62,"People have started to understand Opposition is totally jobless all over the country. 😜😀🤣🤙
+
+Even bots from Pakistan… https://t.co/w7nqzNDh8f",,Pakistan,NEGATIVE,-0.9996868371963501,0,0,0,2020-07-14 12:08:39,False,Jambudweepe,7951
+2020-09-18,Pakistan,1306813365122105344,NoorGul18208789,Noor Gul,20,"Going to hospital 
+
+Other countries:-
+Chocolates , balloons , flowers and cards 
+
+In Pakistan :-
+2kg saib , 2 darjan kely , 1 kg santry",,Pakistan,NEGATIVE,-0.9986786246299744,0,0,0,2020-09-15 09:58:03,False,,42
+2020-09-18,Pakistan,1306813332305768448,RichardBarrow,Richard Barrow in Thailand 🇹🇭🇬🇧,167146,"Official #COVID19 update in #Thailand on Friday:
+🔸3,497 people infected (+7)
+🔸3,328 discharged from hospital (+3)
+🔸… https://t.co/Snx2slOxiT",,Thailand,NEGATIVE,-0.999968409538269,2,0,0,2009-09-09 16:18:56,True,"Samut Prakan, Thailand",95268
+2020-09-18,Pakistan,1306813332305768448,RichardBarrow,Richard Barrow in Thailand 🇹🇭🇬🇧,167146,"Official #COVID19 update in #Thailand on Friday:
+🔸3,497 people infected (+7)
+🔸3,328 discharged from hospital (+3)
+🔸… https://t.co/Snx2slOxiT",Hashtag,#COVID19,NEGATIVE,-0.999968409538269,2,0,0,2009-09-09 16:18:56,True,"Samut Prakan, Thailand",95268
+2020-09-18,Pakistan,1306813332305768448,RichardBarrow,Richard Barrow in Thailand 🇹🇭🇬🇧,167146,"Official #COVID19 update in #Thailand on Friday:
+🔸3,497 people infected (+7)
+🔸3,328 discharged from hospital (+3)
+🔸… https://t.co/Snx2slOxiT",Hashtag,#Thailand,NEGATIVE,-0.999968409538269,2,0,0,2009-09-09 16:18:56,True,"Samut Prakan, Thailand",95268
+2020-09-18,Pakistan,1306813329856487424,AlinaAdyl,علینہ بتول ♡‏,3008,Here's the true sunni We both shia sunni want peace Government Should take action against these Takfiris Terrorist… https://t.co/Jtdh1ifmB5,,Takfiris,NEGATIVE,-0.9664740562438965,2,0,0,2019-03-18 14:21:27,False,🇵🇰,33466
+2020-09-18,Pakistan,1306813300835901440,BPSingh24640608,B P Singh,11,"Pak to elevate Gilgit-Baltistan to full-fledged province: Report
+ https://t.co/enXc0zBbPj
+Download the TOI app now:
+https://t.co/LKFaARQNH2",,Gilgit-Baltistan,POSITIVE,0.9648867845535278,0,0,0,2020-08-06 14:37:17,False,,43
+2020-09-18,Pakistan,1306813299762368515,UrduWisdom,UrduWisdom,21,"500+ General Knowledge about Pakistan ( For all Competitive Exams ) https://t.co/VdC9QYQGZ5 via @YouTube 
+#generalknowledge",,Pakistan,POSITIVE,0.9740938544273376,0,0,0,2019-12-26 07:51:57,False,,242
+2020-09-18,Pakistan,1306813299762368515,UrduWisdom,UrduWisdom,21,"500+ General Knowledge about Pakistan ( For all Competitive Exams ) https://t.co/VdC9QYQGZ5 via @YouTube 
+#generalknowledge",Hashtag,#generalknowledge,POSITIVE,0.9740938544273376,0,0,0,2019-12-26 07:51:57,False,,242
+2020-09-18,Pakistan,1306813289570074630,Narsimhan17,Narsimhan,9,@imMAK02 @AijazZaka please leave IMMEDIATELY  for  HOMELAND PAKISTAN  that is where you belong,,PAKISTAN,NEGATIVE,-0.9816669225692749,0,0,0,2020-02-22 06:31:51,False,,5935
+2020-09-18,Pakistan,1306813275330363392,_peacekeeper2,NewsFreak 2.0,604,This is Karachi in Pakistan where many Shias have been killed in Targeted Killings in just past 48 hours. Look at t… https://t.co/bRZe4Or8go,,Karachi,NEGATIVE,-0.9919689297676086,1,0,0,2020-01-22 02:15:08,False,India,1312
+2020-09-18,Pakistan,1306813275330363392,_peacekeeper2,NewsFreak 2.0,604,This is Karachi in Pakistan where many Shias have been killed in Targeted Killings in just past 48 hours. Look at t… https://t.co/bRZe4Or8go,,Pakistan,NEGATIVE,-0.9919689297676086,1,0,0,2020-01-22 02:15:08,False,India,1312
+2020-09-18,Pakistan,1306813275330363392,_peacekeeper2,NewsFreak 2.0,604,This is Karachi in Pakistan where many Shias have been killed in Targeted Killings in just past 48 hours. Look at t… https://t.co/bRZe4Or8go,,Shias,NEGATIVE,-0.9919689297676086,1,0,0,2020-01-22 02:15:08,False,India,1312
+2020-09-18,Pakistan,1306813275330363392,_peacekeeper2,NewsFreak 2.0,604,This is Karachi in Pakistan where many Shias have been killed in Targeted Killings in just past 48 hours. Look at t… https://t.co/bRZe4Or8go,,Targeted Killings,NEGATIVE,-0.9919689297676086,1,0,0,2020-01-22 02:15:08,False,India,1312
+2020-09-18,Pakistan,1306813268489646080,FazalUr29207365,Fazal Ur Rehman,110,"Chairperson of the CPEC Committee in the Senate of Pakistan, Senator @sherryrehman will be the chief guest for the… https://t.co/jhzZzL1iJM",,CPEC Committee,POSITIVE,0.8998381495475769,0,0,0,2020-07-03 01:15:25,False,,1343
+2020-09-18,Pakistan,1306813268489646080,FazalUr29207365,Fazal Ur Rehman,110,"Chairperson of the CPEC Committee in the Senate of Pakistan, Senator @sherryrehman will be the chief guest for the… https://t.co/jhzZzL1iJM",,Senate of Pakistan,POSITIVE,0.8998381495475769,0,0,0,2020-07-03 01:15:25,False,,1343
+2020-09-18,Pakistan,1306813251838242818,khanfliction,Daniyal Khan,885,@ikhanic00 my gorey loving cousins in Pakistan do,,Pakistan,POSITIVE,0.9507049918174744,0,0,0,2017-02-18 03:52:23,False,"Allen, TX",3319
+2020-09-18,Pakistan,1306813241499189248,PromoterBoxing,Vengeance Is Mine!,3452,"A #Pakistan glacier, as viewed from a drone - in pictures
+
+By: Polish photographer #David #Kaszlikowski took a seri… https://t.co/3DSI5jO2oL",,Pakistan,NEGATIVE,-0.9610505104064941,2,0,0,2009-10-18 21:17:11,False,United States Of America,22633
+2020-09-18,Pakistan,1306813241499189248,PromoterBoxing,Vengeance Is Mine!,3452,"A #Pakistan glacier, as viewed from a drone - in pictures
+
+By: Polish photographer #David #Kaszlikowski took a seri… https://t.co/3DSI5jO2oL",,Polish,NEGATIVE,-0.9610505104064941,2,0,0,2009-10-18 21:17:11,False,United States Of America,22633
+2020-09-18,Pakistan,1306813241499189248,PromoterBoxing,Vengeance Is Mine!,3452,"A #Pakistan glacier, as viewed from a drone - in pictures
+
+By: Polish photographer #David #Kaszlikowski took a seri… https://t.co/3DSI5jO2oL",,David Kaszlikowski,NEGATIVE,-0.9610505104064941,2,0,0,2009-10-18 21:17:11,False,United States Of America,22633
+2020-09-18,Pakistan,1306813241499189248,PromoterBoxing,Vengeance Is Mine!,3452,"A #Pakistan glacier, as viewed from a drone - in pictures
+
+By: Polish photographer #David #Kaszlikowski took a seri… https://t.co/3DSI5jO2oL",Hashtag,#Pakistan,NEGATIVE,-0.9610505104064941,2,0,0,2009-10-18 21:17:11,False,United States Of America,22633
+2020-09-18,Pakistan,1306813241499189248,PromoterBoxing,Vengeance Is Mine!,3452,"A #Pakistan glacier, as viewed from a drone - in pictures
+
+By: Polish photographer #David #Kaszlikowski took a seri… https://t.co/3DSI5jO2oL",Hashtag,#David,NEGATIVE,-0.9610505104064941,2,0,0,2009-10-18 21:17:11,False,United States Of America,22633
+2020-09-18,Pakistan,1306813241499189248,PromoterBoxing,Vengeance Is Mine!,3452,"A #Pakistan glacier, as viewed from a drone - in pictures
+
+By: Polish photographer #David #Kaszlikowski took a seri… https://t.co/3DSI5jO2oL",Hashtag,#Kaszlikowski,NEGATIVE,-0.9610505104064941,2,0,0,2009-10-18 21:17:11,False,United States Of America,22633
+2020-09-18,Pakistan,1306813227871940611,shahidmalick1,Shahid Malick,156,"@mubasherlucman Definitely, you are wrong. Pakistan will stay forever IA...",,Pakistan,NEGATIVE,-0.6236705183982849,1,0,0,2012-02-11 16:46:53,False,"Faisalabad, Pakistan",172
+2020-09-18,Pakistan,1306813213418299394,sagar152w,Sagar BM,12,"Another example of Pakistan following their Boss China!
+
+What China is doing with Uyghurs,  Pakistan is doing with… https://t.co/LQoTs0qmPw",,Pakistan,NEGATIVE,-0.9991527795791626,0,0,0,2020-08-07 04:44:34,False,,51
+2020-09-18,Pakistan,1306813213418299394,sagar152w,Sagar BM,12,"Another example of Pakistan following their Boss China!
+
+What China is doing with Uyghurs,  Pakistan is doing with… https://t.co/LQoTs0qmPw",,China,NEGATIVE,-0.9991527795791626,0,0,0,2020-08-07 04:44:34,False,,51
+2020-09-18,Pakistan,1306813213418299394,sagar152w,Sagar BM,12,"Another example of Pakistan following their Boss China!
+
+What China is doing with Uyghurs,  Pakistan is doing with… https://t.co/LQoTs0qmPw",,China,NEGATIVE,-0.9991527795791626,0,0,0,2020-08-07 04:44:34,False,,51
+2020-09-18,Pakistan,1306813213418299394,sagar152w,Sagar BM,12,"Another example of Pakistan following their Boss China!
+
+What China is doing with Uyghurs,  Pakistan is doing with… https://t.co/LQoTs0qmPw",,Uyghurs,NEGATIVE,-0.9991527795791626,0,0,0,2020-08-07 04:44:34,False,,51
+2020-09-18,Pakistan,1306813213418299394,sagar152w,Sagar BM,12,"Another example of Pakistan following their Boss China!
+
+What China is doing with Uyghurs,  Pakistan is doing with… https://t.co/LQoTs0qmPw",,Pakistan,NEGATIVE,-0.9991527795791626,0,0,0,2020-08-07 04:44:34,False,,51
+2020-09-18,Pakistan,1306813207315730432,pakistaninews,Pakistan News,95771,Pakistan re-elected to key UN body. #pakistan https://t.co/TWzckEXjJa,,Pakistan,POSITIVE,0.981209933757782,0,0,1,2009-02-02 18:33:47,False,"Islamabad, Pakistan",287881
+2020-09-18,Pakistan,1306813207315730432,pakistaninews,Pakistan News,95771,Pakistan re-elected to key UN body. #pakistan https://t.co/TWzckEXjJa,,UN,POSITIVE,0.981209933757782,0,0,1,2009-02-02 18:33:47,False,"Islamabad, Pakistan",287881
+2020-09-18,Pakistan,1306813207315730432,pakistaninews,Pakistan News,95771,Pakistan re-elected to key UN body. #pakistan https://t.co/TWzckEXjJa,,pakistan,POSITIVE,0.981209933757782,0,0,1,2009-02-02 18:33:47,False,"Islamabad, Pakistan",287881
+2020-09-18,Pakistan,1306813207315730432,pakistaninews,Pakistan News,95771,Pakistan re-elected to key UN body. #pakistan https://t.co/TWzckEXjJa,Hashtag,#pakistan,POSITIVE,0.981209933757782,0,0,1,2009-02-02 18:33:47,False,"Islamabad, Pakistan",287881
+2020-09-18,Pakistan,1306813194195922944,mikhaliq,Imran Khaliq,612,COVID-19 ain’t over yet. A rising trend since Ashura in Pakistan. 700+ today. Not w good picture,,Ashura,NEGATIVE,-0.991831362247467,0,0,0,2010-03-13 21:24:47,False,"Karachi, Pakistan",18778
+2020-09-18,Pakistan,1306813194195922944,mikhaliq,Imran Khaliq,612,COVID-19 ain’t over yet. A rising trend since Ashura in Pakistan. 700+ today. Not w good picture,,Pakistan,NEGATIVE,-0.991831362247467,0,0,0,2010-03-13 21:24:47,False,"Karachi, Pakistan",18778
+2020-09-18,Pakistan,1306813185056366592,BPSingh24640608,B P Singh,11,"Pakistan parliament passes three FATF related bills amid opposition protests
+ https://t.co/qvEbwvEKwE
+Download the… https://t.co/HUVnoiekga",,Pakistan,NEGATIVE,-0.9126481413841248,0,0,0,2020-08-06 14:37:17,False,,43
+2020-09-18,Pakistan,1306813185056366592,BPSingh24640608,B P Singh,11,"Pakistan parliament passes three FATF related bills amid opposition protests
+ https://t.co/qvEbwvEKwE
+Download the… https://t.co/HUVnoiekga",,FATF,NEGATIVE,-0.9126481413841248,0,0,0,2020-08-06 14:37:17,False,,43
+2020-09-18,Pakistan,1306813175732613124,TopTrendsWatch,Top Trends Watch 🇵🇰,6289,"Trending Topics in Pakistan on 18-Sep-20, 09:31:55
+
+11 maxwell
+12 Reko Diq
+13 1 Go
+14 3 Dinner
+15 Parliament
+16 ali… https://t.co/Y7skhaBSmh",,Pakistan,POSITIVE,0.9873867630958557,0,0,0,2010-03-18 06:47:03,False,Pakistan,71292
+2020-09-18,Pakistan,1306813175732613124,TopTrendsWatch,Top Trends Watch 🇵🇰,6289,"Trending Topics in Pakistan on 18-Sep-20, 09:31:55
+
+11 maxwell
+12 Reko Diq
+13 1 Go
+14 3 Dinner
+15 Parliament
+16 ali… https://t.co/Y7skhaBSmh",,Reko Diq,POSITIVE,0.9873867630958557,0,0,0,2010-03-18 06:47:03,False,Pakistan,71292
+2020-09-18,Pakistan,1306813175279484929,BPSingh24640608,B P Singh,11,"Pakistan 'epicenter of terrorism'; persecutes Hindus, Sikhs, Christians: India at Geneva
+ /india/pakistan-epicenter… https://t.co/VILwil0tOM",,Pakistan,NEGATIVE,-0.6044613122940063,0,0,0,2020-08-06 14:37:17,False,,43
+2020-09-18,Pakistan,1306813175279484929,BPSingh24640608,B P Singh,11,"Pakistan 'epicenter of terrorism'; persecutes Hindus, Sikhs, Christians: India at Geneva
+ /india/pakistan-epicenter… https://t.co/VILwil0tOM",,Hindus,NEGATIVE,-0.6044613122940063,0,0,0,2020-08-06 14:37:17,False,,43
+2020-09-18,Pakistan,1306813175279484929,BPSingh24640608,B P Singh,11,"Pakistan 'epicenter of terrorism'; persecutes Hindus, Sikhs, Christians: India at Geneva
+ /india/pakistan-epicenter… https://t.co/VILwil0tOM",,Sikhs,NEGATIVE,-0.6044613122940063,0,0,0,2020-08-06 14:37:17,False,,43
+2020-09-18,Pakistan,1306813175279484929,BPSingh24640608,B P Singh,11,"Pakistan 'epicenter of terrorism'; persecutes Hindus, Sikhs, Christians: India at Geneva
+ /india/pakistan-epicenter… https://t.co/VILwil0tOM",,Christians,NEGATIVE,-0.6044613122940063,0,0,0,2020-08-06 14:37:17,False,,43
+2020-09-18,Pakistan,1306813175279484929,BPSingh24640608,B P Singh,11,"Pakistan 'epicenter of terrorism'; persecutes Hindus, Sikhs, Christians: India at Geneva
+ /india/pakistan-epicenter… https://t.co/VILwil0tOM",,India,NEGATIVE,-0.6044613122940063,0,0,0,2020-08-06 14:37:17,False,,43
+2020-09-18,Pakistan,1306813175279484929,BPSingh24640608,B P Singh,11,"Pakistan 'epicenter of terrorism'; persecutes Hindus, Sikhs, Christians: India at Geneva
+ /india/pakistan-epicenter… https://t.co/VILwil0tOM",,Geneva,NEGATIVE,-0.6044613122940063,0,0,0,2020-08-06 14:37:17,False,,43
+2020-09-18,Pakistan,1306813168186949632,rhmalik51,Rashid Hussain Malik,12,"@Daanibhai Pakistan’s common man is not corrupt. It is Pakistani so called Elite class, politicians and high placed… https://t.co/3Ky3jnhCW1",,Daanibhai Pakistan,POSITIVE,0.8564014434814453,0,0,0,2013-02-23 03:20:37,False,"Rawalpindi, Pakistan",2290
+2020-09-18,Pakistan,1306813168186949632,rhmalik51,Rashid Hussain Malik,12,"@Daanibhai Pakistan’s common man is not corrupt. It is Pakistani so called Elite class, politicians and high placed… https://t.co/3Ky3jnhCW1",,Pakistani,POSITIVE,0.8564014434814453,0,0,0,2013-02-23 03:20:37,False,"Rawalpindi, Pakistan",2290
+2020-09-18,Pakistan,1306813166077317120,FarhanHSiddiqi,Farhan Siddiqi,1414,"I write on the normative, statist and structural impulses in Pakistan’s foreign policy and its two key objectives:… https://t.co/7axGlHa0hS",,Pakistan,POSITIVE,0.9887827038764954,0,0,0,2013-02-05 06:02:17,False,"Islamabad, Pakistan",4945
+2020-09-18,Pakistan,1306813127028363264,Diaa_tweets,shaھ zadi,2856,"Good Morning Pakistan 🌺
+Have a blessed day 💕",,Pakistan,POSITIVE,0.996452808380127,4,0,0,2018-01-11 14:09:28,False,,9840
+2020-09-18,Pakistan,1306813120556474368,Muhamma26833939,Muhammad Usman,1,"@ImranKhanPTI 
+Sir can you please ban all the nonsense of stage drama's in pakistan live and recorded ?? Full of vu… https://t.co/XVM8Ih6Rwi",,pakistan,NEGATIVE,-0.9809167981147766,0,0,0,2015-09-29 15:47:39,False,,76
+2020-09-18,Pakistan,1306813118824083456,MovieShoovy,Movie Shoovy ®,11375,"We are loving #Ameera 's fashion sense already @iiqraaziz On sets of #Raqeebse @ Karachi, Pakistan https://t.co/7vtuMj2qEb",,Ameera,POSITIVE,0.9467839598655701,1,0,0,2011-01-13 18:09:44,False,karachi,59458
+2020-09-18,Pakistan,1306813118824083456,MovieShoovy,Movie Shoovy ®,11375,"We are loving #Ameera 's fashion sense already @iiqraaziz On sets of #Raqeebse @ Karachi, Pakistan https://t.co/7vtuMj2qEb",,Karachi,POSITIVE,0.9467839598655701,1,0,0,2011-01-13 18:09:44,False,karachi,59458
+2020-09-18,Pakistan,1306813118824083456,MovieShoovy,Movie Shoovy ®,11375,"We are loving #Ameera 's fashion sense already @iiqraaziz On sets of #Raqeebse @ Karachi, Pakistan https://t.co/7vtuMj2qEb",,Pakistan,POSITIVE,0.9467839598655701,1,0,0,2011-01-13 18:09:44,False,karachi,59458
+2020-09-18,Pakistan,1306813118824083456,MovieShoovy,Movie Shoovy ®,11375,"We are loving #Ameera 's fashion sense already @iiqraaziz On sets of #Raqeebse @ Karachi, Pakistan https://t.co/7vtuMj2qEb",Hashtag,#Ameera,POSITIVE,0.9467839598655701,1,0,0,2011-01-13 18:09:44,False,karachi,59458
+2020-09-18,Pakistan,1306813118824083456,MovieShoovy,Movie Shoovy ®,11375,"We are loving #Ameera 's fashion sense already @iiqraaziz On sets of #Raqeebse @ Karachi, Pakistan https://t.co/7vtuMj2qEb",Hashtag,#Raqeebse,POSITIVE,0.9467839598655701,1,0,0,2011-01-13 18:09:44,False,karachi,59458
+2020-09-18,Pakistan,1306813115179425792,varma2707,Pradeep Varma,118,"@HuXijin_GT Who believes chinese, pakistan &amp; north korea. These are the Three rogue nations of the world .",,pakistan,NEGATIVE,-0.9950527548789978,0,0,0,2020-03-09 17:57:11,False,North America & HinduRastra ,2739
+2020-09-18,Pakistan,1306813115179425792,varma2707,Pradeep Varma,118,"@HuXijin_GT Who believes chinese, pakistan &amp; north korea. These are the Three rogue nations of the world .",,north korea,NEGATIVE,-0.9950527548789978,0,0,0,2020-03-09 17:57:11,False,North America & HinduRastra ,2739
+2020-09-18,Pakistan,1306813106996215811,LoshadSpaceport,Starships324,650,@ridathehanafi @FlagsMashupBot I thought that Pakistan wants to force everyone to become conservative Muslims. Is this accurate?,,Pakistan,NEGATIVE,-0.9999129772186279,0,0,0,2017-02-15 08:35:41,False,"Seremban, Malaysia",14771
+2020-09-18,Pakistan,1306813106996215811,LoshadSpaceport,Starships324,650,@ridathehanafi @FlagsMashupBot I thought that Pakistan wants to force everyone to become conservative Muslims. Is this accurate?,,Muslims,NEGATIVE,-0.9999129772186279,0,0,0,2017-02-15 08:35:41,False,"Seremban, Malaysia",14771
+2020-09-18,Pakistan,1306813091246731264,AttlP,ښفيق کاکړ Attl Panezai,176,"@SyedMuh68907538 Ponam.
+Pakistan oppressed nationalist moment. In which all pashtoon baloch sindh and Siraiki natio… https://t.co/CjgraUJH8E",,Pakistan,NEGATIVE,-0.8670802712440491,0,0,0,2018-09-11 19:24:14,False,southern pashtonkwa Quetta ,2196
+2020-09-18,Pakistan,1306813091246731264,AttlP,ښفيق کاکړ Attl Panezai,176,"@SyedMuh68907538 Ponam.
+Pakistan oppressed nationalist moment. In which all pashtoon baloch sindh and Siraiki natio… https://t.co/CjgraUJH8E",,Siraiki,NEGATIVE,-0.8670802712440491,0,0,0,2018-09-11 19:24:14,False,southern pashtonkwa Quetta ,2196
+2020-09-18,Pakistan,1306813082241507330,81ShahbazRana,Shahbaz Rana,17325,Wheat import matter gets murkier. ECC scraps import tender after food ministry played a spoiler role.Pakistan had d… https://t.co/9bIvBKEzpl,,ECC,NEGATIVE,-0.9997901320457458,0,0,0,2010-04-12 06:25:39,False,Islamabad,10525
+2020-09-18,Pakistan,1306813051505577986,JaiBaghelKhand,Shivanshu Gupta,3,"@arslanrpk4 @trtworld @tiktok_us Pakistan takes indian water 
+And we mix piss In it and send to Pakistan 
+So that u drink our piss",,Pakistan,NEGATIVE,-0.9998000264167786,0,0,0,2020-09-08 15:02:29,False,"New Delhi, India",325
+2020-09-18,Pakistan,1306813051505577986,JaiBaghelKhand,Shivanshu Gupta,3,"@arslanrpk4 @trtworld @tiktok_us Pakistan takes indian water 
+And we mix piss In it and send to Pakistan 
+So that u drink our piss",,indian,NEGATIVE,-0.9998000264167786,0,0,0,2020-09-08 15:02:29,False,"New Delhi, India",325
+2020-09-18,Pakistan,1306813051505577986,JaiBaghelKhand,Shivanshu Gupta,3,"@arslanrpk4 @trtworld @tiktok_us Pakistan takes indian water 
+And we mix piss In it and send to Pakistan 
+So that u drink our piss",,Pakistan,NEGATIVE,-0.9998000264167786,0,0,0,2020-09-08 15:02:29,False,"New Delhi, India",325
+2020-09-18,Pakistan,1306813050125561856,DayaAhuja1,Daya Ahuja,15,"#कांग्रेसी_बेरोजगार_है 
+Congress sold India land to China and Pakistan and now blaming Pm Modi for this. 
+
+Hair cut… https://t.co/QxHFF2isNg",,Congress,NEGATIVE,-0.9988162517547607,0,0,0,2020-05-30 05:46:25,False,,691
+2020-09-18,Pakistan,1306813050125561856,DayaAhuja1,Daya Ahuja,15,"#कांग्रेसी_बेरोजगार_है 
+Congress sold India land to China and Pakistan and now blaming Pm Modi for this. 
+
+Hair cut… https://t.co/QxHFF2isNg",,India,NEGATIVE,-0.9988162517547607,0,0,0,2020-05-30 05:46:25,False,,691
+2020-09-18,Pakistan,1306813050125561856,DayaAhuja1,Daya Ahuja,15,"#कांग्रेसी_बेरोजगार_है 
+Congress sold India land to China and Pakistan and now blaming Pm Modi for this. 
+
+Hair cut… https://t.co/QxHFF2isNg",,China,NEGATIVE,-0.9988162517547607,0,0,0,2020-05-30 05:46:25,False,,691
+2020-09-18,Pakistan,1306813050125561856,DayaAhuja1,Daya Ahuja,15,"#कांग्रेसी_बेरोजगार_है 
+Congress sold India land to China and Pakistan and now blaming Pm Modi for this. 
+
+Hair cut… https://t.co/QxHFF2isNg",,Pakistan,NEGATIVE,-0.9988162517547607,0,0,0,2020-05-30 05:46:25,False,,691
+2020-09-18,Pakistan,1306813050125561856,DayaAhuja1,Daya Ahuja,15,"#कांग्रेसी_बेरोजगार_है 
+Congress sold India land to China and Pakistan and now blaming Pm Modi for this. 
+
+Hair cut… https://t.co/QxHFF2isNg",,Modi,NEGATIVE,-0.9988162517547607,0,0,0,2020-05-30 05:46:25,False,,691
+2020-09-18,Pakistan,1306813050125561856,DayaAhuja1,Daya Ahuja,15,"#कांग्रेसी_बेरोजगार_है 
+Congress sold India land to China and Pakistan and now blaming Pm Modi for this. 
+
+Hair cut… https://t.co/QxHFF2isNg",Hashtag,#क,NEGATIVE,-0.9988162517547607,0,0,0,2020-05-30 05:46:25,False,,691
+2020-09-18,Pakistan,1306813035844075521,Nimmi098,ربط دل,469,"Pakistan wins stay in Reko Diq case, AGP terms it ‘victory’ https://t.co/LppUHBzYg5",,Pakistan,POSITIVE,0.9838841557502747,0,0,0,2020-07-02 17:10:09,False,,1131
+2020-09-18,Pakistan,1306813035844075521,Nimmi098,ربط دل,469,"Pakistan wins stay in Reko Diq case, AGP terms it ‘victory’ https://t.co/LppUHBzYg5",,Reko Diq,POSITIVE,0.9838841557502747,0,0,0,2020-07-02 17:10:09,False,,1131
+2020-09-18,Pakistan,1306813035844075521,Nimmi098,ربط دل,469,"Pakistan wins stay in Reko Diq case, AGP terms it ‘victory’ https://t.co/LppUHBzYg5",,AGP,POSITIVE,0.9838841557502747,0,0,0,2020-07-02 17:10:09,False,,1131
+2020-09-18,Pakistan,1306813012779642881,_Emma_r3d,Emma 🍒 🌈 🇺🇸,684,@AdityaRajKaul And people from Pakistan cant defend this argument,,Pakistan,NEGATIVE,-0.8225148916244507,0,0,0,2020-06-11 12:27:04,False,"North Carolina, USA",13473
+2020-09-18,Pakistan,1306813009663266818,fazalnadeem,Fazal Nadeem,2127,"Pakistan wins stay over $6 billion penalty in Reko Diq case
+
+AGP office terms the development a ‘success’ for Pakis… https://t.co/q9Fk5Pm5RG",,Pakistan,POSITIVE,0.9433128833770752,0,0,0,2009-03-10 16:17:19,False,,14461
+2020-09-18,Pakistan,1306813009663266818,fazalnadeem,Fazal Nadeem,2127,"Pakistan wins stay over $6 billion penalty in Reko Diq case
+
+AGP office terms the development a ‘success’ for Pakis… https://t.co/q9Fk5Pm5RG",,Reko Diq,POSITIVE,0.9433128833770752,0,0,0,2009-03-10 16:17:19,False,,14461
+2020-09-18,Pakistan,1306813009663266818,fazalnadeem,Fazal Nadeem,2127,"Pakistan wins stay over $6 billion penalty in Reko Diq case
+
+AGP office terms the development a ‘success’ for Pakis… https://t.co/q9Fk5Pm5RG",,AGP,POSITIVE,0.9433128833770752,0,0,0,2009-03-10 16:17:19,False,,14461
+2020-09-18,Pakistan,1306813009663266818,fazalnadeem,Fazal Nadeem,2127,"Pakistan wins stay over $6 billion penalty in Reko Diq case
+
+AGP office terms the development a ‘success’ for Pakis… https://t.co/q9Fk5Pm5RG",,Pakis,POSITIVE,0.9433128833770752,0,0,0,2009-03-10 16:17:19,False,,14461
+2020-09-18,Pakistan,1306812991703265280,asarpotar,Rajesh A,149,"1: China tells India to back off LAC - India problem. They will not budge
+2: Nepal puts Indian Areas as their own i… https://t.co/Z5wQQqO6SQ",,China,NEGATIVE,-0.9526417851448059,0,0,0,2012-11-09 14:58:24,False,,14399
+2020-09-18,Pakistan,1306812991703265280,asarpotar,Rajesh A,149,"1: China tells India to back off LAC - India problem. They will not budge
+2: Nepal puts Indian Areas as their own i… https://t.co/Z5wQQqO6SQ",,India,NEGATIVE,-0.9526417851448059,0,0,0,2012-11-09 14:58:24,False,,14399
+2020-09-18,Pakistan,1306812991703265280,asarpotar,Rajesh A,149,"1: China tells India to back off LAC - India problem. They will not budge
+2: Nepal puts Indian Areas as their own i… https://t.co/Z5wQQqO6SQ",,LAC,NEGATIVE,-0.9526417851448059,0,0,0,2012-11-09 14:58:24,False,,14399
+2020-09-18,Pakistan,1306812991703265280,asarpotar,Rajesh A,149,"1: China tells India to back off LAC - India problem. They will not budge
+2: Nepal puts Indian Areas as their own i… https://t.co/Z5wQQqO6SQ",,India,NEGATIVE,-0.9526417851448059,0,0,0,2012-11-09 14:58:24,False,,14399
+2020-09-18,Pakistan,1306812991703265280,asarpotar,Rajesh A,149,"1: China tells India to back off LAC - India problem. They will not budge
+2: Nepal puts Indian Areas as their own i… https://t.co/Z5wQQqO6SQ",,Nepal,NEGATIVE,-0.9526417851448059,0,0,0,2012-11-09 14:58:24,False,,14399
+2020-09-18,Pakistan,1306812991703265280,asarpotar,Rajesh A,149,"1: China tells India to back off LAC - India problem. They will not budge
+2: Nepal puts Indian Areas as their own i… https://t.co/Z5wQQqO6SQ",,Indian Areas,NEGATIVE,-0.9526417851448059,0,0,0,2012-11-09 14:58:24,False,,14399
+2020-09-18,Pakistan,1306812953207873538,mankopnn,ओल्ड मोंक ही जीवन है,67,"@Swwagatam @Arzookazmi30 This is not only pakistan it happens wherever muslim are in majority.
+Understand the trend… https://t.co/8UU7Yz2TCK",,pakistan,POSITIVE,0.87098628282547,0,0,0,2009-08-20 12:32:40,False,Delhi,6061
+2020-09-18,Pakistan,1306812924850126848,Raj63245195,Raj the infidel,271,"@kashmirosint Not going to make any difference. If there's a war between India&amp; Pakistan again, we'll take our land back",,India,NEGATIVE,-0.9999821186065674,1,0,0,2019-12-25 09:37:48,False,Qatar,27860
+2020-09-18,Pakistan,1306812924850126848,Raj63245195,Raj the infidel,271,"@kashmirosint Not going to make any difference. If there's a war between India&amp; Pakistan again, we'll take our land back",,Pakistan,NEGATIVE,-0.9999821186065674,1,0,0,2019-12-25 09:37:48,False,Qatar,27860
+2020-09-18,Pakistan,1306812921129902080,fazalnadeem,Fazal Nadeem,2127,Upcoming #FATF review to go well for Pakistan: Chinese envoy https://t.co/qesoLoMEUt,,FATF,POSITIVE,0.5734474062919617,0,0,0,2009-03-10 16:17:19,False,,14461
+2020-09-18,Pakistan,1306812921129902080,fazalnadeem,Fazal Nadeem,2127,Upcoming #FATF review to go well for Pakistan: Chinese envoy https://t.co/qesoLoMEUt,,Pakistan,POSITIVE,0.5734474062919617,0,0,0,2009-03-10 16:17:19,False,,14461
+2020-09-18,Pakistan,1306812921129902080,fazalnadeem,Fazal Nadeem,2127,Upcoming #FATF review to go well for Pakistan: Chinese envoy https://t.co/qesoLoMEUt,,Chinese,POSITIVE,0.5734474062919617,0,0,0,2009-03-10 16:17:19,False,,14461
+2020-09-18,Pakistan,1306812921129902080,fazalnadeem,Fazal Nadeem,2127,Upcoming #FATF review to go well for Pakistan: Chinese envoy https://t.co/qesoLoMEUt,Hashtag,#FATF,POSITIVE,0.5734474062919617,0,0,0,2009-03-10 16:17:19,False,,14461
+2020-09-18,Pakistan,1306812910945984513,ghoshpp1,🙏 उत्तिष्ठ भारत ।। Rising Bharat 🙏,124,@atahasnain53 Sir I think he is talking with ref to Pakistan Army. No logic will work with him,,Pakistan Army,NEGATIVE,-0.9998072981834412,0,0,0,2020-02-22 15:23:56,False,भारत,11750
+2020-09-18,Pakistan,1306812891673231360,iprashantvns,🔱प्रशांत🔱,248,"Idea Society= Pakistan?
+Inclusive like Pakistan?
+How straight forward and clear in vision they are. While others ca… https://t.co/7nYpdmB4CS",,Pakistan,POSITIVE,0.9942508935928345,0,0,0,2013-05-14 18:35:14,False,Bharat bhumi,13905
+2020-09-18,Pakistan,1306812891673231360,iprashantvns,🔱प्रशांत🔱,248,"Idea Society= Pakistan?
+Inclusive like Pakistan?
+How straight forward and clear in vision they are. While others ca… https://t.co/7nYpdmB4CS",,Pakistan,POSITIVE,0.9942508935928345,0,0,0,2013-05-14 18:35:14,False,Bharat bhumi,13905
+2020-09-18,Pakistan,1306812882756149248,allone_sagar,The TRUTH- You can't handle it!,45,@Arzookazmi30 Wow. Congratulations.  You are becoming popular in India.  I like progressive people like you.  But a… https://t.co/wXmgXVxWSR,,India,POSITIVE,0.8672100901603699,0,0,0,2020-05-09 13:17:03,False,,1373
+2020-09-18,Pakistan,1306812866574639104,karmatheway,True Man,1,@AmitShah @narendramodi @rashtrapatibhvn India must devise a new map and pass a resolution to consider Pakistan as… https://t.co/WDiY2pMSEX,,India,NEGATIVE,-0.8305264115333557,0,0,0,2020-02-18 05:06:27,False,,643
+2020-09-18,Pakistan,1306812866574639104,karmatheway,True Man,1,@AmitShah @narendramodi @rashtrapatibhvn India must devise a new map and pass a resolution to consider Pakistan as… https://t.co/WDiY2pMSEX,,Pakistan,NEGATIVE,-0.8305264115333557,0,0,0,2020-02-18 05:06:27,False,,643
+2020-09-18,Pakistan,1306812826204270594,gents77,Gentle Raj,162,"@deespeak If Jaya ji is right , Pakistan is also right, china is also right. They are doing good for their country.… https://t.co/gfs5Yakikk",,Jaya ji,POSITIVE,0.7998745441436768,0,0,0,2013-11-08 17:25:58,False,,144
+2020-09-18,Pakistan,1306812826204270594,gents77,Gentle Raj,162,"@deespeak If Jaya ji is right , Pakistan is also right, china is also right. They are doing good for their country.… https://t.co/gfs5Yakikk",,Pakistan,POSITIVE,0.7998745441436768,0,0,0,2013-11-08 17:25:58,False,,144
+2020-09-18,Pakistan,1306812826204270594,gents77,Gentle Raj,162,"@deespeak If Jaya ji is right , Pakistan is also right, china is also right. They are doing good for their country.… https://t.co/gfs5Yakikk",,china,POSITIVE,0.7998745441436768,0,0,0,2013-11-08 17:25:58,False,,144
+2020-09-18,Pakistan,1306812819086684160,masoodahmadsh11,Syed Masud Ahmad,49,@NasimZehra MAKE PAKISTAN A TRUE SECULAR STATE OR FACE CIVIL WAR IN NEAR FUTURE IF IT GOES ON LIKE THIS.,,NasimZehra,NEGATIVE,-0.8871700763702393,0,0,0,2016-06-10 05:43:14,False,,5315
+2020-09-18,Pakistan,1306812819086684160,masoodahmadsh11,Syed Masud Ahmad,49,@NasimZehra MAKE PAKISTAN A TRUE SECULAR STATE OR FACE CIVIL WAR IN NEAR FUTURE IF IT GOES ON LIKE THIS.,,PAKISTAN,NEGATIVE,-0.8871700763702393,0,0,0,2016-06-10 05:43:14,False,,5315
+2020-09-18,Pakistan,1306812784496324608,HamzaNa94309557,Hamza Shakeel,19,What are you all doing kindly!! Be Muslims leave this sectarian issues Believe in one God !!! Why are you all tryin… https://t.co/wcR6aCQJQq,,Muslims,NEGATIVE,-0.9998465776443481,0,0,1,2020-09-05 17:43:57,False,,894
+2020-09-18,Pakistan,1306812784496324608,HamzaNa94309557,Hamza Shakeel,19,What are you all doing kindly!! Be Muslims leave this sectarian issues Believe in one God !!! Why are you all tryin… https://t.co/wcR6aCQJQq,,God,NEGATIVE,-0.9998465776443481,0,0,1,2020-09-05 17:43:57,False,,894
+2020-09-18,Pakistan,1306812712933101571,TopTrendsWatch,Top Trends Watch 🇵🇰,6289,"Trending Topics in Pakistan on 18-Sep-20, 09:30:04
+
+41 #pakistanmovingforward
+42 #ibshamzahid
+43… https://t.co/zt5KKf1HLQ",,Pakistan,POSITIVE,0.9954289197921753,1,0,1,2010-03-18 06:47:03,False,Pakistan,71292
+2020-09-18,Pakistan,1306812712933101571,TopTrendsWatch,Top Trends Watch 🇵🇰,6289,"Trending Topics in Pakistan on 18-Sep-20, 09:30:04
+
+41 #pakistanmovingforward
+42 #ibshamzahid
+43… https://t.co/zt5KKf1HLQ",Hashtag,#pakistanmovingforward,POSITIVE,0.9954289197921753,1,0,1,2010-03-18 06:47:03,False,Pakistan,71292
+2020-09-18,Pakistan,1306812712933101571,TopTrendsWatch,Top Trends Watch 🇵🇰,6289,"Trending Topics in Pakistan on 18-Sep-20, 09:30:04
+
+41 #pakistanmovingforward
+42 #ibshamzahid
+43… https://t.co/zt5KKf1HLQ",Hashtag,#ibshamzahid,POSITIVE,0.9954289197921753,1,0,1,2010-03-18 06:47:03,False,Pakistan,71292
+2020-09-18,Pakistan,1306812699158999041,bilalgilani,Bilal I Gilani,2413,"If Telenor and Ufone join forces, the entity will enjoy 40% of all subscribers in Pakistan.",,Telenor,POSITIVE,0.9737938642501831,2,0,0,2009-06-27 21:30:07,False,Islamabad Lahore Karachi ,7077
+2020-09-18,Pakistan,1306812699158999041,bilalgilani,Bilal I Gilani,2413,"If Telenor and Ufone join forces, the entity will enjoy 40% of all subscribers in Pakistan.",,Ufone,POSITIVE,0.9737938642501831,2,0,0,2009-06-27 21:30:07,False,Islamabad Lahore Karachi ,7077
+2020-09-18,Pakistan,1306812699158999041,bilalgilani,Bilal I Gilani,2413,"If Telenor and Ufone join forces, the entity will enjoy 40% of all subscribers in Pakistan.",,Pakistan,POSITIVE,0.9737938642501831,2,0,0,2009-06-27 21:30:07,False,Islamabad Lahore Karachi ,7077
+2020-09-18,Pakistan,1306812698395541504,aasmaamir,ASMA AMIR,22,@Life_jiyo @Sadafpervez2 @murtazawahab1 We already live with unhygenic conditions in Pakistan and we are surviving… https://t.co/9zI90AudBa,,Pakistan,POSITIVE,0.8347179293632507,0,0,0,2010-07-03 12:01:40,False,,135
+2020-09-18,Pakistan,1306812690833211393,mudassirr_alam,Mudassir Alam Jan,71,@twiflanker Yes! But the thing is GB can never be the province of Pakistan unless the Kashmir dispute is resolved.… https://t.co/GbEic7dHdU,,Pakistan,NEGATIVE,-0.6119168400764465,0,0,0,2016-08-24 01:20:40,False,"Gilgit-Baltistan, Pakistan",75
+2020-09-18,Pakistan,1306812690833211393,mudassirr_alam,Mudassir Alam Jan,71,@twiflanker Yes! But the thing is GB can never be the province of Pakistan unless the Kashmir dispute is resolved.… https://t.co/GbEic7dHdU,,Kashmir,NEGATIVE,-0.6119168400764465,0,0,0,2016-08-24 01:20:40,False,"Gilgit-Baltistan, Pakistan",75
+2020-09-18,Pakistan,1306812610512187392,LoshadSpaceport,Starships324,650,"@FlagsMashupBot Pakistan hates that, since this Bangladesh has become so American, it's not even a ""proper Muslim"" anymore.",,Pakistan,NEGATIVE,-0.9998602867126465,0,0,0,2017-02-15 08:35:41,False,"Seremban, Malaysia",14771
+2020-09-18,Pakistan,1306812610512187392,LoshadSpaceport,Starships324,650,"@FlagsMashupBot Pakistan hates that, since this Bangladesh has become so American, it's not even a ""proper Muslim"" anymore.",,Bangladesh,NEGATIVE,-0.9998602867126465,0,0,0,2017-02-15 08:35:41,False,"Seremban, Malaysia",14771
+2020-09-18,Pakistan,1306812610512187392,LoshadSpaceport,Starships324,650,"@FlagsMashupBot Pakistan hates that, since this Bangladesh has become so American, it's not even a ""proper Muslim"" anymore.",,American,NEGATIVE,-0.9998602867126465,0,0,0,2017-02-15 08:35:41,False,"Seremban, Malaysia",14771
+2020-09-18,Pakistan,1306812610512187392,LoshadSpaceport,Starships324,650,"@FlagsMashupBot Pakistan hates that, since this Bangladesh has become so American, it's not even a ""proper Muslim"" anymore.",,Muslim,NEGATIVE,-0.9998602867126465,0,0,0,2017-02-15 08:35:41,False,"Seremban, Malaysia",14771
+2020-09-18,Pakistan,1306812599040978944,aasmaamir,ASMA AMIR,22,@babai_anas @maryamnatalia5 @murtazawahab1 We already live with unhygenic conditions in Pakistan and we are survivi… https://t.co/F9s91vGBKb,,Pakistan,NEGATIVE,-0.7363519668579102,0,0,0,2010-07-03 12:01:40,False,,135
+2020-09-18,Pakistan,1306812584440541185,umairmandokhel,MuSher,362,Pakistan drowned even deeper when Gen Raheel took charge. Gen Bajwa followed seniors. Group of mighty ones are unst… https://t.co/woSepHWNXV,,Pakistan,POSITIVE,0.7528765797615051,0,0,0,2012-01-02 16:41:22,False,None,12890
+2020-09-18,Pakistan,1306812584440541185,umairmandokhel,MuSher,362,Pakistan drowned even deeper when Gen Raheel took charge. Gen Bajwa followed seniors. Group of mighty ones are unst… https://t.co/woSepHWNXV,,Raheel,POSITIVE,0.7528765797615051,0,0,0,2012-01-02 16:41:22,False,None,12890
+2020-09-18,Pakistan,1306812584440541185,umairmandokhel,MuSher,362,Pakistan drowned even deeper when Gen Raheel took charge. Gen Bajwa followed seniors. Group of mighty ones are unst… https://t.co/woSepHWNXV,,Gen Bajwa,POSITIVE,0.7528765797615051,0,0,0,2012-01-02 16:41:22,False,None,12890
+2020-09-18,Pakistan,1306812564509261824,Defence_360,Defence360_Official,13165,"It's been 2 days since china made, Pakistan's sub standard weak JF17 Thunder fighter jet crashed there's no officia… https://t.co/lvSgWCR6th",,china,NEGATIVE,-0.9994229078292847,11,0,2,2016-08-19 09:02:36,False,Somewhere in the Middle east,36216
+2020-09-18,Pakistan,1306812564509261824,Defence_360,Defence360_Official,13165,"It's been 2 days since china made, Pakistan's sub standard weak JF17 Thunder fighter jet crashed there's no officia… https://t.co/lvSgWCR6th",,Pakistan,NEGATIVE,-0.9994229078292847,11,0,2,2016-08-19 09:02:36,False,Somewhere in the Middle east,36216
+2020-09-18,Pakistan,1306812564509261824,Defence_360,Defence360_Official,13165,"It's been 2 days since china made, Pakistan's sub standard weak JF17 Thunder fighter jet crashed there's no officia… https://t.co/lvSgWCR6th",,JF17 Thunder,NEGATIVE,-0.9994229078292847,11,0,2,2016-08-19 09:02:36,False,Somewhere in the Middle east,36216
+2020-09-18,Pakistan,1306812541256044551,Dexteristhename,Dexter,35,"@CMShehbaz May Allah destroyed anyone who have looted, the resources of Pakistan and TRANSFERRED Billion to offshore account.",,Allah,NEGATIVE,-0.9996381998062134,0,0,0,2019-07-02 09:33:32,False,Not your concern,3674
+2020-09-18,Pakistan,1306812541256044551,Dexteristhename,Dexter,35,"@CMShehbaz May Allah destroyed anyone who have looted, the resources of Pakistan and TRANSFERRED Billion to offshore account.",,Pakistan,NEGATIVE,-0.9996381998062134,0,0,0,2019-07-02 09:33:32,False,Not your concern,3674
+2020-09-18,Pakistan,1306812528173953024,trahmed48,Tariq Ahmed,4,"@kichu7416 @PravinSawhney Similarly, India tries to bully Pakistan by creating false flag ops.  They even refuse to… https://t.co/5BH7LatkVQ",,India,NEGATIVE,-0.9984185695648193,0,0,0,2012-01-25 23:58:28,False,Chicago,8
+2020-09-18,Pakistan,1306812528173953024,trahmed48,Tariq Ahmed,4,"@kichu7416 @PravinSawhney Similarly, India tries to bully Pakistan by creating false flag ops.  They even refuse to… https://t.co/5BH7LatkVQ",,Pakistan,NEGATIVE,-0.9984185695648193,0,0,0,2012-01-25 23:58:28,False,Chicago,8
+2020-09-18,Pakistan,1306812494804000769,rawjws,JWS,6,@konkonas Aap bhi in jihadi ke Saath never expected is there any actor in Bollywood who is not with anti-Indian forces and Pakistan,,konkonas Aap,NEGATIVE,-0.9969081282615662,0,0,0,2020-07-11 13:48:30,False,,240
+2020-09-18,Pakistan,1306812494804000769,rawjws,JWS,6,@konkonas Aap bhi in jihadi ke Saath never expected is there any actor in Bollywood who is not with anti-Indian forces and Pakistan,,Saath,NEGATIVE,-0.9969081282615662,0,0,0,2020-07-11 13:48:30,False,,240
+2020-09-18,Pakistan,1306812494804000769,rawjws,JWS,6,@konkonas Aap bhi in jihadi ke Saath never expected is there any actor in Bollywood who is not with anti-Indian forces and Pakistan,,Bollywood,NEGATIVE,-0.9969081282615662,0,0,0,2020-07-11 13:48:30,False,,240
+2020-09-18,Pakistan,1306812494804000769,rawjws,JWS,6,@konkonas Aap bhi in jihadi ke Saath never expected is there any actor in Bollywood who is not with anti-Indian forces and Pakistan,,anti-Indian,NEGATIVE,-0.9969081282615662,0,0,0,2020-07-11 13:48:30,False,,240
+2020-09-18,Pakistan,1306812494804000769,rawjws,JWS,6,@konkonas Aap bhi in jihadi ke Saath never expected is there any actor in Bollywood who is not with anti-Indian forces and Pakistan,,Pakistan,NEGATIVE,-0.9969081282615662,0,0,0,2020-07-11 13:48:30,False,,240
+2020-09-18,Pakistan,1306812492119764993,MazharRafique17,M.Mazhar,251,"Amazing Pakistan
+#DiscoverGawadar🇵🇰 https://t.co/0btrKyEZGj",,Pakistan DiscoverGawadar,POSITIVE,0.992609441280365,0,0,0,2018-06-16 20:06:28,False,"Punjab, Pakistan",1867
+2020-09-18,Pakistan,1306812492119764993,MazharRafique17,M.Mazhar,251,"Amazing Pakistan
+#DiscoverGawadar🇵🇰 https://t.co/0btrKyEZGj",Hashtag,#DiscoverGawadar,POSITIVE,0.992609441280365,0,0,0,2018-06-16 20:06:28,False,"Punjab, Pakistan",1867
+2020-09-18,Pakistan,1306812462650535936,HamzaSiddiquiPK,Hamza Siddiqui,9115,"@AsimSBajwa That's good news for Pakistan ❤️🇵🇰
+You will make success Pakistan
+
+#PakistanMovingForward",,AsimSBajwa,POSITIVE,0.8478497266769409,4,0,0,2014-11-24 10:42:40,False,Pakistan,9554
+2020-09-18,Pakistan,1306812462650535936,HamzaSiddiquiPK,Hamza Siddiqui,9115,"@AsimSBajwa That's good news for Pakistan ❤️🇵🇰
+You will make success Pakistan
+
+#PakistanMovingForward",,Pakistan,POSITIVE,0.8478497266769409,4,0,0,2014-11-24 10:42:40,False,Pakistan,9554
+2020-09-18,Pakistan,1306812462650535936,HamzaSiddiquiPK,Hamza Siddiqui,9115,"@AsimSBajwa That's good news for Pakistan ❤️🇵🇰
+You will make success Pakistan
+
+#PakistanMovingForward",,Pakistan,POSITIVE,0.8478497266769409,4,0,0,2014-11-24 10:42:40,False,Pakistan,9554
+2020-09-18,Pakistan,1306812462650535936,HamzaSiddiquiPK,Hamza Siddiqui,9115,"@AsimSBajwa That's good news for Pakistan ❤️🇵🇰
+You will make success Pakistan
+
+#PakistanMovingForward",Hashtag,#PakistanMovingForward,POSITIVE,0.8478497266769409,4,0,0,2014-11-24 10:42:40,False,Pakistan,9554
+2020-09-18,Pakistan,1306812454878564353,bilalgilani,Bilal I Gilani,2413,"As per our channel checks, Pakistan Telecommunication Company Limited (PTCL) has issued a request for proposal (RFP… https://t.co/aLmSQebRxC",,Pakistan Telecommunication Company Limited,NEGATIVE,-0.9925948977470398,2,0,0,2009-06-27 21:30:07,False,Islamabad Lahore Karachi ,7077
+2020-09-18,Pakistan,1306812454878564353,bilalgilani,Bilal I Gilani,2413,"As per our channel checks, Pakistan Telecommunication Company Limited (PTCL) has issued a request for proposal (RFP… https://t.co/aLmSQebRxC",,PTCL,NEGATIVE,-0.9925948977470398,2,0,0,2009-06-27 21:30:07,False,Islamabad Lahore Karachi ,7077
+2020-09-18,Pakistan,1306812448347840513,qurashi_e,عرفان قریشی🗨️iRFaNQuRashiE,280,Gilgit Baltistan to be made full-fledged Pakistani province. Pakistan PM Imran Khan to visit the region to make for… https://t.co/IiVlsZTDgq,,Gilgit Baltistan,POSITIVE,0.8702990412712097,1,0,0,2020-02-01 16:59:12,False,Srinagar Kashmir,1976
+2020-09-18,Pakistan,1306812448347840513,qurashi_e,عرفان قریشی🗨️iRFaNQuRashiE,280,Gilgit Baltistan to be made full-fledged Pakistani province. Pakistan PM Imran Khan to visit the region to make for… https://t.co/IiVlsZTDgq,,Pakistani,POSITIVE,0.8702990412712097,1,0,0,2020-02-01 16:59:12,False,Srinagar Kashmir,1976
+2020-09-18,Pakistan,1306812448347840513,qurashi_e,عرفان قریشی🗨️iRFaNQuRashiE,280,Gilgit Baltistan to be made full-fledged Pakistani province. Pakistan PM Imran Khan to visit the region to make for… https://t.co/IiVlsZTDgq,,Pakistan,POSITIVE,0.8702990412712097,1,0,0,2020-02-01 16:59:12,False,Srinagar Kashmir,1976
+2020-09-18,Pakistan,1306812448347840513,qurashi_e,عرفان قریشی🗨️iRFaNQuRashiE,280,Gilgit Baltistan to be made full-fledged Pakistani province. Pakistan PM Imran Khan to visit the region to make for… https://t.co/IiVlsZTDgq,,Imran Khan,POSITIVE,0.8702990412712097,1,0,0,2020-02-01 16:59:12,False,Srinagar Kashmir,1976
+2020-09-18,Pakistan,1306812383621337090,Narsimhan17,Narsimhan,9,@RanaAyyub Covid deaths in India re only 1% of cases a world record we must thank Modiji for this he is an avatar o… https://t.co/ipn3auF5KE,,India,POSITIVE,0.9072492718696594,0,0,0,2020-02-22 06:31:51,False,,5935
+2020-09-18,Pakistan,1306812383621337090,Narsimhan17,Narsimhan,9,@RanaAyyub Covid deaths in India re only 1% of cases a world record we must thank Modiji for this he is an avatar o… https://t.co/ipn3auF5KE,,Modiji,POSITIVE,0.9072492718696594,0,0,0,2020-02-22 06:31:51,False,,5935
+2020-09-18,Pakistan,1306812381134192640,shahid24475911,shahid,38,"Now Pakistan is in safe hand Alhamdulilah pak grow furiously then before.. inshAllah IK fix everything...,,,💪",,Pakistan,NEGATIVE,-0.7668353915214539,0,0,0,2018-04-30 13:41:04,False,23 Ali block new garden town,152
+2020-09-18,Pakistan,1306812381134192640,shahid24475911,shahid,38,"Now Pakistan is in safe hand Alhamdulilah pak grow furiously then before.. inshAllah IK fix everything...,,,💪",,Alhamdulilah,NEGATIVE,-0.7668353915214539,0,0,0,2018-04-30 13:41:04,False,23 Ali block new garden town,152
+2020-09-18,Pakistan,1306812365913161730,MASUDQAIM11,MASUDQAIM1,61,Pakistan    at     crossroads  !   People  please   decide   ...  No more   lecherous'   politicians  i.e   Bilawal… https://t.co/drFEIb3Xrh,,Pakistan,POSITIVE,0.5981219410896301,0,0,0,2018-09-03 04:38:34,False,Islamabad ,7291
+2020-09-18,Pakistan,1306812365913161730,MASUDQAIM11,MASUDQAIM1,61,Pakistan    at     crossroads  !   People  please   decide   ...  No more   lecherous'   politicians  i.e   Bilawal… https://t.co/drFEIb3Xrh,,Bilawal,POSITIVE,0.5981219410896301,0,0,0,2018-09-03 04:38:34,False,Islamabad ,7291
+2020-09-18,Pakistan,1306812319708528641,mohandixit,INDIAN. HINDUSTANI,86,@RvUpadhya @dineshgrao He will not talk about Chinese virus or Chinese aggression. Or about PAKISTAN TERRORISM beca… https://t.co/YsCNc9ljIP,,Chinese,NEGATIVE,-0.993164598941803,0,0,0,2011-11-17 03:29:40,False,,14280
+2020-09-18,Pakistan,1306812319708528641,mohandixit,INDIAN. HINDUSTANI,86,@RvUpadhya @dineshgrao He will not talk about Chinese virus or Chinese aggression. Or about PAKISTAN TERRORISM beca… https://t.co/YsCNc9ljIP,,Chinese,NEGATIVE,-0.993164598941803,0,0,0,2011-11-17 03:29:40,False,,14280
+2020-09-18,Pakistan,1306812319708528641,mohandixit,INDIAN. HINDUSTANI,86,@RvUpadhya @dineshgrao He will not talk about Chinese virus or Chinese aggression. Or about PAKISTAN TERRORISM beca… https://t.co/YsCNc9ljIP,,PAKISTAN,NEGATIVE,-0.993164598941803,0,0,0,2011-11-17 03:29:40,False,,14280
+2020-09-18,Pakistan,1306812294853165057,ImranInc,Imran Ahmad,5451,PMIK address at the 4th Annual Austrian World Summit explains how Pakistan took revolutionary steps through plantin… https://t.co/QNK3tIaEbs,,PMIK,POSITIVE,0.7237119078636169,1,0,1,2011-10-30 15:34:31,False,,40869
+2020-09-18,Pakistan,1306812294853165057,ImranInc,Imran Ahmad,5451,PMIK address at the 4th Annual Austrian World Summit explains how Pakistan took revolutionary steps through plantin… https://t.co/QNK3tIaEbs,,4th Annual,POSITIVE,0.7237119078636169,1,0,1,2011-10-30 15:34:31,False,,40869
+2020-09-18,Pakistan,1306812294853165057,ImranInc,Imran Ahmad,5451,PMIK address at the 4th Annual Austrian World Summit explains how Pakistan took revolutionary steps through plantin… https://t.co/QNK3tIaEbs,,Austrian World Summit,POSITIVE,0.7237119078636169,1,0,1,2011-10-30 15:34:31,False,,40869
+2020-09-18,Pakistan,1306812294853165057,ImranInc,Imran Ahmad,5451,PMIK address at the 4th Annual Austrian World Summit explains how Pakistan took revolutionary steps through plantin… https://t.co/QNK3tIaEbs,,Pakistan,POSITIVE,0.7237119078636169,1,0,1,2011-10-30 15:34:31,False,,40869
