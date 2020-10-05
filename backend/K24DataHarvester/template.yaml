@@ -1,0 +1,129 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  K24DataHarvester
+  SAM Template for Karachi24 Data Harvester
+
+Globals:
+  Function:
+    Runtime: python3.8
+    Handler: app.lambda_handler
+    Timeout: 30
+  
+Parameters:
+  TwitterKey:
+    Type: String
+    Default: '*** enter your twitter key ***'
+
+  TwitterSecretKey:
+    Type: String
+    Default: '*** enter twitter secret key ***'
+
+  InputBucketName:
+    Type: String
+    Default: 'data.karachi24.com'
+
+  DBTableName:
+    Type: String
+    Default: 'K24Tweets'
+
+  RootFolderForTweets:
+    Type: String
+    Default: 'k24dataharvester/tweets'
+
+Resources:
+  InputS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref InputBucketName
+  
+  K24DataHarvesterStateMachine:
+    Type: AWS::Serverless::StateMachine # More info about State Machine Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-statemachine.html
+    Properties:
+      DefinitionUri: statemachine/tweet_importer.asl.json
+      DefinitionSubstitutions:
+        TweetSearcherFunctionArn: !GetAtt TweetSearcherFunction.Arn
+        SaveToDynamoDbFunctionArn: !GetAtt SaveToDynamoDbFunction.Arn
+        ExitFunctionArn: !GetAtt ExitFunction.Arn
+        DDBPutItem: !Sub arn:${AWS::Partition}:states:::dynamodb:putItem
+        DDBTable: !Ref TweetTable
+      Events:
+        DailySchedule:
+          Type: Schedule # More info about Schedule Event Source: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-statemachine-schedule.html
+          Properties:
+            Description: Schedule to run the state machine
+            Enabled: True
+            Schedule: "rate(30 minutes)"
+      Policies: # Find out more about SAM policy templates: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-policy-templates.html
+        - LambdaInvokePolicy:
+            FunctionName: !Ref TweetSearcherFunction
+        - LambdaInvokePolicy:
+            FunctionName: !Ref SaveToDynamoDbFunction
+        - LambdaInvokePolicy:
+            FunctionName: !Ref ExitFunction
+        - DynamoDBCrudPolicy:
+            TableName: !Ref TweetTable
+        - S3CrudPolicy:
+            BucketName: !Ref InputBucketName 
+
+  TweetSearcherFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-function.html
+    Properties:
+      CodeUri: functions/TweetSearcher/
+      Environment:
+        Variables:
+          InputBucketName: !Ref InputBucketName
+          RootFolderForTweets: !Ref RootFolderForTweets
+          TwitterKey: !Ref TwitterKey
+          TwitterSecretKey: !Ref TwitterSecretKey
+
+      Policies: # Find out more about SAM policy templates: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-policy-templates.html
+        - S3CrudPolicy:
+            BucketName: !Ref InputBucketName 
+
+  SaveToDynamoDbFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: functions/SaveToDynamoDb/
+      Timeout: 60
+      # MemorySize: 512
+      Environment:
+        Variables:
+          InputBucketName: !Ref InputBucketName
+          DDBtable: !Ref DBTableName
+      Policies: # Find out more about SAM policy templates: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-policy-templates.html
+        - DynamoDBCrudPolicy:
+            TableName: !Ref TweetTable
+        - S3CrudPolicy:
+            BucketName: !Ref InputBucketName 
+
+  TweetTable:
+    Type: AWS::Serverless::SimpleTable # More info about SimpleTable Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-simpletable.html
+    Properties:
+      PrimaryKey:
+        Name: Id
+        Type: String
+      ProvisionedThroughput:
+        ReadCapacityUnits: 5
+        WriteCapacityUnits: 5
+      TableName: K24Tweets
+      Tags:
+        Department: Engineering
+        AppType: Serverless
+        project: karachi24
+
+  ExitFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: functions/Exit/
+
+Outputs:
+  # K24DataHarvesterStateMachineHourlyTradingSchedule is an implicit Schedule event rule created out of Events key under Serverless::StateMachine
+  # Find out more about other implicit resources you can reference within SAM
+  # https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-generated-resources.html
+  K24DataHarvesterStateMachineArn:
+    Description: "Data Harvester for Karachi24.com Data Harvester State machine ARN"
+    Value: !Ref K24DataHarvesterStateMachine
+  K24DataHarvesterStateMachineRoleArn:
+    Description: "IAM Role created for Karachi24.com Data Harvester"
+    Value: !GetAtt K24DataHarvesterStateMachineRole.Arn

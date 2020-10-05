@@ -1,0 +1,63 @@
+{
+    "Comment": "A state machine to import tweets.",
+    "StartAt": "Search For Tweets",
+    "States": {
+        "Search For Tweets": {
+            "Type": "Task",
+            "Resource": "${TweetSearcherFunctionArn}",
+            "Retry": [
+                {
+                    "ErrorEquals": [
+                        "States.TaskFailed"
+                    ],
+                    "IntervalSeconds": 60,
+                    "MaxAttempts": 5,
+                    "BackoffRate": 1.5
+                }
+            ],
+            "Next": "Save Tweets if Result Found?"
+        },
+        "Save Tweets if Result Found?": {
+            "Type": "Choice",
+            "Choices": [
+                {
+                    "Variable": "$.body.count",
+                    "NumericGreaterThan": 0,
+                    "Next": "Save To Dynamo Db"
+                }
+            ],
+            "Default": "Exit"
+        },
+        "Save To Dynamo Db": {
+            "Type": "Task",
+            "Resource": "${SaveToDynamoDbFunctionArn}",
+            "Retry": [
+                {
+                    "ErrorEquals": [
+                        "States.TaskFailed"
+                    ],
+                    "IntervalSeconds": 5,
+                    "MaxAttempts": 3,
+                    "BackoffRate": 1
+                }
+            ],
+            "Next": "Exit"
+        },
+        "Exit": {
+            "Type": "Task",
+            "Resource": "${ExitFunctionArn}",
+            "Retry": [
+                {
+                    "ErrorEquals": [
+                        "States.TaskFailed"
+                    ],
+                    "IntervalSeconds": 5,
+                    "MaxAttempts": 1,
+                    "BackoffRate": 1
+                }
+            ],
+            "End": true
+            
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "statusCode": 200,
+    "body": {
+        "query": "Karachi OR #Karachi OR karachi OR #karachi min_retweets:10 min_faves:10 -filter:replies filter:videos",
+        "category": "videos",
+        "count": 100,
+        "file_path": "k24dataharvester/tweets/2020/10/videos-2020_10_04-01_30_10_PM-result-55-rows.json"
+    }
+}
