@@ -1,13 +1,35 @@
-from datetime import datetime
-from random import randint
-from uuid import uuid4
-import boto3
-import json 
 import os
-import numpy as np
+import json 
+from datetime import datetime
+import boto3
+from botocore.exceptions import ClientError
+import logging
+ 
+def _get_env_params():
+    env = os.environ['Environment']
+    endpoint_url = os.environ['DynamoDb_EndPointURL']
+    bucket_name = os.environ['InputBucketName']
+    table_name = os.environ["DDBtable"]
+    debug = os.environ['Debug']
+    return env, endpoint_url, bucket_name, table_name, debug
 
-BATCH_SIZE = 25
+def _get_input_params(event):
+    query = event["body"]["query"] 
+    category = event["body"]["category"] 
+    file_path = event["body"]["file_path"] 
+    count = event["body"]["count"] if event["body"] else 0
 
+    return query, category, file_path, count
+
+def _get_dynamoDb_connection(env, endpoint_url):
+    ddbclient=''
+    if env == 'local':
+        ddbclient = boto3.resource('dynamodb', endpoint_url=endpoint_url)
+    else:
+        ddbclient = boto3.resource('dynamodb')
+
+    return ddbclient
+    
 def _parse_tweet_from_json(item, extra_data):
     duration_millis = media_url  = video_url = ""
 
@@ -21,86 +43,76 @@ def _parse_tweet_from_json(item, extra_data):
         'Id':                item["id"],
         'user_name':         item["user"]["name"],
         'screen_name':       str(item["user"]["screen_name"]),
-        'retweet_count':     str(item["retweet_count"]),
+        'retweet_count':     item["retweet_count"],
         'text':              str(item["text"]),
         'tweet_created_at':  str(item["created_at"]),
-        'favorite_count':    str(item["favorite_count"]),
+        'favorite_count':    item["favorite_count"],
         'hashtags':          str(item["entities"]['hashtags']),
-        'user_status_count': str(item["user"]["statuses_count"]),
+        'user_status_count': item["user"]["statuses_count"],
         'location':          str(item["place"]),
         'source_device':     str(item["source"]),
         'truncated':         str(item["truncated"]),
-        'duration_millis':   str(duration_millis),
+        'duration_millis':   duration_millis,
         'media_url_https':   media_url,
         'video_url':         video_url,
         'row_timestamp':     str(datetime.now().isoformat()),
     }
+
     return {**result, **extra_data}
 
+def _get_s3_file_content_as_json(bucket_name, file_path):
+    s3 = boto3.client('s3')
+    fileObj = s3.get_object(Bucket=bucket_name, Key=file_path)
+    file_content = fileObj["Body"].read().decode("utf-8")
+    return json.loads(file_content)
+
 def lambda_handler(event, context):
-    """Lambda function
-
-    Parameters
-    ----------
-    event: dict, required
-        Input event to the Lambda function
-
-    context: object, required
-        Lambda Context runtime methods and attributes
-
-    Returns
-    ------
-        dict: Object containing results
-    """
-
-    bucket_name = os.environ['InputBucketName']
-    table_name = os.environ["DDBtable"]
-    query = event["body"]["query"] 
-    category = event["body"]["category"] 
-    file_path = event["body"]["file_path"] 
-    count = event["body"]["count"] if event["body"] else 0
+    env, endpoint_url, bucket_name, table_name, debug  = _get_env_params()
+    query, category, file_path, count = _get_input_params(event)
+    ddbclient=''
+    if debug: 
+        print("Env:", env, endpoint_url, bucket_name, table_name)
+        print("Event:", query, category, file_path, count)
 
     try:    
         result = {}
         if count:
-            s3 = boto3.client('s3')
-            fileObj = s3.get_object(Bucket=bucket_name, Key=file_path)
-            file_content = fileObj["Body"].read().decode("utf-8")
-            all_data = json.loads(file_content)
-            chunks = (count//BATCH_SIZE)+1
-            all_keys = list(all_data.keys())
-            chunked_ids = np.array_split(all_keys, chunks)
-            dynamo_db = boto3.resource('dynamodb')
-            dynamoTable = dynamo_db.Table(table_name)
+            extra_data = {"category": category, "file_path": file_path}
+            json_data = _get_s3_file_content_as_json(bucket_name, file_path)
 
-            for key_batch in chunked_ids:
-                for key in key_batch:
-                    extra_data = {"category": category, "file_path": file_path}
-                    data = _parse_tweet_from_json(all_data[key], extra_data)
-                    dynamoTable.put_item(Item = {
-                        'Id':                str(data["Id"]),
+            ddbclient = _get_dynamoDb_connection(env, endpoint_url)
+            dynamoTable = ddbclient.Table(table_name)
+            print("dynamoTable created on:", dynamoTable.creation_date_time)
+
+            with dynamoTable.batch_writer() as batch:
+                for key in json_data.keys():
+                    data = _parse_tweet_from_json(json_data[key], extra_data)
+                    batch.put_item(Item = {
+                        'Id':                data["Id"],
                         'src_file':          str(data["file_path"]),
                         'category':          str(data["category"]),
                         'user_name':         str(data["user_name"]),
                         'screen_name':       str(data["screen_name"]),
-                        'retweet_count':     str(data["retweet_count"]),
+                        'retweet_count':     data["retweet_count"],
                         'text':              str(data["text"]),
                         'tweet_created_at':  str(data["tweet_created_at"]),
-                        'favorite_count':    str(data["favorite_count"]),
+                        'favorite_count':    data["favorite_count"],
                         'hashtags':          str(data["hashtags"]),
-                        'user_status_count': str(data["user_status_count"]),
+                        'user_status_count': data["user_status_count"],
                         'location':          str(data["location"]),
                         'source_device':     str(data["source_device"]),
                         'truncated':         str(data["truncated"]),
-                        'duration_millis':   str(data["duration_millis"]),
+                        'duration_millis':   data["duration_millis"],
                         'media_url_https':   str(data["media_url_https"]),
                         'video_url':         str(data["video_url"]),
                         'row_timestamp':     str(data["row_timestamp"]),
                     })
 
         return count
+    except ddbclient.exceptions.ResourceNotFoundException as e:
+        logging.error('Cannot do operations on a non-existent table')
+        raise e
 
     except Exception as e:
-        print("file_path: ", file_path)
-        print(e)
+        print("saveToDynamoDb: Unexpected errorsaveToDynamoDb: file_path: ", file_path)
         raise e

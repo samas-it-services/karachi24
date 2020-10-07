@@ -4,20 +4,23 @@ import tweepy
 from datetime import datetime
 import os 
 
-def _get_params(event):
-    since_id = event["since_id"] if event["since_id"] else None
-    return event["q"], event["category"], event["count"], since_id
-
-def _get_default_params(event):
-    default_query = "Karachi OR #Karachi OR karachi OR #karachi min_retweets:10 min_faves:10 -filter:replies filter:videos"
-    max_tweet_per_qry = 500
-    category = "videos"
-    since_id = None
-    return default_query, category, max_tweet_per_qry, since_id
-
-def _create_twitter_api():
+def _get_env_params():
     twitter_key = os.environ['TwitterKey']
     twitter_secret_key = os.environ['TwitterSecretKey']
+    bucket_name = os.environ['InputBucketName']
+    root_folder = os.environ['RootFolderForTweets']
+    debug = os.environ['Debug']
+    return twitter_key, twitter_secret_key, bucket_name, root_folder, debug
+
+def _get_input_params(event):
+    default_query = "Karachi OR #Karachi OR karachi OR #karachi min_retweets:10 min_faves:10 -filter:replies filter:videos"
+    q = event["q"] if event["q"] else default_query
+    category = event["category"] if event["category"] else "default"
+    count = event["count"] if event["count"] else "100"
+    since_id = event["since_id"] if event["since_id"] else None
+    return q, category, count, since_id
+
+def _create_twitter_api(twitter_key, twitter_secret_key):
     auth = tweepy.AppAuthHandler(twitter_key, twitter_secret_key)
     api = tweepy.API(auth, wait_on_rate_limit=True,
                     wait_on_rate_limit_notify=True)
@@ -50,11 +53,14 @@ def _get_file_path(root_folder, prefix, file_name):
     return f'{root_folder}/{year_month}/{prefix}-{ts}-{file_name}'
 
 def lambda_handler(event, context):
-    bucket_name = os.environ['InputBucketName']
-    root_folder = os.environ['RootFolderForTweets']
+    twitter_key, twitter_secret_key, bucket_name, root_folder, debug = _get_env_params()
+    query, category, max_tweet_per_qry, since_id = _get_input_params(event) 
+    if debug: 
+        print("env:", twitter_key, twitter_secret_key, bucket_name, root_folder)
+        print("event:", query, category, max_tweet_per_qry, since_id)
+
     try:    
-        query, category, max_tweet_per_qry, since_id = _get_params(event) if "q" in event else _get_default_params(event)
-        api = _create_twitter_api()
+        api = _create_twitter_api(twitter_key, twitter_secret_key)
         tweets = _search(api, query, max_tweet_per_qry, since_id)
         count = len(tweets)
         json_result = _get_json_result(tweets) 
