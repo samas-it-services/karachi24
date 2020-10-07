@@ -7,7 +7,7 @@ import logging
  
 def _get_env_params():
     env = os.environ['Environment']
-    endpoint_url = os.environ['DynamoDb_EndPointURL']
+    endpoint_url = os.environ['DynamoDbEndPointURL']
     bucket_name = os.environ['InputBucketName']
     table_name = os.environ["DDBtable"]
     debug = os.environ['Debug']

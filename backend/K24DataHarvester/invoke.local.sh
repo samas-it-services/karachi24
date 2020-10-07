@@ -11,11 +11,10 @@ DockerNetwork=k24_data_harvester_local
 DynamoDb_EndPointURL=http://dynamodb:8000/
 endpoint_url=http://localhost:8000/
 Debug=0
-
 # ---------- no changes beyond this point ----------
 
 echo Validating SAM template
-# sam validate -t template.yaml
+sam validate -t template.yaml
 
 echo Building CloudFormation stack
 sam build
@@ -40,7 +39,7 @@ ParameterKey=Environment,ParameterValue=$Environment \
 ParameterKey=InputBucketName,ParameterValue=$InputBucketName \
 ParameterKey=DBTableName,ParameterValue=$DBTableName \
 ParameterKey=Debug,ParameterValue=$Debug \
-ParameterKey=DynamoDb_EndPointURL,ParameterValue=$DynamoDb_EndPointURL \
+ParameterKey=DynamoDbEndPointURL,ParameterValue=$DynamoDbEndPointURL \
 --docker-network $DockerNetwork \
 --env-vars env.json \
 -e $eventFile_SaveToDynamoDbFunction \

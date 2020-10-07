@@ -14,9 +14,10 @@ Parameters:
   Environment:
     Type: String
     Description: Choose between local or AWS
-    AllowedValues:
-      - local
-      - aws
+    Default: 'aws'    
+    # AllowedValues:
+    #   - local
+    #   - aws
 
   TwitterKey:
     Type: String
@@ -35,7 +36,7 @@ Parameters:
   RootFolderForTweets:
     Type: String
 
-  DynamoDb_EndPointURL:
+  DynamoDbEndPointURL:
     Type: String    
     Description: Use it for local development
     Default: 'http://dynamodb:8000'
@@ -107,7 +108,7 @@ Resources:
           Environment: !Ref Environment
           InputBucketName: !Ref InputBucketName
           DDBtable: !Ref DBTableName
-          DynamoDb_EndPointURL: !Ref DynamoDb_EndPointURL
+          DynamoDbEndPointURL: !Ref DynamoDbEndPointURL
           Debug: !Ref Debug
       Policies: # Find out more about SAM policy templates: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-policy-templates.html
         - DynamoDBCrudPolicy:
@@ -116,7 +117,7 @@ Resources:
             BucketName: !Ref InputBucketName 
 
   TweetTable:
-    Type: AWS::Serverless::Table 
+    Type: AWS::DynamoDB::Table 
     Properties:
       AttributeDefinitions: 
         - 
@@ -139,11 +140,21 @@ Resources:
         ReadCapacityUnits: 5
         WriteCapacityUnits: 5
 
-      Tags:
-        Department: Engineering
-        AppType: Serverless
-        project: karachi24
-
+  # TweetTable:
+  #   Type: AWS::Serverless::SimpleTable # More info about SimpleTable Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-simpletable.html
+  #   Properties:
+  #     PrimaryKey:
+  #       Name: Id
+  #       Type: String
+  #     ProvisionedThroughput:
+  #       ReadCapacityUnits: 5
+  #       WriteCapacityUnits: 5
+  #     TableName: !Ref DBTableName
+  #     Tags:
+  #       Department: Engineering
+  #       AppType: Serverless
+  #       project: karachi24
+        
   ExitFunction:
     Type: AWS::Serverless::Function
     Properties:
