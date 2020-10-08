@@ -8,16 +8,16 @@ Globals:
   Function:
     Runtime: python3.8
     Handler: app.lambda_handler
-    Timeout: 30
+    Timeout: 10
   
 Parameters:
   Environment:
     Type: String
     Description: Choose between local or AWS
     Default: 'aws'    
-    # AllowedValues:
-    #   - local
-    #   - aws
+    AllowedValues:
+      - local
+      - aws
 
   TwitterKey:
     Type: String
@@ -38,13 +38,13 @@ Parameters:
 
   DynamoDbEndPointURL:
     Type: String    
-    Description: Use it for local development
-    Default: 'http://dynamodb:8000'
+    Description: Use it for local development, typically set to http://dynamodb:8000
+    Default: ''
 
   Debug:
     Type: String
     Description: Print all environment variable (including sensitive keys) if value is not empty
-    Default: ''
+    Default: '0'
 
 Resources:
   InputS3Bucket:
@@ -139,21 +139,6 @@ Resources:
       ProvisionedThroughput:
         ReadCapacityUnits: 5
         WriteCapacityUnits: 5
-
-  # TweetTable:
-  #   Type: AWS::Serverless::SimpleTable # More info about SimpleTable Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-simpletable.html
-  #   Properties:
-  #     PrimaryKey:
-  #       Name: Id
-  #       Type: String
-  #     ProvisionedThroughput:
-  #       ReadCapacityUnits: 5
-  #       WriteCapacityUnits: 5
-  #     TableName: !Ref DBTableName
-  #     Tags:
-  #       Department: Engineering
-  #       AppType: Serverless
-  #       project: karachi24
         
   ExitFunction:
     Type: AWS::Serverless::Function
