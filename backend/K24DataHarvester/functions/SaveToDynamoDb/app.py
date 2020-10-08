@@ -1,9 +1,8 @@
 import os
 import json 
 from datetime import datetime
+import botocore
 import boto3
-from botocore.exceptions import ClientError
-import logging
  
 def _get_env_params():
     env = os.environ['Environment']
@@ -69,18 +68,19 @@ def _get_s3_file_content_as_json(bucket_name, file_path):
 def lambda_handler(event, context):
     env, endpoint_url, bucket_name, table_name, debug  = _get_env_params()
     query, category, file_path, count = _get_input_params(event)
-    ddbclient=''
+
     if debug=="1": 
         print("Env:", env, endpoint_url, bucket_name, table_name)
         print("Event:", query, category, file_path, count)
 
     try:    
+        ddbclient = _get_dynamoDb_connection(env, endpoint_url)
         result = {}
         if count:
             extra_data = {"category": category, "file_path": file_path}
             json_data = _get_s3_file_content_as_json(bucket_name, file_path)
 
-            ddbclient = _get_dynamoDb_connection(env, endpoint_url)
+            
             dynamoTable = ddbclient.Table(table_name)
             print("dynamoTable created on:", dynamoTable.creation_date_time)
 
@@ -109,10 +109,18 @@ def lambda_handler(event, context):
                     })
 
         return count
-    except ddbclient.exceptions.ResourceNotFoundException as e:
-        logging.error('Cannot do operations on a non-existent table')
-        raise e
+
+    except botocore.exceptions.ClientError as err:
+        if err.response['Error']['Code'] == 'InternalError': # Generic error
+            print('Error Message: {}'.format(err.response['Error']['Message']))
+            print('Request ID: {}'.format(err.response['ResponseMetadata']['RequestId']))
+            print('Http code: {}'.format(err.response['ResponseMetadata']['HTTPStatusCode']))
+        else:
+            raise err
 
     except Exception as e:
-        print("saveToDynamoDb: Unexpected errorsaveToDynamoDb: file_path: ", file_path)
+        print("saveToDynamoDb: Unexpected error: ", str(e))
+        print("saveToDynamoDb: env: endpoint_url: ", str(endpoint_url))
+        print("saveToDynamoDb: param: file_path: ", str(file_path))
+        print("saveToDynamoDb: param: query: ", str(query))
         raise e

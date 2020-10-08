@@ -39,7 +39,6 @@ Parameters:
   DynamoDbEndPointURL:
     Type: String    
     Description: Use it for local development, typically set to http://dynamodb:8000
-    Default: ''
 
   Debug:
     Type: String

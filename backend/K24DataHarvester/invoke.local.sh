@@ -8,9 +8,13 @@ DBTableName=K24Tweets
 InputBucketName=data.karachi24.com
 RootFolderForTweets=k24dataharvester/tweets
 DockerNetwork=k24_data_harvester_local
-DynamoDb_EndPointURL=http://dynamodb:8000/
+DynamoDbEndPointURL=http://dynamodb:8000/
 endpoint_url=http://localhost:8000/
 Debug=0
+
+# Before: Make sure to run this once to setup docker container and dynamodb
+# ./setup.sh
+
 # ---------- no changes beyond this point ----------
 
 echo Validating SAM template
@@ -48,5 +52,6 @@ ParameterKey=DynamoDbEndPointURL,ParameterValue=$DynamoDbEndPointURL \
 # endpoint_url=http://localhost:8000/
 # DBTableName=K24Tweets
 aws dynamodb scan --table-name $DBTableName --select COUNT --endpoint-url $endpoint_url
+
 # echo Deploying the stack
 # sam deploy
