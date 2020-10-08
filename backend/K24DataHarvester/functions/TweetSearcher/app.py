@@ -14,10 +14,10 @@ def _get_env_params():
 
 def _get_input_params(event):
     default_query = "Karachi OR #Karachi OR karachi OR #karachi min_retweets:10 min_faves:10 -filter:replies filter:videos"
-    q = event["q"] if event["q"] else default_query
-    category = event["category"] if event["category"] else "default"
-    count = event["count"] if event["count"] else "100"
-    since_id = event["since_id"] if event["since_id"] else None
+    q = event["q"] if "q" in event else default_query
+    category = event["category"] if "category" in event else "default"
+    count = event["count"] if "count" in event else "10"
+    since_id = event["since_id"] if "since_id" in event else None
     return q, category, count, since_id
 
 def _create_twitter_api(twitter_key, twitter_secret_key):
@@ -55,7 +55,7 @@ def _get_file_path(root_folder, prefix, file_name):
 def lambda_handler(event, context):
     twitter_key, twitter_secret_key, bucket_name, root_folder, debug = _get_env_params()
     query, category, max_tweet_per_qry, since_id = _get_input_params(event) 
-    if debug: 
+    if debug=="1": 
         print("env:", twitter_key, twitter_secret_key, bucket_name, root_folder)
         print("event:", query, category, max_tweet_per_qry, since_id)
 

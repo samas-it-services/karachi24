@@ -70,7 +70,7 @@ def lambda_handler(event, context):
     env, endpoint_url, bucket_name, table_name, debug  = _get_env_params()
     query, category, file_path, count = _get_input_params(event)
     ddbclient=''
-    if debug: 
+    if debug=="1": 
         print("Env:", env, endpoint_url, bucket_name, table_name)
         print("Event:", query, category, file_path, count)
 
