@@ -1,12 +1,17 @@
 #!/bin/bash
+
+# pls replace this with your twitter key/secret
+TwitterKey=*** twitterkey ***
+TwitterSecretKey=***twiiter secret key ***
+# pls replace this with your own s3 bucket that you have write access to
+InputBucketName=data.karachi24.com
+
+# below settings don't need to be changed
 Environment=local
 eventFile_TweetSearcherFunction=./functions/TweetSearcher/event.json
 eventFile_SaveToDynamoDbFunction=./data/result1.json
-TwitterKey=*** twitterkey ***
-TwitterSecretKey=***twiiter secret key ***
 DBTableName=K24Tweets
-InputBucketName=data.karachi24.com
-RootFolderForTweets=k24dataharvester/tweets
+RootFolderForTweets=k24dataharvester/local/tweets
 DockerNetwork=k24_data_harvester_local
 DynamoDbEndPointURL=http://dynamodb:8000/
 endpoint_url=http://localhost:8000/

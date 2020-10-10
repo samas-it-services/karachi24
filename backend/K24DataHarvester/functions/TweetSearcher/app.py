@@ -5,12 +5,13 @@ from datetime import datetime
 import os 
 
 def _get_env_params():
+    env = os.environ['Environment']
     twitter_key = os.environ['TwitterKey']
     twitter_secret_key = os.environ['TwitterSecretKey']
     bucket_name = os.environ['InputBucketName']
     root_folder = os.environ['RootFolderForTweets']
     debug = os.environ['Debug']
-    return twitter_key, twitter_secret_key, bucket_name, root_folder, debug
+    return env, twitter_key, twitter_secret_key, bucket_name, root_folder, debug
 
 def _get_input_params(event):
     default_query = "Karachi OR #Karachi OR karachi OR #karachi min_retweets:10 min_faves:10 -filter:replies filter:videos"
@@ -53,10 +54,10 @@ def _get_file_path(root_folder, prefix, file_name):
     return f'{root_folder}/{year_month}/{prefix}-{ts}-{file_name}'
 
 def lambda_handler(event, context):
-    twitter_key, twitter_secret_key, bucket_name, root_folder, debug = _get_env_params()
+    env, twitter_key, twitter_secret_key, bucket_name, root_folder, debug = _get_env_params()
     query, category, max_tweet_per_qry, since_id = _get_input_params(event) 
     if debug=="1": 
-        print("env:", twitter_key, twitter_secret_key, bucket_name, root_folder)
+        print("env:", env, twitter_key, twitter_secret_key, bucket_name, root_folder)
         print("event:", query, category, max_tweet_per_qry, since_id)
 
     try:    
