@@ -15,10 +15,10 @@ def _get_env_params():
 def _get_input_params(event):
     query = event["body"]["query"] 
     category = event["body"]["category"] 
-    file_path = event["body"]["file_path"] 
     count = event["body"]["count"] if event["body"] else 0
+    file_path = event["body"]["file_path"] 
 
-    return query, category, file_path, count
+    return query, category, count, file_path
 
 def _get_dynamoDb_connection(env, endpoint_url):
     ddbclient=''
@@ -67,11 +67,11 @@ def _get_s3_file_content_as_json(bucket_name, file_path):
 
 def lambda_handler(event, context):
     env, endpoint_url, bucket_name, table_name, debug  = _get_env_params()
-    query, category, file_path, count = _get_input_params(event)
+    query, category, count, file_path= _get_input_params(event)
 
     if debug=="1": 
         print("Env:", env, endpoint_url, bucket_name, table_name)
-        print("Event:", query, category, file_path, count)
+        print("Event:", query, category, count, file_path)
 
     try:    
         ddbclient = _get_dynamoDb_connection(env, endpoint_url)
@@ -80,33 +80,12 @@ def lambda_handler(event, context):
             extra_data = {"category": category, "file_path": file_path}
             json_data = _get_s3_file_content_as_json(bucket_name, file_path)
 
-            
             dynamoTable = ddbclient.Table(table_name)
             print("dynamoTable created on:", dynamoTable.creation_date_time)
 
             with dynamoTable.batch_writer() as batch:
                 for key in json_data.keys():
-                    data = _parse_tweet_from_json(json_data[key], extra_data)
-                    batch.put_item(Item = {
-                        'Id':                data["Id"],
-                        'src_file':          str(data["file_path"]),
-                        'category':          str(data["category"]),
-                        'user_name':         str(data["user_name"]),
-                        'screen_name':       str(data["screen_name"]),
-                        'retweet_count':     data["retweet_count"],
-                        'text':              str(data["text"]),
-                        'tweet_created_at':  str(data["tweet_created_at"]),
-                        'favorite_count':    data["favorite_count"],
-                        'hashtags':          str(data["hashtags"]),
-                        'user_status_count': data["user_status_count"],
-                        'location':          str(data["location"]),
-                        'source_device':     str(data["source_device"]),
-                        'truncated':         str(data["truncated"]),
-                        'duration_millis':   data["duration_millis"],
-                        'media_url_https':   str(data["media_url_https"]),
-                        'video_url':         str(data["video_url"]),
-                        'row_timestamp':     str(data["row_timestamp"]),
-                    })
+                    batch.put_item(_parse_tweet_from_json(json_data[key], extra_data))
 
         return count
 
