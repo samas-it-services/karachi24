@@ -39,7 +39,7 @@ ParameterKey=TwitterSecretKey,ParameterValue=$TwitterSecretKey \
 ParameterKey=InputBucketName,ParameterValue=$InputBucketName \
 ParameterKey=RootFolderForTweets,ParameterValue=$RootFolderForTweets \
 ParameterKey=Debug,ParameterValue=$Debug \
---env-vars env.json -e $eventFile_TweetSearcherFunction \
+-e $eventFile_TweetSearcherFunction \
 > $eventFile_SaveToDynamoDbFunction
 
 echo Executing SaveToDynamoDbFunction
@@ -50,7 +50,6 @@ ParameterKey=DBTableName,ParameterValue=$DBTableName \
 ParameterKey=Debug,ParameterValue=$Debug \
 ParameterKey=DynamoDbEndPointURL,ParameterValue=$DynamoDbEndPointURL \
 --docker-network $DockerNetwork \
---env-vars env.json \
 -e $eventFile_SaveToDynamoDbFunction \
 > ./data/result2.json
 
