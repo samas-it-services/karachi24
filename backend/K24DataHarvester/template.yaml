@@ -1,8 +1,7 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Transform: AWS::Serverless-2016-10-31
 Description: >
-  K24DataHarvester
-  SAM Template for Karachi24 Data Harvester
+  Karachi24 Data Harvester
 
 Globals:
   Function:
@@ -58,7 +57,6 @@ Resources:
       DefinitionSubstitutions:
         TweetSearcherFunctionArn: !GetAtt TweetSearcherFunction.Arn
         SaveToDynamoDbFunctionArn: !GetAtt SaveToDynamoDbFunction.Arn
-        ExitFunctionArn: !GetAtt ExitFunction.Arn
         DDBPutItem: !Sub arn:${AWS::Partition}:states:::dynamodb:putItem
         DDBTable: !Ref TweetTable
       Events:
@@ -66,15 +64,13 @@ Resources:
           Type: Schedule # More info about Schedule Event Source: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-property-statemachine-schedule.html
           Properties:
             Description: Schedule to run the state machine
-            Enabled: False
+            Enabled: True
             Schedule: "rate(1 day)"
       Policies: # Find out more about SAM policy templates: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-policy-templates.html
         - LambdaInvokePolicy:
             FunctionName: !Ref TweetSearcherFunction
         - LambdaInvokePolicy:
             FunctionName: !Ref SaveToDynamoDbFunction
-        - LambdaInvokePolicy:
-            FunctionName: !Ref ExitFunction
         - DynamoDBCrudPolicy:
             TableName: !Ref TweetTable
         - S3CrudPolicy:
@@ -139,11 +135,6 @@ Resources:
         ReadCapacityUnits: 5
         WriteCapacityUnits: 5
         
-  ExitFunction:
-    Type: AWS::Serverless::Function
-    Properties:
-      CodeUri: functions/Exit/
-
 Outputs:
   # K24DataHarvesterStateMachineHourlyTradingSchedule is an implicit Schedule event rule created out of Events key under Serverless::StateMachine
   # Find out more about other implicit resources you can reference within SAM

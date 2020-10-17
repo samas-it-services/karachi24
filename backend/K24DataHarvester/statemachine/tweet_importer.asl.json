@@ -15,9 +15,9 @@
                     "BackoffRate": 1.5
                 }
             ],
-            "Next": "Save Tweets if Result Found?"
+            "Next": "Results Found?"
         },
-        "Save Tweets if Result Found?": {
+        "Results Found?": {
             "Type": "Choice",
             "Choices": [
                 {
@@ -26,7 +26,7 @@
                     "Next": "Save To Dynamo Db"
                 }
             ],
-            "Default": "Exit"
+            "Default": "Finish"
         },
         "Save To Dynamo Db": {
             "Type": "Task",
@@ -41,23 +41,10 @@
                     "BackoffRate": 1
                 }
             ],
-            "Next": "Exit"
+            "Next": "Finish"
         },
-        "Exit": {
-            "Type": "Task",
-            "Resource": "${ExitFunctionArn}",
-            "Retry": [
-                {
-                    "ErrorEquals": [
-                        "States.TaskFailed"
-                    ],
-                    "IntervalSeconds": 5,
-                    "MaxAttempts": 1,
-                    "BackoffRate": 1
-                }
-            ],
-            "End": true
-            
+        "Finish": {
+            "Type": "Succeed"
         }
     }
 }
