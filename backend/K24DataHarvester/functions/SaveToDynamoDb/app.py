@@ -13,12 +13,13 @@ def _get_env_params():
     return env, endpoint_url, bucket_name, table_name, debug
 
 def _get_input_params(event):
-    query = event["body"]["query"] 
     category = event["body"]["category"] 
+    topic = event["body"]["topic"] 
+    query = event["body"]["query"] 
     count = event["body"]["count"] if event["body"] else 0
     file_path = event["body"]["file_path"] 
 
-    return query, category, count, file_path
+    return category, topic, query, count, file_path
 
 def _get_dynamoDb_connection(env, endpoint_url):
     ddbclient=''
@@ -67,17 +68,16 @@ def _get_s3_file_content_as_json(bucket_name, file_path):
 
 def lambda_handler(event, context):
     env, endpoint_url, bucket_name, table_name, debug  = _get_env_params()
-    query, category, count, file_path= _get_input_params(event)
+    category, topic, query, count, file_path= _get_input_params(event)
 
     if debug=="1": 
         print("Env:", env, endpoint_url, bucket_name, table_name)
-        print("Event:", query, category, count, file_path)
+        print("Event:", category, topic, query, count, file_path)
 
     try:    
         ddbclient = _get_dynamoDb_connection(env, endpoint_url)
-        result = {}
         if count:
-            extra_data = {"category": category, "file_path": file_path}
+            extra_data = {"category": category, "topic": topic, "file_path": file_path}
             json_data = _get_s3_file_content_as_json(bucket_name, file_path)
 
             dynamoTable = ddbclient.Table(table_name)
