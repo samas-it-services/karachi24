@@ -1,49 +1,65 @@
 {
     "Comment": "A state machine to import tweets.",
-    "StartAt": "Search For Tweets",
+    "StartAt": "Process All Categories",
+    "TimeoutSeconds": 120,
     "States": {
-        "Search For Tweets": {
-            "Type": "Task",
-            "Resource": "${TweetSearcherFunctionArn}",
-            "Retry": [
-                {
-                    "ErrorEquals": [
-                        "States.TaskFailed"
-                    ],
-                    "IntervalSeconds": 60,
-                    "MaxAttempts": 5,
-                    "BackoffRate": 1.5
+        "Process All Categories": {
+            "Type": "Map",
+            "ItemsPath": "$.queries",
+            "MaxConcurrency": 0,
+            "Next": "AllFinish",
+            "Iterator": {
+                "StartAt": "Search For Tweets",
+                "States": {
+                    "Search For Tweets": {
+                        "Type": "Task",
+                        "Resource": "${TweetSearcherFunctionArn}",
+                        
+                        "Retry": [
+                            {
+                                "ErrorEquals": [
+                                    "States.TaskFailed"
+                                ],
+                                "IntervalSeconds": 30,
+                                "MaxAttempts": 2,
+                                "BackoffRate": 1.5
+                            }
+                        ],
+                        "Next": "Results Found?"
+                    },
+                    "Results Found?": {
+                        "Type": "Choice",
+                        "Choices": [
+                            {
+                                "Variable": "$.body.count",
+                                "NumericGreaterThan": 0,
+                                "Next": "Yes, Save To Dynamo Db"
+                            }
+                        ],
+                        "Default": "Finish"
+                    },
+                    "Yes, Save To Dynamo Db": {
+                        "Type": "Task",
+                        "Resource": "${SaveToDynamoDbFunctionArn}",
+                        "Retry": [
+                            {
+                                "ErrorEquals": [
+                                    "States.TaskFailed"
+                                ],
+                                "IntervalSeconds": 5,
+                                "MaxAttempts": 3,
+                                "BackoffRate": 1
+                            }
+                        ],
+                        "Next": "Finish"
+                    },
+                    "Finish": {
+                        "Type": "Succeed"
+                    }
                 }
-            ],
-            "Next": "Results Found?"
+            }
         },
-        "Results Found?": {
-            "Type": "Choice",
-            "Choices": [
-                {
-                    "Variable": "$.body.count",
-                    "NumericGreaterThan": 0,
-                    "Next": "Save To Dynamo Db"
-                }
-            ],
-            "Default": "Finish"
-        },
-        "Save To Dynamo Db": {
-            "Type": "Task",
-            "Resource": "${SaveToDynamoDbFunctionArn}",
-            "Retry": [
-                {
-                    "ErrorEquals": [
-                        "States.TaskFailed"
-                    ],
-                    "IntervalSeconds": 5,
-                    "MaxAttempts": 3,
-                    "BackoffRate": 1
-                }
-            ],
-            "Next": "Finish"
-        },
-        "Finish": {
+        "AllFinish": {
             "Type": "Succeed"
         }
     }
