@@ -68,7 +68,7 @@ def lambda_handler(event, context):
         tweets = _search(api, query, count, since_id)
         count = len(tweets)
         json_result = _get_json_result(tweets)
-        file_path = _get_file_path(root_folder, prefix=f"{category}-{topic}", file_name=f"result-{count}-rows.json")
+        file_path = _get_file_path(root_folder, prefix=f"{query_id}-{category}-{topic}-since-{since_id}", file_name=f"result-{count}-rows.json")
         _save_json_to_s3(bucket_name, file_path, json_result)
 
         return {
