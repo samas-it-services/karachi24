@@ -3,6 +3,7 @@ import json
 from datetime import datetime
 import botocore
 import boto3
+from dateutil.parser import parse
  
 def _get_env_params():
     env = os.environ['Environment']
@@ -13,13 +14,18 @@ def _get_env_params():
     return env, endpoint_url, bucket_name, table_name, debug
 
 def _get_input_params(event):
-    category = event["body"]["category"] 
-    topic = event["body"]["topic"] 
-    query = event["body"]["query"] 
-    count = event["body"]["count"] if event["body"] else 0
-    file_path = event["body"]["file_path"] 
+    if "body" in event:
+        body = event["body"]
+        
+        category = body["category"]  if "category" in body else "default"
+        topic = body["topic"] if "topic" in body else "default"
+        query = body["query"] if "query" in body else ""
+        count = body["count"] if "count" in body else "0"
+        file_path = body["file_path"] if "file_path" in body else -1
 
-    return category, topic, query, count, file_path
+        return category, topic, query, count, file_path
+    else:
+        raise Exception("SaveToDynamoDb: Invalid input.", event)
 
 def _get_dynamoDb_connection(env, endpoint_url):
     ddbclient=''
@@ -29,7 +35,7 @@ def _get_dynamoDb_connection(env, endpoint_url):
         ddbclient = boto3.resource('dynamodb')
 
     return ddbclient
-    
+
 def _parse_tweet_from_json(item, extra_data):
     duration_millis = media_url  = video_url = ""
 
@@ -39,10 +45,15 @@ def _parse_tweet_from_json(item, extra_data):
         media_url = str(media["media_url_https"]) if "media_url_https" in media else ""
         video_url = str(media["video_info"]["variants"][0]["url"]) if "video_info" in media else ""
 
+    reply_count = item["reply_count"] if 'reply_count' in item else 0
+    retweeted = item["retweeted"]  if 'retweeted' in item else "NA"
+    tweet_date = str(parse(item["created_at"]).strftime('%Y-%m-%d'))
+
     result = {
         'Id':                item["id"],
         'user_name':         item["user"]["name"],
         'screen_name':       str(item["user"]["screen_name"]),
+        'followers_count':   str(item["user"]["followers_count"]),
         'retweet_count':     item["retweet_count"],
         'text':              str(item["text"]),
         'tweet_created_at':  str(item["created_at"]),
@@ -52,6 +63,10 @@ def _parse_tweet_from_json(item, extra_data):
         'location':          str(item["place"]),
         'source_device':     str(item["source"]),
         'truncated':         str(item["truncated"]),
+        'reply_count':       reply_count,
+        'retweeted':         retweeted,
+        'tweet_date':        tweet_date,
+
         'duration_millis':   duration_millis,
         'media_url_https':   media_url,
         'video_url':         video_url,
@@ -67,16 +82,18 @@ def _get_s3_file_content_as_json(bucket_name, file_path):
     return json.loads(file_content)
 
 def lambda_handler(event, context):
-    env, endpoint_url, bucket_name, table_name, debug  = _get_env_params()
-    category, topic, query, count, file_path= _get_input_params(event)
+    env, endpoint_url, bucket_name, table_name, debug = _get_env_params()
+    category, topic, query, count, file_path = _get_input_params(event)
 
     if debug=="1": 
-        print("Env:", env, endpoint_url, bucket_name, table_name)
-        print("Event:", category, topic, query, count, file_path)
+        print("Env:", env, ", endpoint_url:", endpoint_url, ", bucket_name: ", bucket_name, ", table_name: ", table_name)
+        print("event: category:", category, ", topic:", topic, ", count:", count, ", file_path:", file_path)
+        print("query: \n", query)
 
     try:    
         ddbclient = _get_dynamoDb_connection(env, endpoint_url)
-        if count:
+        since_id = -1
+        if count > 0:
             extra_data = {"category": category, "topic": topic, "file_path": file_path}
             json_data = _get_s3_file_content_as_json(bucket_name, file_path)
 
@@ -85,9 +102,21 @@ def lambda_handler(event, context):
 
             with dynamoTable.batch_writer() as batch:
                 for key in json_data.keys():
-                    batch.put_item(_parse_tweet_from_json(json_data[key], extra_data))
+                    data = _parse_tweet_from_json(json_data[key], extra_data)
+                    batch.put_item(data)
 
-        return count
+            since_id = max(list(json_data.keys()))
+            
+        return {
+            'statusCode': 200,
+            'body': {
+                "category": category,
+                "topic":    topic,
+                "query":    query,
+                "count":    count,
+                "since_id": since_id
+                    }
+            }
 
     except botocore.exceptions.ClientError as err:
         if err.response['Error']['Code'] == 'InternalError': # Generic error
