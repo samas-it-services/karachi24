@@ -16,12 +16,13 @@ def _get_env_params():
 def _get_input_params(event):
     default_query = "Karachi OR #Karachi OR karachi OR #karachi min_retweets:10 min_faves:10 -filter:replies filter:videos"
     
+    query_id = event["Id"] if "Id" in event else "0"
     category = event["category"] if "category" in event else "default"
     topic = event["topic"] if "topic" in event else "default"
     query = event["q"] if "q" in event else default_query
     count = event["count"] if "count" in event else "10"
     since_id = event["since_id"] if "since_id" in event else None
-    return category, topic, query, count, since_id
+    return query_id, category, topic, query, count, since_id
 
 def _create_twitter_api(twitter_key, twitter_secret_key):
     auth = tweepy.AppAuthHandler(twitter_key, twitter_secret_key)
@@ -57,10 +58,10 @@ def _get_file_path(root_folder, prefix, file_name):
 
 def lambda_handler(event, context):
     env, twitter_key, twitter_secret_key, bucket_name, root_folder, debug = _get_env_params()
-    category, topic, query, count, since_id = _get_input_params(event) 
+    query_id, category, topic, query, count, since_id = _get_input_params(event) 
     if debug=="1": 
         print("env:", env, ", twitter_key: ", twitter_key, ", twitter_secret_key:", twitter_secret_key, ", bucket_name:", bucket_name, ", root_folder:", root_folder)
-        print("event: query: ", query, ", category:", category, ", count:", count, ", since_id:", since_id)
+        print("event: queryId: ", query_id, ", query: ", query, ", category:", category, ", count:", count, ", since_id:", since_id)
 
     try:    
         api = _create_twitter_api(twitter_key, twitter_secret_key)
@@ -73,6 +74,7 @@ def lambda_handler(event, context):
         return {
             'statusCode': 200,
             'body': {
+                "query_id":     query_id,
                 "category":     category,
                 "topic":        topic,
                 "query":        query,

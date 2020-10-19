@@ -1,8 +1,24 @@
 {
     "Comment": "A state machine to import tweets.",
-    "StartAt": "Process All Categories",
-    "TimeoutSeconds": 120,
+    "StartAt": "Read Config Params From Db",
+    "TimeoutSeconds": 30,
     "States": {
+        "Read Config Params From Db": {
+            "Type": "Task",
+            "Resource": "${ReadConfigParamsFromDbFunctionArn}",
+            
+            "Retry": [
+                {
+                    "ErrorEquals": [
+                        "States.TaskFailed"
+                    ],
+                    "IntervalSeconds": 5,
+                    "MaxAttempts": 1,
+                    "BackoffRate": 1.5
+                }
+            ],
+            "Next": "Process All Categories"
+        },
         "Process All Categories": {
             "Type": "Map",
             "ItemsPath": "$.queries",

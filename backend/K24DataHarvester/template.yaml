@@ -32,6 +32,9 @@ Parameters:
   DBTableName:
     Type: String
 
+  ConfigDBTableName:
+    Type: String
+
   RootFolderForTweets:
     Type: String
 
@@ -57,6 +60,7 @@ Resources:
       DefinitionUri: statemachine/tweet_importer.asl.json
       Type: STANDARD
       DefinitionSubstitutions:
+        ReadConfigParamsFromDbFunctionArn: !GetAtt ReadConfigParamsFromDbFunction.Arn
         TweetSearcherFunctionArn: !GetAtt TweetSearcherFunction.Arn
         SaveToDynamoDbFunctionArn: !GetAtt SaveToDynamoDbFunction.Arn
         DDBPutItem: !Sub arn:${AWS::Partition}:states:::dynamodb:putItem
@@ -79,6 +83,8 @@ Resources:
             
       Policies: # Find out more about SAM policy templates: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-policy-templates.html
         - LambdaInvokePolicy:
+            FunctionName: !Ref ReadConfigParamsFromDbFunction
+        - LambdaInvokePolicy:
             FunctionName: !Ref TweetSearcherFunction
         - LambdaInvokePolicy:
             FunctionName: !Ref SaveToDynamoDbFunction
@@ -90,6 +96,21 @@ Resources:
       - project: Karachi24
       - dept: backend
 
+  ReadConfigParamsFromDbFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-function.html
+    Properties:
+      CodeUri: functions/ReadConfigParamsFromDb/
+      Environment:
+        Variables:
+          Environment: !Ref Environment
+          ConfigDBTableName: !Ref ConfigDBTableName
+          DynamoDbEndPointURL: !Ref DynamoDbEndPointURL
+          Debug: !Ref Debug
+
+      Policies: # Find out more about SAM policy templates: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-policy-templates.html
+        - DynamoDBCrudPolicy:
+            TableName: !Ref ConfigDBTableName
+
   TweetSearcherFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-function.html
     Properties:
@@ -99,6 +120,7 @@ Resources:
           Environment: !Ref Environment
           InputBucketName: !Ref InputBucketName
           RootFolderForTweets: !Ref RootFolderForTweets
+          ConfigDBTableName: !Ref ConfigDBTableName
           TwitterKey: !Ref TwitterKey
           TwitterSecretKey: !Ref TwitterSecretKey
           Debug: !Ref Debug
@@ -111,17 +133,20 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: functions/SaveToDynamoDb/
-      Timeout: 20
+      Timeout: 30
       Environment:
         Variables:
           Environment: !Ref Environment
           InputBucketName: !Ref InputBucketName
+          ConfigDBTableName: !Ref ConfigDBTableName
           DDBtable: !Ref DBTableName
           DynamoDbEndPointURL: !Ref DynamoDbEndPointURL
           Debug: !Ref Debug
       Policies: # Find out more about SAM policy templates: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-policy-templates.html
         - DynamoDBCrudPolicy:
             TableName: !Ref TweetTable
+        - DynamoDBCrudPolicy:
+            TableName: !Ref ConfigDBTableName
         - S3CrudPolicy:
             BucketName: !Ref InputBucketName 
 
@@ -135,6 +160,9 @@ Resources:
         - 
           AttributeName: 'tweet_created_at'
           AttributeType: 'S'
+        - 
+          AttributeName: 'user_name'
+          AttributeType: 'S'
       KeySchema: 
         - 
           AttributeName: 'Id'
@@ -147,8 +175,60 @@ Resources:
 
       ProvisionedThroughput:
         ReadCapacityUnits: 5
-        WriteCapacityUnits: 5
-        
+        WriteCapacityUnits: 1
+
+      GlobalSecondaryIndexes: 
+        - 
+          IndexName: "user_nameGSI"
+          KeySchema: 
+            - 
+              AttributeName: "user_name"
+              KeyType: "HASH"
+            - 
+              AttributeName: "tweet_created_at"
+              KeyType: "RANGE"
+          Projection: 
+            NonKeyAttributes: 
+              - "text"
+              - "favorite_count"
+              - "reply_count"
+            ProjectionType: "INCLUDE"
+          ProvisionedThroughput: 
+            ReadCapacityUnits: "5"
+            WriteCapacityUnits: "1"
+
+      Tags:
+        - Key: project
+          Value: karachi24
+
+  TweetConfigTable:
+    Type: AWS::DynamoDB::Table 
+    Properties:
+      AttributeDefinitions: 
+        - 
+          AttributeName: 'Id'
+          AttributeType: 'N'
+        - 
+          AttributeName: 'enabled'
+          AttributeType: 'S'
+      KeySchema: 
+        - 
+          AttributeName: 'Id'
+          KeyType: 'HASH'
+        - 
+          AttributeName: 'enabled'
+          KeyType: 'RANGE'
+
+      TableName: !Ref ConfigDBTableName
+
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
+
+      Tags:
+        - Key: project
+          Value: karachi24
+
 Outputs:
   # K24DataHarvesterStateMachineHourlyTradingSchedule is an implicit Schedule event rule created out of Events key under Serverless::StateMachine
   # Find out more about other implicit resources you can reference within SAM

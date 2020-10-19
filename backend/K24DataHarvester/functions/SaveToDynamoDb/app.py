@@ -10,20 +10,23 @@ def _get_env_params():
     endpoint_url = os.environ['DynamoDbEndPointURL']
     bucket_name = os.environ['InputBucketName']
     table_name = os.environ["DDBtable"]
+    config_DB_table_name = os.environ['ConfigDBTableName']
     debug = os.environ['Debug']
-    return env, endpoint_url, bucket_name, table_name, debug
+    return env, endpoint_url, bucket_name, table_name, config_DB_table_name, debug
 
 def _get_input_params(event):
     if "body" in event:
         body = event["body"]
         
+        query_id = body["query_id"] if "query_id" in body else "0"
         category = body["category"]  if "category" in body else "default"
         topic = body["topic"] if "topic" in body else "default"
         query = body["query"] if "query" in body else ""
         count = body["count"] if "count" in body else "0"
+        since_id = body["since_id"] if "since_id" in body else ""
         file_path = body["file_path"] if "file_path" in body else -1
 
-        return category, topic, query, count, file_path
+        return query_id, category, topic, query, count, since_id, file_path
     else:
         raise Exception("SaveToDynamoDb: Invalid input.", event)
 
@@ -81,18 +84,40 @@ def _get_s3_file_content_as_json(bucket_name, file_path):
     file_content = fileObj["Body"].read().decode("utf-8")
     return json.loads(file_content)
 
+def _update_since_id(dynamodb, table_name, query_id, since_id, file_path):
+    table = boto3.resource('dynamodb').Table(table_name)
+    # table = dynamodb.Table(table_name)
+    item = ""
+    try:
+        # get item
+        response = table.get_item(Key={'Id': int(query_id), 'enabled': "1"})
+        item = response['Item']
+
+        # update
+        item['since_id'] = str(since_id)
+        item['file_path'] = file_path
+        item['last_updated'] = str(datetime.now())
+        table.put_item(Item=item)
+    except Exception as e:
+        print("saveToDynamoDb: _update_since_id: Unexpected error: ", str(e))
+        print("saveToDynamoDb: _update_since_id: query_id:", query_id)
+        print("saveToDynamoDb: _update_since_id: item:", item)
+        pass
+
+    return True
+
 def lambda_handler(event, context):
-    env, endpoint_url, bucket_name, table_name, debug = _get_env_params()
-    category, topic, query, count, file_path = _get_input_params(event)
+    env, endpoint_url, bucket_name, table_name, config_DB_table_name, debug = _get_env_params()
+    query_id, category, topic, query, count, since_id, file_path = _get_input_params(event)
 
     if debug=="1": 
-        print("Env:", env, ", endpoint_url:", endpoint_url, ", bucket_name: ", bucket_name, ", table_name: ", table_name)
+        print("Env:", env, ", endpoint_url:", endpoint_url, ", bucket_name: ", bucket_name, ", table_name: ", table_name, ", config_DB_table_name: ", config_DB_table_name)
         print("event: category:", category, ", topic:", topic, ", count:", count, ", file_path:", file_path)
         print("query: \n", query)
 
     try:    
         ddbclient = _get_dynamoDb_connection(env, endpoint_url)
-        since_id = -1
+        new_since_id = since_id
         if count > 0:
             extra_data = {"category": category, "topic": topic, "file_path": file_path}
             json_data = _get_s3_file_content_as_json(bucket_name, file_path)
@@ -105,16 +130,19 @@ def lambda_handler(event, context):
                     data = _parse_tweet_from_json(json_data[key], extra_data)
                     batch.put_item(data)
 
-            since_id = max(list(json_data.keys()))
+            new_since_id = max(list(json_data.keys()))
+            _update_since_id(ddbclient, config_DB_table_name, query_id, new_since_id, file_path)
             
         return {
             'statusCode': 200,
             'body': {
-                "category": category,
-                "topic":    topic,
-                "query":    query,
-                "count":    count,
-                "since_id": since_id
+                "query_id":     query_id,
+                "category":     category,
+                "topic":        topic,
+                "query":        query,
+                "count":        count,
+                "old_since_id": since_id,
+                "new_since_id": new_since_id,
                     }
             }
 
@@ -128,7 +156,4 @@ def lambda_handler(event, context):
 
     except Exception as e:
         print("saveToDynamoDb: Unexpected error: ", str(e))
-        print("saveToDynamoDb: env: endpoint_url: ", str(endpoint_url))
-        print("saveToDynamoDb: param: file_path: ", str(file_path))
-        print("saveToDynamoDb: param: query: ", str(query))
         raise e
