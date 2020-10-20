@@ -15,24 +15,27 @@ def _get_env_params():
 
 def _get_input_params(event):
     default_query = "Karachi OR #Karachi OR karachi OR #karachi min_retweets:10 min_faves:10 -filter:replies filter:videos"
-    q = event["q"] if "q" in event else default_query
+    
+    query_id = event["Id"] if "Id" in event else "0"
     category = event["category"] if "category" in event else "default"
+    topic = event["topic"] if "topic" in event else "default"
+    query = event["q"] if "q" in event else default_query
     count = event["count"] if "count" in event else "10"
     since_id = event["since_id"] if "since_id" in event else None
-    return q, category, count, since_id
+    return query_id, category, topic, query, count, since_id
 
 def _create_twitter_api(twitter_key, twitter_secret_key):
     auth = tweepy.AppAuthHandler(twitter_key, twitter_secret_key)
     api = tweepy.API(auth, wait_on_rate_limit=True,
                     wait_on_rate_limit_notify=True)
     if (not api):
-        raise ("Can't Authenticate")
+        raise Exception("Can't Authenticate")
 
     return api
 
-def _search(api, searchQuery, tweetsPerQry, since_id=None):
+def _search(api, searchQuery, count, since_id=None):
     """Search for tweets matching the given search text."""
-    return api.search(q=searchQuery, count=tweetsPerQry, since_id=since_id, return_json=True) 
+    return api.search(q=searchQuery, count=count, since_id=since_id, return_json=True) 
 
 def _get_json_result(tweets):
     """Returns a map of tweet id and json data result"""
@@ -55,30 +58,34 @@ def _get_file_path(root_folder, prefix, file_name):
 
 def lambda_handler(event, context):
     env, twitter_key, twitter_secret_key, bucket_name, root_folder, debug = _get_env_params()
-    query, category, max_tweet_per_qry, since_id = _get_input_params(event) 
+    query_id, category, topic, query, count, since_id = _get_input_params(event) 
     if debug=="1": 
-        print("env:", env, twitter_key, twitter_secret_key, bucket_name, root_folder)
-        print("event:", query, category, max_tweet_per_qry, since_id)
+        print("env:", env, ", twitter_key: ", twitter_key, ", twitter_secret_key:", twitter_secret_key, ", bucket_name:", bucket_name, ", root_folder:", root_folder)
+        print("event: queryId: ", query_id, ", query: ", query, ", category:", category, ", count:", count, ", since_id:", since_id)
 
     try:    
         api = _create_twitter_api(twitter_key, twitter_secret_key)
-        tweets = _search(api, query, max_tweet_per_qry, since_id)
+        tweets = _search(api, query, count, since_id)
         count = len(tweets)
-        json_result = _get_json_result(tweets) 
-        file_path = _get_file_path(root_folder, category, file_name = f"result-{count}-rows.json")
-        _save_json_to_s3(bucket_name, file_path, json_result)
+        file_path = ""
+        if count > 0:
+            json_result = _get_json_result(tweets)
+            file_path = _get_file_path(root_folder, prefix=f"{query_id}-{category}-{topic}-since-{since_id}", file_name=f"result-{count}-rows.json")
+            _save_json_to_s3(bucket_name, file_path, json_result)
 
         return {
             'statusCode': 200,
             'body': {
-                "category": category,
-                "query":    query,
-                "since_id": since_id,
-                "count" :   count,
-                "file_path": file_path
+                "query_id":     query_id,
+                "category":     category,
+                "topic":        topic,
+                "query":        query,
+                "count":        count,
+                "since_id":     since_id,
+                "file_path":    file_path
             } 
         }
 
     except Exception as e:
-        print(e)
+        print("TweetSearcher: Unexpected error: ", str(e))
         raise e

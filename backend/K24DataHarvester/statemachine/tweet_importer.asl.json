@@ -1,51 +1,12 @@
 {
     "Comment": "A state machine to import tweets.",
-    "StartAt": "Search For Tweets",
+    "StartAt": "Read Config Params From Db",
+    "TimeoutSeconds": 30,
     "States": {
-        "Search For Tweets": {
+        "Read Config Params From Db": {
             "Type": "Task",
-            "Resource": "${TweetSearcherFunctionArn}",
-            "Retry": [
-                {
-                    "ErrorEquals": [
-                        "States.TaskFailed"
-                    ],
-                    "IntervalSeconds": 60,
-                    "MaxAttempts": 5,
-                    "BackoffRate": 1.5
-                }
-            ],
-            "Next": "Save Tweets if Result Found?"
-        },
-        "Save Tweets if Result Found?": {
-            "Type": "Choice",
-            "Choices": [
-                {
-                    "Variable": "$.body.count",
-                    "NumericGreaterThan": 0,
-                    "Next": "Save To Dynamo Db"
-                }
-            ],
-            "Default": "Exit"
-        },
-        "Save To Dynamo Db": {
-            "Type": "Task",
-            "Resource": "${SaveToDynamoDbFunctionArn}",
-            "Retry": [
-                {
-                    "ErrorEquals": [
-                        "States.TaskFailed"
-                    ],
-                    "IntervalSeconds": 5,
-                    "MaxAttempts": 3,
-                    "BackoffRate": 1
-                }
-            ],
-            "Next": "Exit"
-        },
-        "Exit": {
-            "Type": "Task",
-            "Resource": "${ExitFunctionArn}",
+            "Resource": "${ReadConfigParamsFromDbFunctionArn}",
+            
             "Retry": [
                 {
                     "ErrorEquals": [
@@ -53,11 +14,69 @@
                     ],
                     "IntervalSeconds": 5,
                     "MaxAttempts": 1,
-                    "BackoffRate": 1
+                    "BackoffRate": 1.5
                 }
             ],
-            "End": true
-            
+            "Next": "Process All Categories"
+        },
+        "Process All Categories": {
+            "Type": "Map",
+            "ItemsPath": "$.queries",
+            "MaxConcurrency": 0,
+            "Next": "AllFinish",
+            "Iterator": {
+                "StartAt": "Search For Tweets",
+                "States": {
+                    "Search For Tweets": {
+                        "Type": "Task",
+                        "Resource": "${TweetSearcherFunctionArn}",
+                        
+                        "Retry": [
+                            {
+                                "ErrorEquals": [
+                                    "States.TaskFailed"
+                                ],
+                                "IntervalSeconds": 30,
+                                "MaxAttempts": 2,
+                                "BackoffRate": 1.5
+                            }
+                        ],
+                        "Next": "Results Found?"
+                    },
+                    "Results Found?": {
+                        "Type": "Choice",
+                        "Choices": [
+                            {
+                                "Variable": "$.body.count",
+                                "NumericGreaterThan": 0,
+                                "Next": "Yes, Save To Dynamo Db"
+                            }
+                        ],
+                        "Default": "Finish"
+                    },
+                    "Yes, Save To Dynamo Db": {
+                        "Type": "Task",
+                        "Resource": "${SaveToDynamoDbFunctionArn}",
+                        "Retry": [
+                            {
+                                "ErrorEquals": [
+                                    "States.TaskFailed"
+                                ],
+                                "IntervalSeconds": 5,
+                                "MaxAttempts": 3,
+                                "BackoffRate": 1
+                            }
+                        ],
+                        "Next": "Finish"
+                    },
+                    "Finish": {
+                        "Type": "Succeed"
+                    }
+                }
+            }
+        },
+        "AllFinish": {
+            "Type": "Succeed"
         }
     }
 }

@@ -1,10 +1,11 @@
 {
     "statusCode": 200,
     "body": {
-        "file_path": "k24dataharvester/tweets/2020/10/videos-2020_10_04-01_30_10_PM-result-55-rows.json",
-        "query": "Karachi OR #Karachi OR karachi OR #karachi min_retweets:10 min_faves:10 -filter:replies filter:videos",
-        "category": "videos",
-        "count": 100,
-        "since_id": "1312862399490220002"
+      "category": "text",
+      "topic": "karachi",
+      "query": "Karachi OR #Karachi OR karachi OR #karachi min_retweets:10 min_faves:10 -filter:replies -filter:images -filter:videos -filter:news geocode:24.874553,67.0398131,200mi",
+      "count": 84,
+      "since_id": "1312862399490220002",
+      "file_path": "k24dataharvester/tweets/2020/10/text-karachi-2020_10_19-02_53_12_AM-result-84-rows.json"
     }
-}
+  }
