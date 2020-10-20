@@ -25,9 +25,9 @@
             "MaxConcurrency": 0,
             "Next": "AllFinish",
             "Iterator": {
-                "StartAt": "Search For Tweets",
+                "StartAt": "Search For Tweets and Save to s3",
                 "States": {
-                    "Search For Tweets": {
+                    "Search For Tweets and Save to s3": {
                         "Type": "Task",
                         "Resource": "${TweetSearcherFunctionArn}",
                         
