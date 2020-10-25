@@ -1,0 +1,57 @@
+enum Category {
+  Text
+  Image
+  Video
+  News
+}
+
+type K24Config @model
+  @key(name: "configByTopic", fields: ["topic", "category"], queryField: "configByTopic") 
+  @key(name: "configByCategory", fields: ["category", "topic"], queryField: "configByCategory") 
+{
+  id: ID!
+  name: String
+  category: Category!
+  topic: String!
+  query: String!
+  enabled: Boolean!
+  file_path: String
+  last_updated: String
+  count: Int!
+  since_id: Float
+}
+
+
+type K24Tweets @model
+  @key(name: "tweetByTopic", fields: ["topic", "tweet_created_at"], queryField: "tweetByTopic") 
+  @key(name: "tweetByCategory", fields: ["category", "tweet_created_at"], queryField: "tweetByCategory") 
+  @key(name: "tweetByUser", fields: ["user_name", "tweet_created_at"], queryField: "tweetByUser") 
+{
+  Id: ID!
+  text: String!
+  category: Category!
+  tweet_created_at: AWSDateTime!
+  tweet_date: AWSDate!
+  user_name: String!
+  topic: String!
+  enabled: Boolean
+  file_path: String!
+  last_updated: String
+  duration_millis: Int
+  favorite_count: Int
+  followers_count: Float
+  hashtags: [String]
+  location: AWSJSON
+  media_url_https: AWSURL
+  reply_count: Int
+  retweet_count: Int
+  retweeted: Boolean
+  row_timestamp: String
+  screen_name: String
+  source_device: String
+  truncated: Boolean
+  user_status_count: Int
+  video_url: AWSURL
+  configID: ID!
+  Config: K24Config @connection(fields: ["configID"])  
+}
