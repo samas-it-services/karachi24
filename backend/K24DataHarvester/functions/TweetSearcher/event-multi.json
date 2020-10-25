@@ -1,9 +1,9 @@
 {
-    "Id": 1,
+    "id": 1,
     "enabled": "1",
     "description": "These tweets are related to Karachi",
     "queries": [{
-            "Id": 1,
+            "id": 1,
             "category": "text",
             "topic": "karachi",
             "q": "Karachi OR #Karachi OR karachi OR #karachi min_retweets:10 min_faves:10 -filter:replies -filter:images -filter:videos -filter:news geocode:24.874553,67.0398131,200mi",
@@ -12,7 +12,7 @@
             "enabled": "1"
         },
         {
-            "Id": 2,
+            "id": 2,
             "category": "images",
             "topic": "karachi",
             "q": "Karachi OR #Karachi OR karachi OR #karachi min_retweets:10 min_faves:10 -filter:replies filter:images geocode:24.874553,67.0398131,200mi",
@@ -21,7 +21,7 @@
             "enabled": "1"
         },
         {
-            "Id": 3,
+            "id": 3,
             "category": "videos",
             "topic": "karachi",
             "q": "Karachi OR #Karachi OR karachi OR #karachi min_retweets:10 min_faves:10 -filter:replies filter:videos",
@@ -30,7 +30,7 @@
             "enabled": "1"
         },
         {
-            "Id": 4,
+            "id": 4,
             "category": "news",
             "topic": "karachi",
             "q": "Karachi OR #Karachi OR karachi OR #karachi min_retweets:10 min_faves:10 -filter:replies filter:news",

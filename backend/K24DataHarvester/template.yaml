@@ -155,8 +155,8 @@ Resources:
     Properties:
       AttributeDefinitions: 
         - 
-          AttributeName: 'Id'
-          AttributeType: 'N'
+          AttributeName: 'id'
+          AttributeType: 'S'
         - 
           AttributeName: 'tweet_created_at'
           AttributeType: 'S'
@@ -165,16 +165,13 @@ Resources:
           AttributeType: 'S'
       KeySchema: 
         - 
-          AttributeName: 'Id'
+          AttributeName: 'id'
           KeyType: 'HASH'
-        - 
-          AttributeName: 'tweet_created_at'
-          KeyType: 'RANGE'
 
       TableName: !Ref DBTableName
 
       ProvisionedThroughput:
-        ReadCapacityUnits: 5
+        ReadCapacityUnits: 1
         WriteCapacityUnits: 1
 
       GlobalSecondaryIndexes: 
@@ -194,7 +191,7 @@ Resources:
               - "reply_count"
             ProjectionType: "INCLUDE"
           ProvisionedThroughput: 
-            ReadCapacityUnits: "5"
+            ReadCapacityUnits: "1"
             WriteCapacityUnits: "1"
 
       Tags:
@@ -206,18 +203,12 @@ Resources:
     Properties:
       AttributeDefinitions: 
         - 
-          AttributeName: 'Id'
-          AttributeType: 'N'
-        - 
-          AttributeName: 'enabled'
+          AttributeName: 'id'
           AttributeType: 'S'
       KeySchema: 
         - 
-          AttributeName: 'Id'
+          AttributeName: 'id'
           KeyType: 'HASH'
-        - 
-          AttributeName: 'enabled'
-          KeyType: 'RANGE'
 
       TableName: !Ref ConfigDBTableName
 

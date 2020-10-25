@@ -36,7 +36,7 @@ def lambda_handler(event, context):
         dynamoTable = ddbclient.Table(config_DB_table_name)
         print(f"dynamoTable [{config_DB_table_name}] created on: {dynamoTable.creation_date_time}")
         response = dynamoTable.scan()
-        db_response = [x for x in response['Items'] if x['enabled'] == "1"]
+        db_response = [x for x in response['Items'] if x['enabled'] == True]
 
         return {
             'statusCode': 200,

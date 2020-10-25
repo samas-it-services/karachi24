@@ -18,7 +18,7 @@ def _parse_tweet_from_json(item, extra_data):
     tweet_date = str(parse(item["created_at"]).strftime('%Y-%m-%d'))
 
     result = {
-        'Id':                item["id"],
+        'id':                item["id"],
         'user_name':         item["user"]["name"],
         'screen_name':       str(item["user"]["screen_name"]),
         'followers_count':   str(item["user"]["followers_count"]),
@@ -53,7 +53,7 @@ json_data = _get_file_content_as_json(file_path)
 extra_data = {"category": "text", "topic": "karachi", "file_path": file_path}
 for key in json_data.keys():
     data = _parse_tweet_from_json(json_data[key], extra_data)
-    print(data['Id'])
+    print(data['id'])
     # print(data)
 
 print("since_id", list(json_data.keys())[-1])

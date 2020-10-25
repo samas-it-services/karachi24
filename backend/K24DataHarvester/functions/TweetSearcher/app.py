@@ -16,10 +16,10 @@ def _get_env_params():
 def _get_input_params(event):
     default_query = "Karachi OR #Karachi OR karachi OR #karachi min_retweets:10 min_faves:10 -filter:replies filter:videos"
     
-    query_id = event["Id"] if "Id" in event else "0"
+    query_id = event["id"] if "id" in event else "-1"
     category = event["category"] if "category" in event else "default"
     topic = event["topic"] if "topic" in event else "default"
-    query = event["q"] if "q" in event else default_query
+    query = event["query"] if "query" in event else default_query
     count = event["count"] if "count" in event else "10"
     since_id = event["since_id"] if "since_id" in event else None
     return query_id, category, topic, query, count, since_id
