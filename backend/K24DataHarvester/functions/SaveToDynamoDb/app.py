@@ -57,7 +57,7 @@ def _parse_tweet_from_json(item, extra_data):
     reply_count = item["reply_count"] if 'reply_count' in item else 0
     retweeted = item["retweeted"]  if 'retweeted' in item else "NA"
     tweet_created_at_raw = str(parse(item["created_at"]))
-    tweet_created_at = str(parse(item["created_at"]).strftime('%Y-%m-%d %H:%M:%S'))
+    tweet_created_at = str(parse(item["created_at"]).strftime('%Y-%m-%dT%H:%M:%SZ'))
     tweet_date = str(parse(item["created_at"]).strftime('%Y-%m-%d'))
     user_name = str(item["user"]["name"]) if str(item["user"]["name"]) else generate_random_username()
 
@@ -130,7 +130,7 @@ def lambda_handler(event, context):
         ddbclient = _get_dynamoDb_connection(env, endpoint_url)
         new_since_id = since_id
         if count > 0:
-            extra_data = {"category": category, "topic": topic, "file_path": file_path}
+            extra_data = {"category": category, "topic": topic, "file_path": file_path, "configID": query_id}
             json_data = _get_s3_file_content_as_json(bucket_name, file_path)
 
             dynamoTable = ddbclient.Table(table_name)
