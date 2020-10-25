@@ -2,13 +2,13 @@ mutation karachiTweets
 {
   text: createK24Config
     (input: {id: "1", category: Text, enabled: true,  name: "karachi tweets", topic: "karachi", count: 1500,
-             query: "Karachi OR #Karachi OR karachi OR #karachi min_retweets:10 min_faves:10 -filter:replies -filter:images -filter:videos -filter:news geocode:24.874553,67.0398131,200mi", 
+             query: "Karachi OR #Karachi OR karachi OR #karachi min_retweets:10 min_faves:10 -filter:replies -filter:images -filter:videos -filter:news", 
              since_id: 0, last_updated: "", file_path: ""})
     {id name query topic category}
 
   images: createK24Config
     (input: {id: "2", category: Image, enabled: true, name: "karachi image", topic: "karachi", count: 1500,
-             query: "Karachi OR #Karachi OR karachi OR #karachi min_retweets:10 min_faves:10 -filter:replies filter:images geocode:24.874553,67.0398131,200mi",
+             query: "Karachi OR #Karachi OR karachi OR #karachi min_retweets:10 min_faves:10 -filter:replies filter:images geocode:31.5879105,74.3128759,200mi",
              since_id: 0, last_updated: "", file_path: ""})
     {id name query topic category}
 

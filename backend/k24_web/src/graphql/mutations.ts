@@ -72,7 +72,6 @@ export const createK24Tweets = /* GraphQL */ `
   ) {
     createK24Tweets(input: $input, condition: $condition) {
       id
-      Id
       text
       category
       tweet_created_at
@@ -124,7 +123,6 @@ export const updateK24Tweets = /* GraphQL */ `
   ) {
     updateK24Tweets(input: $input, condition: $condition) {
       id
-      Id
       text
       category
       tweet_created_at
@@ -176,7 +174,6 @@ export const deleteK24Tweets = /* GraphQL */ `
   ) {
     deleteK24Tweets(input: $input, condition: $condition) {
       id
-      Id
       text
       category
       tweet_created_at

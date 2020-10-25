@@ -1,10 +1,10 @@
 {
-    "AppSyncApiName": "k24GraphQL",
+    "AppSyncApiName": "Karachi24Api",
     "DynamoDBBillingMode": "PAY_PER_REQUEST",
     "DynamoDBEnableServerSideEncryption": false,
     "AuthCognitoUserPoolId": {
         "Fn::GetAtt": [
-            "authk24web50cc1353",
+            "authk24webc4e5152d",
             "Outputs.UserPoolId"
         ]
     }

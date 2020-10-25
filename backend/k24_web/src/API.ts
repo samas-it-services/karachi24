@@ -133,7 +133,6 @@ export type DeleteK24ConfigInput = {
 
 export type CreateK24TweetsInput = {
   id?: string | null,
-  Id: string,
   text: string,
   category: Category,
   tweet_created_at: string,
@@ -162,7 +161,6 @@ export type CreateK24TweetsInput = {
 };
 
 export type ModelK24TweetsConditionInput = {
-  Id?: ModelIDInput | null,
   text?: ModelStringInput | null,
   category?: ModelCategoryInput | null,
   tweet_created_at?: ModelStringInput | null,
@@ -210,7 +208,7 @@ export type ModelIDInput = {
 };
 
 export type UpdateK24TweetsInput = {
-  Id?: string | null,
+  id: string,
   text?: string | null,
   category?: Category | null,
   tweet_created_at?: string | null,
@@ -259,7 +257,7 @@ export type ModelK24ConfigFilterInput = {
 };
 
 export type ModelK24TweetsFilterInput = {
-  Id?: ModelIDInput | null,
+  id?: ModelIDInput | null,
   text?: ModelStringInput | null,
   category?: ModelCategoryInput | null,
   tweet_created_at?: ModelStringInput | null,
@@ -384,7 +382,6 @@ export type CreateK24TweetsMutation = {
   createK24Tweets:  {
     __typename: "K24Tweets",
     id: string,
-    Id: string,
     text: string,
     category: Category,
     tweet_created_at: string,
@@ -439,7 +436,6 @@ export type UpdateK24TweetsMutation = {
   updateK24Tweets:  {
     __typename: "K24Tweets",
     id: string,
-    Id: string,
     text: string,
     category: Category,
     tweet_created_at: string,
@@ -494,7 +490,6 @@ export type DeleteK24TweetsMutation = {
   deleteK24Tweets:  {
     __typename: "K24Tweets",
     id: string,
-    Id: string,
     text: string,
     category: Category,
     tweet_created_at: string,
@@ -598,7 +593,6 @@ export type GetK24TweetsQuery = {
   getK24Tweets:  {
     __typename: "K24Tweets",
     id: string,
-    Id: string,
     text: string,
     category: Category,
     tweet_created_at: string,
@@ -656,7 +650,6 @@ export type ListK24TweetssQuery = {
     items:  Array< {
       __typename: "K24Tweets",
       id: string,
-      Id: string,
       text: string,
       category: Category,
       tweet_created_at: string,
@@ -781,7 +774,6 @@ export type TweetByTopicQuery = {
     items:  Array< {
       __typename: "K24Tweets",
       id: string,
-      Id: string,
       text: string,
       category: Category,
       tweet_created_at: string,
@@ -844,7 +836,6 @@ export type TweetByCategoryQuery = {
     items:  Array< {
       __typename: "K24Tweets",
       id: string,
-      Id: string,
       text: string,
       category: Category,
       tweet_created_at: string,
@@ -907,7 +898,6 @@ export type TweetByUserQuery = {
     items:  Array< {
       __typename: "K24Tweets",
       id: string,
-      Id: string,
       text: string,
       category: Category,
       tweet_created_at: string,
@@ -1013,7 +1003,6 @@ export type OnCreateK24TweetsSubscription = {
   onCreateK24Tweets:  {
     __typename: "K24Tweets",
     id: string,
-    Id: string,
     text: string,
     category: Category,
     tweet_created_at: string,
@@ -1063,7 +1052,6 @@ export type OnUpdateK24TweetsSubscription = {
   onUpdateK24Tweets:  {
     __typename: "K24Tweets",
     id: string,
-    Id: string,
     text: string,
     category: Category,
     tweet_created_at: string,
@@ -1113,7 +1101,6 @@ export type OnDeleteK24TweetsSubscription = {
   onDeleteK24Tweets:  {
     __typename: "K24Tweets",
     id: string,
-    Id: string,
     text: string,
     category: Category,
     tweet_created_at: string,

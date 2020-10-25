@@ -1,4 +1,3 @@
-/* tslint:disable */
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
@@ -74,7 +73,7 @@ export const getK24Tweets = /* GraphQL */ `
       user_status_count
       video_url
       configID
-      Config {
+      config {
         id
         name
         category
@@ -127,7 +126,7 @@ export const listK24Tweetss = /* GraphQL */ `
         user_status_count
         video_url
         configID
-        Config {
+        config {
           id
           name
           category
@@ -262,7 +261,7 @@ export const tweetByTopic = /* GraphQL */ `
         user_status_count
         video_url
         configID
-        Config {
+        config {
           id
           name
           category
@@ -327,7 +326,7 @@ export const tweetByCategory = /* GraphQL */ `
         user_status_count
         video_url
         configID
-        Config {
+        config {
           id
           name
           category
@@ -392,7 +391,7 @@ export const tweetByUser = /* GraphQL */ `
         user_status_count
         video_url
         configID
-        Config {
+        config {
           id
           name
           category

@@ -17,7 +17,7 @@ type K24Config @model
   enabled: Boolean!
   file_path: String
   last_updated: String
-  count: Int!
+  count: Int
   since_id: Float
 }
 
@@ -27,7 +27,7 @@ type K24Tweets @model
   @key(name: "tweetByCategory", fields: ["category", "tweet_created_at"], queryField: "tweetByCategory") 
   @key(name: "tweetByUser", fields: ["user_name", "tweet_created_at"], queryField: "tweetByUser") 
 {
-  Id: ID!
+  id: ID!
   text: String!
   category: Category!
   tweet_created_at: AWSDateTime!
@@ -53,5 +53,5 @@ type K24Tweets @model
   user_status_count: Int
   video_url: AWSURL
   configID: ID!
-  Config: K24Config @connection(fields: ["configID"])  
+  config: K24Config @connection(fields: ["configID"])  
 }

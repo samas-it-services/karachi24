@@ -1,0 +1,27 @@
+mutation lahoreTweets 
+{
+  text: createK24Config
+    (input: {id: "5", category: Text, enabled: true,  name: "lahore tweets", topic: "lahore", count: 1500,
+             query: "Lahore OR #Lahore OR lahore OR #lahore min_retweets:10 min_faves:10 -filter:replies -filter:images -filter:videos -filter:news", 
+             since_id: 0, last_updated: "", file_path: ""})
+    {id name query topic category}
+
+  images: createK24Config
+    (input: {id: "6", category: Image, enabled: true, name: "lahore image", topic: "lahore", count: 1500,
+             query: "Lahore OR #Lahore OR lahore OR #lahore min_retweets:10 min_faves:10 -filter:replies filter:images geocode:24.874553,67.0398131,200mi",
+             since_id: 0, last_updated: "", file_path: ""})
+    {id name query topic category}
+
+  videos: createK24Config
+    (input: {id: "7", category: Video, enabled: true, name: "lahore video", topic: "lahore", count: 1500,
+             query: "Lahore OR #Lahore OR lahore OR #lahore min_retweets:10 min_faves:10 -filter:replies filter:videos",
+             since_id: 0, last_updated: "", file_path: ""})
+    {id name query topic category}
+
+  news: createK24Config
+    (input: {id: "8", category: News, enabled: true, name: "lahore news", topic: "lahore", count: 1500,
+             query: "Lahore OR #Lahore OR lahore OR #lahore min_retweets:10 min_faves:10 -filter:replies filter:news",
+             since_id: 0, last_updated: "", file_path: ""})
+    {id name query topic category}
+
+}

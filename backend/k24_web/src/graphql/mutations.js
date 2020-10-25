@@ -1,10 +1,12 @@
-/* tslint:disable */
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateK24Config = /* GraphQL */ `
-  subscription OnCreateK24Config {
-    onCreateK24Config {
+export const createK24Config = /* GraphQL */ `
+  mutation CreateK24Config(
+    $input: CreateK24ConfigInput!
+    $condition: ModelK24ConfigConditionInput
+  ) {
+    createK24Config(input: $input, condition: $condition) {
       id
       name
       category
@@ -20,9 +22,12 @@ export const onCreateK24Config = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateK24Config = /* GraphQL */ `
-  subscription OnUpdateK24Config {
-    onUpdateK24Config {
+export const updateK24Config = /* GraphQL */ `
+  mutation UpdateK24Config(
+    $input: UpdateK24ConfigInput!
+    $condition: ModelK24ConfigConditionInput
+  ) {
+    updateK24Config(input: $input, condition: $condition) {
       id
       name
       category
@@ -38,9 +43,12 @@ export const onUpdateK24Config = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteK24Config = /* GraphQL */ `
-  subscription OnDeleteK24Config {
-    onDeleteK24Config {
+export const deleteK24Config = /* GraphQL */ `
+  mutation DeleteK24Config(
+    $input: DeleteK24ConfigInput!
+    $condition: ModelK24ConfigConditionInput
+  ) {
+    deleteK24Config(input: $input, condition: $condition) {
       id
       name
       category
@@ -56,9 +64,12 @@ export const onDeleteK24Config = /* GraphQL */ `
     }
   }
 `;
-export const onCreateK24Tweets = /* GraphQL */ `
-  subscription OnCreateK24Tweets {
-    onCreateK24Tweets {
+export const createK24Tweets = /* GraphQL */ `
+  mutation CreateK24Tweets(
+    $input: CreateK24TweetsInput!
+    $condition: ModelK24TweetsConditionInput
+  ) {
+    createK24Tweets(input: $input, condition: $condition) {
       id
       text
       category
@@ -85,7 +96,7 @@ export const onCreateK24Tweets = /* GraphQL */ `
       user_status_count
       video_url
       configID
-      Config {
+      config {
         id
         name
         category
@@ -104,9 +115,12 @@ export const onCreateK24Tweets = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateK24Tweets = /* GraphQL */ `
-  subscription OnUpdateK24Tweets {
-    onUpdateK24Tweets {
+export const updateK24Tweets = /* GraphQL */ `
+  mutation UpdateK24Tweets(
+    $input: UpdateK24TweetsInput!
+    $condition: ModelK24TweetsConditionInput
+  ) {
+    updateK24Tweets(input: $input, condition: $condition) {
       id
       text
       category
@@ -133,7 +147,7 @@ export const onUpdateK24Tweets = /* GraphQL */ `
       user_status_count
       video_url
       configID
-      Config {
+      config {
         id
         name
         category
@@ -152,9 +166,12 @@ export const onUpdateK24Tweets = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteK24Tweets = /* GraphQL */ `
-  subscription OnDeleteK24Tweets {
-    onDeleteK24Tweets {
+export const deleteK24Tweets = /* GraphQL */ `
+  mutation DeleteK24Tweets(
+    $input: DeleteK24TweetsInput!
+    $condition: ModelK24TweetsConditionInput
+  ) {
+    deleteK24Tweets(input: $input, condition: $condition) {
       id
       text
       category
@@ -181,7 +198,7 @@ export const onDeleteK24Tweets = /* GraphQL */ `
       user_status_count
       video_url
       configID
-      Config {
+      config {
         id
         name
         category
