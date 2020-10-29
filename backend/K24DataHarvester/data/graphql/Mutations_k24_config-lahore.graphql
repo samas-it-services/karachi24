@@ -8,7 +8,7 @@ mutation lahoreTweets
 
   images: createK24Config
     (input: {id: "6", category: Image, enabled: true, name: "lahore image", topic: "lahore", count: 1500,
-             query: "Lahore OR #Lahore OR lahore OR #lahore min_retweets:10 min_faves:10 -filter:replies filter:images geocode:24.874553,67.0398131,200mi",
+             query: "Lahore OR #Lahore OR lahore OR #lahore min_retweets:10 min_faves:10 -filter:replies filter:images geocode:24.874553,67.0398131,50mi",
              since_id: 0, last_updated: "", file_path: ""})
     {id name query topic category}
 
