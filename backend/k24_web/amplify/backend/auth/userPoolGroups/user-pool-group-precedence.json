@@ -1,0 +1,14 @@
+[
+    {
+        "groupName": "karachi24DataAdmin",
+        "precedence": 1
+    },
+    {
+        "groupName": "karachi24DataWriter",
+        "precedence": 2
+    },
+    {
+        "groupName": "karachi24DataReader",
+        "precedence": 3
+    }
+]

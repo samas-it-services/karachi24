@@ -1,24 +1,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getK24Config = /* GraphQL */ `
-  query GetK24Config($id: ID!) {
-    getK24Config(id: $id) {
-      id
-      name
-      category
-      topic
-      query
-      enabled
-      file_path
-      last_updated
-      count
-      since_id
-      createdAt
-      updatedAt
-    }
-  }
-`;
 export const listK24Configs = /* GraphQL */ `
   query ListK24Configs(
     $filter: ModelK24ConfigFilterInput
@@ -44,106 +26,21 @@ export const listK24Configs = /* GraphQL */ `
     }
   }
 `;
-export const getK24Tweets = /* GraphQL */ `
-  query GetK24Tweets($id: ID!) {
-    getK24Tweets(id: $id) {
+export const getK24Config = /* GraphQL */ `
+  query GetK24Config($id: ID!) {
+    getK24Config(id: $id) {
       id
-      text
+      name
       category
-      tweet_created_at
-      tweet_date
-      user_name
       topic
+      query
       enabled
       file_path
       last_updated
-      duration_millis
-      favorite_count
-      followers_count
-      hashtags
-      location
-      media_url_https
-      reply_count
-      retweet_count
-      retweeted
-      row_timestamp
-      screen_name
-      source_device
-      truncated
-      user_status_count
-      video_url
-      configID
-      config {
-        id
-        name
-        category
-        topic
-        query
-        enabled
-        file_path
-        last_updated
-        count
-        since_id
-        createdAt
-        updatedAt
-      }
+      count
+      since_id
       createdAt
       updatedAt
-    }
-  }
-`;
-export const listK24Tweetss = /* GraphQL */ `
-  query ListK24Tweetss(
-    $filter: ModelK24TweetsFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listK24Tweetss(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        text
-        category
-        tweet_created_at
-        tweet_date
-        user_name
-        topic
-        enabled
-        file_path
-        last_updated
-        duration_millis
-        favorite_count
-        followers_count
-        hashtags
-        location
-        media_url_https
-        reply_count
-        retweet_count
-        retweeted
-        row_timestamp
-        screen_name
-        source_device
-        truncated
-        user_status_count
-        video_url
-        configID
-        config {
-          id
-          name
-          category
-          topic
-          query
-          enabled
-          file_path
-          last_updated
-          count
-          since_id
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
-      nextToken
     }
   }
 `;
@@ -217,6 +114,109 @@ export const configByCategory = /* GraphQL */ `
     }
   }
 `;
+export const getK24Tweets = /* GraphQL */ `
+  query GetK24Tweets($id: ID!) {
+    getK24Tweets(id: $id) {
+      id
+      text
+      category
+      tweet_created_at
+      tweet_date
+      user_name
+      topic
+      enabled
+      file_path
+      last_updated
+      duration_millis
+      favorite_count
+      followers_count
+      hashtags
+      location
+      media_url_https
+      reply_count
+      retweet_count
+      retweeted
+      row_timestamp
+      screen_name
+      source_device
+      truncated
+      user_status_count
+      video_url
+      configID
+      createdAt
+      updatedAt
+      config {
+        id
+        name
+        category
+        topic
+        query
+        enabled
+        file_path
+        last_updated
+        count
+        since_id
+        createdAt
+        updatedAt
+      }
+    }
+  }
+`;
+export const listK24Tweetss = /* GraphQL */ `
+  query ListK24Tweetss(
+    $filter: ModelK24TweetsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listK24Tweetss(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        text
+        category
+        tweet_created_at
+        tweet_date
+        user_name
+        topic
+        enabled
+        file_path
+        last_updated
+        duration_millis
+        favorite_count
+        followers_count
+        hashtags
+        location
+        media_url_https
+        reply_count
+        retweet_count
+        retweeted
+        row_timestamp
+        screen_name
+        source_device
+        truncated
+        user_status_count
+        video_url
+        configID
+        createdAt
+        updatedAt
+        config {
+          id
+          name
+          category
+          topic
+          query
+          enabled
+          file_path
+          last_updated
+          count
+          since_id
+          createdAt
+          updatedAt
+        }
+      }
+      nextToken
+    }
+  }
+`;
 export const tweetByTopic = /* GraphQL */ `
   query TweetByTopic(
     $topic: String
@@ -261,6 +261,8 @@ export const tweetByTopic = /* GraphQL */ `
         user_status_count
         video_url
         configID
+        createdAt
+        updatedAt
         config {
           id
           name
@@ -275,8 +277,6 @@ export const tweetByTopic = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        createdAt
-        updatedAt
       }
       nextToken
     }
@@ -326,6 +326,8 @@ export const tweetByCategory = /* GraphQL */ `
         user_status_count
         video_url
         configID
+        createdAt
+        updatedAt
         config {
           id
           name
@@ -340,8 +342,6 @@ export const tweetByCategory = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        createdAt
-        updatedAt
       }
       nextToken
     }
@@ -391,6 +391,8 @@ export const tweetByUser = /* GraphQL */ `
         user_status_count
         video_url
         configID
+        createdAt
+        updatedAt
         config {
           id
           name
@@ -405,8 +407,71 @@ export const tweetByUser = /* GraphQL */ `
           createdAt
           updatedAt
         }
+      }
+      nextToken
+    }
+  }
+`;
+export const tweetByDay = /* GraphQL */ `
+  query TweetByDay(
+    $tweet_date: AWSDate
+    $tweet_created_at: ModelStringKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelK24TweetsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    tweetByDay(
+      tweet_date: $tweet_date
+      tweet_created_at: $tweet_created_at
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        text
+        category
+        tweet_created_at
+        tweet_date
+        user_name
+        topic
+        enabled
+        file_path
+        last_updated
+        duration_millis
+        favorite_count
+        followers_count
+        hashtags
+        location
+        media_url_https
+        reply_count
+        retweet_count
+        retweeted
+        row_timestamp
+        screen_name
+        source_device
+        truncated
+        user_status_count
+        video_url
+        configID
         createdAt
         updatedAt
+        config {
+          id
+          name
+          category
+          topic
+          query
+          enabled
+          file_path
+          last_updated
+          count
+          since_id
+          createdAt
+          updatedAt
+        }
       }
       nextToken
     }

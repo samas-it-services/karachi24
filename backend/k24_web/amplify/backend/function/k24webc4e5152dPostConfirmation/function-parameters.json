@@ -1,0 +1,18 @@
+{
+  "trigger": true,
+  "modules": [
+    "add-to-group"
+  ],
+  "parentResource": "k24webc4e5152d",
+  "functionName": "k24webc4e5152dPostConfirmation",
+  "resourceName": "k24webc4e5152dPostConfirmation",
+  "parentStack": "auth",
+  "triggerEnvs": "[]",
+  "triggerDir": "/home/bilgrami/.nvm/versions/node/v14.8.0/lib/node_modules/@aws-amplify/cli/node_modules/amplify-category-auth/provider-utils/awscloudformation/triggers/PostConfirmation",
+  "triggerTemplate": "PostConfirmation.json.ejs",
+  "roleName": "k24webc4e5152dPostConfirmation",
+  "skipEdit": true,
+  "GROUP": "",
+  "enableCors": false,
+  "triggerEventPath": "PostConfirmation.event.json"
+}

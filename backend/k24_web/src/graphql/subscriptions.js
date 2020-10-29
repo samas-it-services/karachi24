@@ -84,6 +84,8 @@ export const onCreateK24Tweets = /* GraphQL */ `
       user_status_count
       video_url
       configID
+      createdAt
+      updatedAt
       config {
         id
         name
@@ -98,8 +100,6 @@ export const onCreateK24Tweets = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -132,6 +132,8 @@ export const onUpdateK24Tweets = /* GraphQL */ `
       user_status_count
       video_url
       configID
+      createdAt
+      updatedAt
       config {
         id
         name
@@ -146,8 +148,6 @@ export const onUpdateK24Tweets = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -180,6 +180,8 @@ export const onDeleteK24Tweets = /* GraphQL */ `
       user_status_count
       video_url
       configID
+      createdAt
+      updatedAt
       config {
         id
         name
@@ -194,8 +196,6 @@ export const onDeleteK24Tweets = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      createdAt
-      updatedAt
     }
   }
 `;

@@ -6,6 +6,11 @@ enum Category {
 }
 
 type K24Config @model
+  @auth(rules: [
+    { allow: public, operations: [read], provider: apiKey }
+    { allow: groups, groups: ["karachi24DataAdmin"], operations: [create, update, delete, read] }
+    { allow: groups, groups: ["karachi24DataWriter"], operations: [create, update, read] }
+    ])
   @key(name: "configByTopic", fields: ["topic", "category"], queryField: "configByTopic") 
   @key(name: "configByCategory", fields: ["category", "topic"], queryField: "configByCategory") 
 {
@@ -23,9 +28,16 @@ type K24Config @model
 
 
 type K24Tweets @model
+  @auth(rules: [
+    { allow: public, operations: [read], provider: apiKey }
+    { allow: groups, groups: ["karachi24DataAdmin"], operations: [create, update, delete, read] }
+    { allow: groups, groups: ["karachi24DataWriter"], operations: [create, update, read] }
+    { allow: groups, groups: ["karachi24DataReader"], operations: [read] }
+    ])
   @key(name: "tweetByTopic", fields: ["topic", "tweet_created_at"], queryField: "tweetByTopic") 
   @key(name: "tweetByCategory", fields: ["category", "tweet_created_at"], queryField: "tweetByCategory") 
-  @key(name: "tweetByUser", fields: ["user_name", "tweet_created_at"], queryField: "tweetByUser") 
+  @key(name: "tweetByUser", fields: ["user_name", "tweet_created_at"], queryField: "tweetByUser")
+  @key(name: "tweetByDay", fields: ["tweet_date", "tweet_created_at"], queryField: "tweetByDay") 
 {
   id: ID!
   text: String!
@@ -35,14 +47,14 @@ type K24Tweets @model
   user_name: String!
   topic: String!
   enabled: Boolean
-  file_path: String!
+  file_path: String @auth(rules: [{ allow: groups, groups: ["karachi24DataAdmin"], operations: [create, update, delete, read] }])
   last_updated: String
   duration_millis: Int
   favorite_count: Int
   followers_count: Float
-  hashtags: [String]
+  hashtags: [AWSJSON]
   location: AWSJSON
-  media_url_https: AWSURL
+  media_url_https: String
   reply_count: Int
   retweet_count: Int
   retweeted: Boolean
@@ -51,7 +63,7 @@ type K24Tweets @model
   source_device: String
   truncated: Boolean
   user_status_count: Int
-  video_url: AWSURL
+  video_url: String
   configID: ID!
   config: K24Config @connection(fields: ["configID"])  
 }
