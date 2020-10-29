@@ -42,6 +42,7 @@ type K24Tweets @model
   id: ID!
   text: String!
   category: Category!
+  tweet_created_at_raw: String
   tweet_created_at: AWSDateTime!
   tweet_date: AWSDate!
   user_name: String!
@@ -52,7 +53,7 @@ type K24Tweets @model
   duration_millis: Int
   favorite_count: Int
   followers_count: Float
-  hashtags: [AWSJSON]
+  hashtags: AWSJSON
   location: AWSJSON
   media_url_https: String
   reply_count: Int
@@ -66,4 +67,6 @@ type K24Tweets @model
   video_url: String
   configID: ID!
   config: K24Config @connection(fields: ["configID"])  
+  flagged: Boolean
+  flaggedData: AWSJSON
 }

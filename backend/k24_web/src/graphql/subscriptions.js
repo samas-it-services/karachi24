@@ -61,6 +61,7 @@ export const onCreateK24Tweets = /* GraphQL */ `
       id
       text
       category
+      tweet_created_at_raw
       tweet_created_at
       tweet_date
       user_name
@@ -84,6 +85,8 @@ export const onCreateK24Tweets = /* GraphQL */ `
       user_status_count
       video_url
       configID
+      flagged
+      flaggedData
       createdAt
       updatedAt
       config {
@@ -109,6 +112,7 @@ export const onUpdateK24Tweets = /* GraphQL */ `
       id
       text
       category
+      tweet_created_at_raw
       tweet_created_at
       tweet_date
       user_name
@@ -132,6 +136,8 @@ export const onUpdateK24Tweets = /* GraphQL */ `
       user_status_count
       video_url
       configID
+      flagged
+      flaggedData
       createdAt
       updatedAt
       config {
@@ -157,6 +163,7 @@ export const onDeleteK24Tweets = /* GraphQL */ `
       id
       text
       category
+      tweet_created_at_raw
       tweet_created_at
       tweet_date
       user_name
@@ -180,6 +187,8 @@ export const onDeleteK24Tweets = /* GraphQL */ `
       user_status_count
       video_url
       configID
+      flagged
+      flaggedData
       createdAt
       updatedAt
       config {

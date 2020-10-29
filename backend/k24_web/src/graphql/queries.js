@@ -120,6 +120,7 @@ export const getK24Tweets = /* GraphQL */ `
       id
       text
       category
+      tweet_created_at_raw
       tweet_created_at
       tweet_date
       user_name
@@ -143,6 +144,8 @@ export const getK24Tweets = /* GraphQL */ `
       user_status_count
       video_url
       configID
+      flagged
+      flaggedData
       createdAt
       updatedAt
       config {
@@ -173,6 +176,7 @@ export const listK24Tweetss = /* GraphQL */ `
         id
         text
         category
+        tweet_created_at_raw
         tweet_created_at
         tweet_date
         user_name
@@ -196,6 +200,8 @@ export const listK24Tweetss = /* GraphQL */ `
         user_status_count
         video_url
         configID
+        flagged
+        flaggedData
         createdAt
         updatedAt
         config {
@@ -238,6 +244,7 @@ export const tweetByTopic = /* GraphQL */ `
         id
         text
         category
+        tweet_created_at_raw
         tweet_created_at
         tweet_date
         user_name
@@ -261,6 +268,8 @@ export const tweetByTopic = /* GraphQL */ `
         user_status_count
         video_url
         configID
+        flagged
+        flaggedData
         createdAt
         updatedAt
         config {
@@ -303,6 +312,7 @@ export const tweetByCategory = /* GraphQL */ `
         id
         text
         category
+        tweet_created_at_raw
         tweet_created_at
         tweet_date
         user_name
@@ -326,6 +336,8 @@ export const tweetByCategory = /* GraphQL */ `
         user_status_count
         video_url
         configID
+        flagged
+        flaggedData
         createdAt
         updatedAt
         config {
@@ -368,6 +380,7 @@ export const tweetByUser = /* GraphQL */ `
         id
         text
         category
+        tweet_created_at_raw
         tweet_created_at
         tweet_date
         user_name
@@ -391,6 +404,8 @@ export const tweetByUser = /* GraphQL */ `
         user_status_count
         video_url
         configID
+        flagged
+        flaggedData
         createdAt
         updatedAt
         config {
@@ -433,6 +448,7 @@ export const tweetByDay = /* GraphQL */ `
         id
         text
         category
+        tweet_created_at_raw
         tweet_created_at
         tweet_date
         user_name
@@ -456,6 +472,8 @@ export const tweetByDay = /* GraphQL */ `
         user_status_count
         video_url
         configID
+        flagged
+        flaggedData
         createdAt
         updatedAt
         config {
