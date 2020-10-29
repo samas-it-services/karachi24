@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "api": {
+      "Karachi24Api": [
+        "read"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}
