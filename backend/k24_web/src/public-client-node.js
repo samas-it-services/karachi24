@@ -1,11 +1,30 @@
 const axios = require("axios")
 
-// const url = process.env.API_KARACHI24API_GRAPHQLAPIENDPOINTOUTPUT
-// const api_key = process.env.API_KARACHI24API_GRAPHQLAPIKEYOUTPUT
+const url = process.env.API_KARACHI24API_GRAPHQLAPIENDPOINTOUTPUT
+const api_key = process.env.API_KARACHI24API_GRAPHQLAPIKEYOUTPUT
 
-const gql_query = `
+const gql_simple_query = `
 query listK24Tweets {
-  result: listK24Tweetss(limit: 10) {
+  result: listK24Tweetss(limit: 10, filter: {enabled: {eq: true}}) {
+    items {
+      id
+      text
+      topic
+      category
+      user_name
+      tweet_date
+      tweet_created_at
+      configID
+      hashtags
+    }
+    nextToken
+    }
+}
+`  
+
+const gql_detailed_query = `
+query listK24Tweets {
+  result: listK24Tweetss(limit: 10, filter: {enabled: {eq: true}}) {
     items {
       id
       text
@@ -40,6 +59,100 @@ query listK24Tweets {
     }
 }
 `  
+const gql_query_by_topic = `
+query tweetByTopic {
+  tweetByTopic(limit: 10, topic: "karachi", sortDirection: DESC, filter: {enabled: {eq: true}}) {
+    items {
+      id
+      text
+      topic
+      category
+      user_name
+      tweet_date
+      tweet_created_at
+      configID
+      hashtags
+    }
+    nextToken
+  }
+}
+
+`
+
+const gql_query_tweet_by_day = `
+query tweetByTopic {
+  tweetByDay(limit: 10, sortDirection: DESC, tweet_created_at: {beginsWith: "2020-10-31"}, tweet_date: "2020-10-31", filter: {enabled: {eq: true}}) {
+    items {
+      id
+      text
+      topic
+      category
+      user_name
+      tweet_date
+      tweet_created_at
+      configID
+      hashtags
+    }
+    nextToken
+  }
+}
+`
+const gql_query_tweet_by_user = `
+query MyQuery {
+  tweetByUser(limit: 10, sortDirection: DESC, tweet_created_at: {beginsWith: "2020-10-31"}, user_name: "Blood Donors Pakistan 🇵🇰", filter: {enabled: {eq: true}}) {
+    items {
+      id
+      text
+      topic
+      category
+      user_name
+      tweet_date
+      tweet_created_at
+      configID
+      hashtags
+    }
+    nextToken
+  }
+}
+
+`
+
+gql_query_VideoTweets = `
+query VideoTweets {
+  tweetByCategory(category: Video, limit: 10, sortDirection: DESC, tweet_created_at: {beginsWith: "2020-10-31"}) {
+    items {
+      id
+      text
+      topic
+      category
+      user_name
+      tweet_date
+      tweet_created_at
+      configID
+      hashtags
+      video_url # contains video url
+    }
+    nextToken
+  }
+}
+
+`
+// gql_query = gql_simple_query
+// gql_query = gql_detailed_query
+// gql_query = gql_query_by_topic
+// gql_query = gql_query_tweet_by_day
+// gql_query = gql_query_tweet_by_user
+gql_query = gql_query_VideoTweets
+
+const gql_update_value_query = ` 
+mutation MyMutation {
+  updateK24Config(input: {enabled: false, id: "1"}) {
+    id
+    enabled
+  }
+}
+`
+// gql_query = gql_update_value_query // this will fail because API Key method has read-only access
 
 axios({
     url: url,
@@ -49,8 +162,11 @@ axios({
       },
     method: 'post',
     data: {
-      query: gql_query    
+      query: gql_query
     }
   }).then((result) => {
-    console.log(JSON.stringify(result.data))
+    console.log(JSON.stringify(result.data,null,2))
+  })
+  .catch((error) => {
+    console.error(error);
   });
