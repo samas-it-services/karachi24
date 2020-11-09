@@ -7,9 +7,9 @@ enum Category {
 
 type K24Config @model
   @auth(rules: [
-    { allow: public, operations: [read], provider: apiKey }
     { allow: groups, groups: ["karachi24DataAdmin"], operations: [create, update, delete, read] }
     { allow: groups, groups: ["karachi24DataWriter"], operations: [create, update, read] }
+    { allow: groups, groups: ["karachi24DataReader"], operations: [read] }
     ])
   @key(name: "configByTopic", fields: ["topic", "category"], queryField: "configByTopic") 
   @key(name: "configByCategory", fields: ["category", "topic"], queryField: "configByCategory") 
@@ -48,7 +48,11 @@ type K24Tweets @model
   user_name: String!
   topic: String!
   enabled: Boolean
-  file_path: String @auth(rules: [{ allow: groups, groups: ["karachi24DataAdmin"], operations: [create, update, delete, read] }])
+  file_path: String @auth(rules: [
+    { allow: groups, groups: ["karachi24DataAdmin"], operations: [create, update, delete, read] }
+    { allow: groups, groups: ["karachi24DataWriter"], operations: [read] }
+    { allow: groups, groups: ["karachi24DataReader"], operations: [read] }
+    ])
   last_updated: String
   duration_millis: Int
   favorite_count: Int

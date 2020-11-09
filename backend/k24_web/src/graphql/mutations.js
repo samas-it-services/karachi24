@@ -97,10 +97,6 @@ export const createK24Tweets = /* GraphQL */ `
       user_status_count
       video_url
       configID
-      flagged
-      flaggedData
-      createdAt
-      updatedAt
       config {
         id
         name
@@ -115,6 +111,10 @@ export const createK24Tweets = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      flagged
+      flaggedData
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -151,10 +151,6 @@ export const updateK24Tweets = /* GraphQL */ `
       user_status_count
       video_url
       configID
-      flagged
-      flaggedData
-      createdAt
-      updatedAt
       config {
         id
         name
@@ -169,6 +165,10 @@ export const updateK24Tweets = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      flagged
+      flaggedData
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -205,10 +205,6 @@ export const deleteK24Tweets = /* GraphQL */ `
       user_status_count
       video_url
       configID
-      flagged
-      flaggedData
-      createdAt
-      updatedAt
       config {
         id
         name
@@ -223,6 +219,10 @@ export const deleteK24Tweets = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      flagged
+      flaggedData
+      createdAt
+      updatedAt
     }
   }
 `;

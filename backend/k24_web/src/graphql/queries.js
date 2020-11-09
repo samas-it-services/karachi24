@@ -1,6 +1,24 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getK24Config = /* GraphQL */ `
+  query GetK24Config($id: ID!) {
+    getK24Config(id: $id) {
+      id
+      name
+      category
+      topic
+      query
+      enabled
+      file_path
+      last_updated
+      count
+      since_id
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const listK24Configs = /* GraphQL */ `
   query ListK24Configs(
     $filter: ModelK24ConfigFilterInput
@@ -23,24 +41,6 @@ export const listK24Configs = /* GraphQL */ `
         updatedAt
       }
       nextToken
-    }
-  }
-`;
-export const getK24Config = /* GraphQL */ `
-  query GetK24Config($id: ID!) {
-    getK24Config(id: $id) {
-      id
-      name
-      category
-      topic
-      query
-      enabled
-      file_path
-      last_updated
-      count
-      since_id
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -144,10 +144,6 @@ export const getK24Tweets = /* GraphQL */ `
       user_status_count
       video_url
       configID
-      flagged
-      flaggedData
-      createdAt
-      updatedAt
       config {
         id
         name
@@ -162,6 +158,10 @@ export const getK24Tweets = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      flagged
+      flaggedData
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -200,10 +200,6 @@ export const listK24Tweetss = /* GraphQL */ `
         user_status_count
         video_url
         configID
-        flagged
-        flaggedData
-        createdAt
-        updatedAt
         config {
           id
           name
@@ -218,6 +214,10 @@ export const listK24Tweetss = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        flagged
+        flaggedData
+        createdAt
+        updatedAt
       }
       nextToken
     }
@@ -268,10 +268,6 @@ export const tweetByTopic = /* GraphQL */ `
         user_status_count
         video_url
         configID
-        flagged
-        flaggedData
-        createdAt
-        updatedAt
         config {
           id
           name
@@ -286,6 +282,10 @@ export const tweetByTopic = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        flagged
+        flaggedData
+        createdAt
+        updatedAt
       }
       nextToken
     }
@@ -336,10 +336,6 @@ export const tweetByCategory = /* GraphQL */ `
         user_status_count
         video_url
         configID
-        flagged
-        flaggedData
-        createdAt
-        updatedAt
         config {
           id
           name
@@ -354,6 +350,10 @@ export const tweetByCategory = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        flagged
+        flaggedData
+        createdAt
+        updatedAt
       }
       nextToken
     }
@@ -404,10 +404,6 @@ export const tweetByUser = /* GraphQL */ `
         user_status_count
         video_url
         configID
-        flagged
-        flaggedData
-        createdAt
-        updatedAt
         config {
           id
           name
@@ -422,6 +418,10 @@ export const tweetByUser = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        flagged
+        flaggedData
+        createdAt
+        updatedAt
       }
       nextToken
     }
@@ -472,10 +472,6 @@ export const tweetByDay = /* GraphQL */ `
         user_status_count
         video_url
         configID
-        flagged
-        flaggedData
-        createdAt
-        updatedAt
         config {
           id
           name
@@ -490,6 +486,10 @@ export const tweetByDay = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        flagged
+        flaggedData
+        createdAt
+        updatedAt
       }
       nextToken
     }

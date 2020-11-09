@@ -45,109 +45,6 @@ export const listK24Configs = /* GraphQL */ `
     }
   }
 `;
-export const getK24Tweets = /* GraphQL */ `
-  query GetK24Tweets($id: ID!) {
-    getK24Tweets(id: $id) {
-      id
-      text
-      category
-      tweet_created_at
-      tweet_date
-      user_name
-      topic
-      enabled
-      file_path
-      last_updated
-      duration_millis
-      favorite_count
-      followers_count
-      hashtags
-      location
-      media_url_https
-      reply_count
-      retweet_count
-      retweeted
-      row_timestamp
-      screen_name
-      source_device
-      truncated
-      user_status_count
-      video_url
-      configID
-      Config {
-        id
-        name
-        category
-        topic
-        query
-        enabled
-        file_path
-        last_updated
-        count
-        since_id
-        createdAt
-        updatedAt
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listK24Tweetss = /* GraphQL */ `
-  query ListK24Tweetss(
-    $filter: ModelK24TweetsFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listK24Tweetss(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        text
-        category
-        tweet_created_at
-        tweet_date
-        user_name
-        topic
-        enabled
-        file_path
-        last_updated
-        duration_millis
-        favorite_count
-        followers_count
-        hashtags
-        location
-        media_url_https
-        reply_count
-        retweet_count
-        retweeted
-        row_timestamp
-        screen_name
-        source_device
-        truncated
-        user_status_count
-        video_url
-        configID
-        Config {
-          id
-          name
-          category
-          topic
-          query
-          enabled
-          file_path
-          last_updated
-          count
-          since_id
-          createdAt
-          updatedAt
-        }
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
 export const configByTopic = /* GraphQL */ `
   query ConfigByTopic(
     $topic: String
@@ -218,27 +115,69 @@ export const configByCategory = /* GraphQL */ `
     }
   }
 `;
-export const tweetByTopic = /* GraphQL */ `
-  query TweetByTopic(
-    $topic: String
-    $tweet_created_at: ModelStringKeyConditionInput
-    $sortDirection: ModelSortDirection
+export const getK24Tweets = /* GraphQL */ `
+  query GetK24Tweets($id: ID!) {
+    getK24Tweets(id: $id) {
+      id
+      text
+      category
+      tweet_created_at_raw
+      tweet_created_at
+      tweet_date
+      user_name
+      topic
+      enabled
+      file_path
+      last_updated
+      duration_millis
+      favorite_count
+      followers_count
+      hashtags
+      location
+      media_url_https
+      reply_count
+      retweet_count
+      retweeted
+      row_timestamp
+      screen_name
+      source_device
+      truncated
+      user_status_count
+      video_url
+      configID
+      config {
+        id
+        name
+        category
+        topic
+        query
+        enabled
+        file_path
+        last_updated
+        count
+        since_id
+        createdAt
+        updatedAt
+      }
+      flagged
+      flaggedData
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listK24Tweetss = /* GraphQL */ `
+  query ListK24Tweetss(
     $filter: ModelK24TweetsFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    tweetByTopic(
-      topic: $topic
-      tweet_created_at: $tweet_created_at
-      sortDirection: $sortDirection
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
+    listK24Tweetss(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         text
         category
+        tweet_created_at_raw
         tweet_created_at
         tweet_date
         user_name
@@ -262,7 +201,7 @@ export const tweetByTopic = /* GraphQL */ `
         user_status_count
         video_url
         configID
-        Config {
+        config {
           id
           name
           category
@@ -276,6 +215,76 @@ export const tweetByTopic = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        flagged
+        flaggedData
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const tweetByTopic = /* GraphQL */ `
+  query TweetByTopic(
+    $topic: String
+    $tweet_created_at: ModelStringKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelK24TweetsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    tweetByTopic(
+      topic: $topic
+      tweet_created_at: $tweet_created_at
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        text
+        category
+        tweet_created_at_raw
+        tweet_created_at
+        tweet_date
+        user_name
+        topic
+        enabled
+        file_path
+        last_updated
+        duration_millis
+        favorite_count
+        followers_count
+        hashtags
+        location
+        media_url_https
+        reply_count
+        retweet_count
+        retweeted
+        row_timestamp
+        screen_name
+        source_device
+        truncated
+        user_status_count
+        video_url
+        configID
+        config {
+          id
+          name
+          category
+          topic
+          query
+          enabled
+          file_path
+          last_updated
+          count
+          since_id
+          createdAt
+          updatedAt
+        }
+        flagged
+        flaggedData
         createdAt
         updatedAt
       }
@@ -304,6 +313,7 @@ export const tweetByCategory = /* GraphQL */ `
         id
         text
         category
+        tweet_created_at_raw
         tweet_created_at
         tweet_date
         user_name
@@ -327,7 +337,7 @@ export const tweetByCategory = /* GraphQL */ `
         user_status_count
         video_url
         configID
-        Config {
+        config {
           id
           name
           category
@@ -341,6 +351,8 @@ export const tweetByCategory = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        flagged
+        flaggedData
         createdAt
         updatedAt
       }
@@ -369,6 +381,7 @@ export const tweetByUser = /* GraphQL */ `
         id
         text
         category
+        tweet_created_at_raw
         tweet_created_at
         tweet_date
         user_name
@@ -392,7 +405,7 @@ export const tweetByUser = /* GraphQL */ `
         user_status_count
         video_url
         configID
-        Config {
+        config {
           id
           name
           category
@@ -406,6 +419,76 @@ export const tweetByUser = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        flagged
+        flaggedData
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const tweetByDay = /* GraphQL */ `
+  query TweetByDay(
+    $tweet_date: AWSDate
+    $tweet_created_at: ModelStringKeyConditionInput
+    $sortDirection: ModelSortDirection
+    $filter: ModelK24TweetsFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    tweetByDay(
+      tweet_date: $tweet_date
+      tweet_created_at: $tweet_created_at
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        text
+        category
+        tweet_created_at_raw
+        tweet_created_at
+        tweet_date
+        user_name
+        topic
+        enabled
+        file_path
+        last_updated
+        duration_millis
+        favorite_count
+        followers_count
+        hashtags
+        location
+        media_url_https
+        reply_count
+        retweet_count
+        retweeted
+        row_timestamp
+        screen_name
+        source_device
+        truncated
+        user_status_count
+        video_url
+        configID
+        config {
+          id
+          name
+          category
+          topic
+          query
+          enabled
+          file_path
+          last_updated
+          count
+          since_id
+          createdAt
+          updatedAt
+        }
+        flagged
+        flaggedData
         createdAt
         updatedAt
       }
